@@ -15,7 +15,7 @@ Paper (oral presentation)
 Stefanie E. LaZerte\*, Independent  
 <sel@steffilazerte.ca>
 
-Sam J. Albers, British Columbia Ministry of Environment and Climate Change Strategy
+Sam J. Albers, British Columbia Ministry of Environment and Climate Change Strategy  
 <sam.albers@gov.bc.ca>  
 
 \* presenting author
