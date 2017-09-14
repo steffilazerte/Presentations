@@ -12,11 +12,11 @@ Paper (oral presentation)
 
 ### Authors
 
-Stefanie E. LaZerte\*, Independent
+Stefanie E. LaZerte\*, Independent  
 <sel@steffilazerte.ca>
 
 Sam J. Albers, British Columbia Ministry of Environment and Climate Change Strategy
-<sam.albers@gov.bc.ca>
+<sam.albers@gov.bc.ca>  
 
 \* presenting author
 
