@@ -15,7 +15,7 @@ Paper (oral presentation)
 Stefanie E. LaZerte\*, Independent  
 <sel@steffilazerte.ca>
 
-Sam J. Albers, Quesnel River Research Centre, University of Northern British Columbia 
+Sam J. Albers, Geography Program, University of Northern British Columbia 
 <sam.albers@gmail.com>  
 
 \* presenting author
