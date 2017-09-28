@@ -1,0 +1,165 @@
+---
+title: "weathercan"
+author: "Steffi LaZerte & Sam Albers"
+date: "PCAG 2017"
+output:
+  ioslides_presentation:
+    widescreen: true
+    logo: "./Figures/weathercan_logo.png"
+    css: styles.css
+    transition: 0
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE, out.width = "100%")
+knitr::opts_knit$set(root.dir = "../.")
+```
+
+
+
+```{r, include = FALSE}
+library(tidyverse)
+hydro <- read_csv("./2017-09 PCAG - weathercan/Data/MB_05MH001_daily_hydrometric.csv", skip = 1,
+                  col_names = c("ID", "date", "water_level", "level_grade", "level_symbol", "level_q", 
+                                "discharge", "discharge_grade", "discharge_symbol", "discharge_q")) %>%
+  mutate(time = lubridate::force_tz(date, "Etc/GMT-6"),
+         date = as.Date(date)) %>%
+  dplyr::select(date, time, water_level, discharge)
+
+hydro_mean <- hydro %>%
+  group_by(date) %>%
+  summarize(water_level = mean(water_level), discharge = mean(discharge)) %>%
+  dplyr::select(date, water_level, discharge)
+```
+
+## Historical Weather Data
+
+## Accessing Data the Old Way
+
+## `weathercan`
+
+```{r}
+library(weathercan)
+```
+
+
+## `weathercan` - Finding a station
+
+```{r}
+stations
+```
+
+
+---
+
+```{r}
+stations_search(name = "Brandon")
+```
+
+---
+
+```{r}
+ggmap::geocode("Brandon, MB")
+stations_search(coords = c(49.84847, -99.95009), dist = 10)
+```
+
+```{r}
+stations_search(coords = c(49.84847, -99.95009), dist = 10, interval = "hour")
+```
+
+---
+
+```{r}
+stations_search("Winnipeg", interval = "hour")
+ids <- c(50821, 51097)
+```
+
+
+## `weathercan` - Downloading data
+
+```{r}
+w <- weather(station_ids = ids, start = "2017-09-01")
+```
+
+---
+
+```{r, fig.width = 8, fig.height = 3, warning = FALSE}
+library(ggplot2)
+
+ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
+  geom_line()
+```
+
+## With a bit of formating...
+
+```{r}
+ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
+  theme_bw() +
+  geom_line() +
+  labs(x = "Date", y = "Temperature C", colour = "Station")
+```
+
+
+---
+
+```{r}
+ggplot(data = w, aes(x = time, y = pressure, colour = station_name)) +
+  theme_bw() +
+  geom_line() +
+  labs(x = "Date", y = "Pressure (kPa)", colour = "Station")
+```
+
+## Understanding the Data
+
+```{r}
+flags
+weather_index
+```
+
+## Nitty Gritty
+
+Dates are converted
+
+## Combining data
+
+05MH001 - Assiniboine River at Brandon
+```{r, echo = FALSE}
+knitr::kable(hydro)
+```
+
+## Combining data
+
+```{r, eval = FALSE}
+w <- weather(50821, start = "2017-09-01", interval = "day")
+hydro_mean <- left_join(hydro_mean, w, by = "date")
+
+ggplot(data = w, aes(x = date, y = scale(total_precip))) +
+  geom_line() +
+  geom_line(aes(y = scale(water_level)), colour = "blue") +
+  geom_line(aes(y = scale(discharge)), colour = "green")
+
+```
+
+
+## Interpolating
+```{r, eval = FALSE}
+hydro_weather <- add_weather(data = hydro, weather = w, col = ")
+```
+
+
+## Other cools stuff?
+
+Presentation available online: 
+
+Steffi LaZerte
+
+```{r}
+
+```
+
+
+Reference TRU here
+
+Agriculture and Agri-Food Canada (Download Year). Real-time In-situ Soil Monitoring for Agriculture (RISMA) Network Data. Calgary, AB: Geospatial Cyberinfrastructure for Environmental Sensing [distributer], http://aafc.geocens.ca/

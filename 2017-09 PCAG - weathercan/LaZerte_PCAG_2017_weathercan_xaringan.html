@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>weathercan</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Steffi LaZerte &amp; Sam Albers" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: title-slide, nologo
+
+
+
+
+
+
+
+
+### Steffi LaZerte &amp; Sam Albers
+
+# `weathercan`
+
+## An R package for accessing&lt;br&gt;Environment and Climate Change Canada weather data
+
+.align-bottom-left[&lt;img src = "./Figures/twitter_black.jpg" style = "height: 40px; vertical-align:middle"&gt;  @steffilazerte &lt;img src = "./Figures/github.png" style = "height: 40px; vertical-align:middle; margin-left: 25px"&gt; steffilazerte &lt;img src = "./Figures/web.png" style = "height: 40px; vertical-align:middle; margin-left: 25px"&gt; steffilazerte.ca]
+
+.align-bottom-right[PCAG 2017]
+
+
+
+---
+# Historical weather data
+
+- Environment and Climate Change Canada
+- 1840 to Present
+- Hourly, daily, monthly intervals
+- \&gt; 26,000 stations (past and present)
+
+--
+
+&gt; **Lots of Data!**
+
+
+---
+background-image: url("./Figures/ECCC_historical.png")
+background-size: 85%
+background-position: 50% 100%
+
+# Accessing data from ECCC website
+
+---
+background-image: url("./Figures/ECCC_historical2.png")
+background-size: 90%
+background-position: 50% 50%
+
+---
+background-image: url("./Figures/ECCC_historical3.png")
+background-size: 60%
+background-position: 50% 50%
+
+--
+
+&lt;!-- &lt;div class = "arrow-left" style = "position:absolute; right: 370px; bottom: 300px;border: 5px solid red;width:100px; height:50px;border-radius: 10px;"&gt;&lt;/div&gt; --&gt;
+
+&lt;div class = "box" style = "position:absolute; right:70px; bottom:220px;"&gt;Download&lt;br&gt;Data!&lt;/div&gt;
+
+
+---
+# Data good but not ready
+.center[&lt;img src = "./Figures/ECCC_historical_data.png" style = "width:100%"&gt;]
+
+
+---
+background-image: url("./Figures/weathercan_logo.png")
+background-size: 450px
+background-position: 50% 70%
+class: center, nologo
+
+# .red[`weathercan`]: An R package
+
+---
+background-image: url("./Figures/R_sm.png")
+background-size: 200px
+background-position: 50% 80%
+class: center, nologo
+
+.spacer[ ]
+
+# .center.Rblue[What's R?]
+
+.spacer[ ]
+
+--
+
+### An open source, programming language, and software environment
+
+
+
+---
+class: center, nologo
+
+.spacer[ ]
+
+# .center.Rblue[What's R?]
+
+.spacer[ ]
+
+### An open source, programming language, and software environment
+
+Often used with RStudio IDE &lt;img src = "./Figures/RStudio-Ball.png" style = "height:75px;vertical-align:middle;"&gt;
+
+
+---
+background-image: url("./Figures/Rexample.png")
+background-size: cover
+class: nologo
+
+
+
+---
+
+# Getting started with .red[`weathercan`]
+
+.spacer[ ]
+
+#### Installing `devtools`
+
+```r
+install.packages("devtools")
+```
+
+#### Installing `weathercan` with `devtools`
+
+```r
+devtools::install_github("steffilazerte/weathercan", build_vignettes = TRUE)
+```
+
+---
+# Basic usage
+
+#### Code
+
+```r
+library(weathercan)
+w &lt;- weather(station_ids = c(50821, 51097), start = "2017-09-01")
+```
+
+--
+#### Output
+
+```
+## # A tibble: 1,248 x 28
+##   station_name station_id   prov   lat    lon                time  hmdx hmdx_flag pressure
+## *        &lt;chr&gt;      &lt;dbl&gt; &lt;fctr&gt; &lt;dbl&gt;  &lt;dbl&gt;              &lt;dttm&gt; &lt;dbl&gt;     &lt;chr&gt;    &lt;dbl&gt;
+## 1    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 00:00:00    26              96.21
+## 2    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 01:00:00    26              96.15
+## 3    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 02:00:00    25              96.09
+## 4    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 03:00:00    NA              96.07
+## 5    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 04:00:00    NA              96.08
+## # ... with 1,243 more rows, and 19 more variables
+```
+
+--
+
+&lt;div class = "redbox" style = "top: 31.5%; right: 57%; width: 168px; height: 30px;"&gt;&lt;/div&gt;
+&lt;div style = "position: absolute; top: 19%; right: 64%;"&gt;&lt;h2&gt;&lt;strong&gt;?&lt;strong&gt;&lt;/h3&gt;&lt;/div&gt;
+
+---
+# Locating a station
+
+
+```r
+stations
+```
+
+--
+
+
+```
+## # A tibble: 26,214 x 10
+##      prov       station_name station_id climate_id   lat     lon   elev interval start   end
+##    &lt;fctr&gt;              &lt;chr&gt;     &lt;fctr&gt;     &lt;fctr&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt;
+##  1     BC     100 MILE HOUSE        625    1095790 51.65 -121.27  929.6     hour    NA    NA
+##  2     BC     100 MILE HOUSE        625    1095790 51.65 -121.27  929.6      day  1957  1959
+##  3     BC     100 MILE HOUSE        625    1095790 51.65 -121.27  929.6    month  1957  1959
+##  4     BC     100 MILE HOUSE       1308    1165791 51.65 -121.30 1059.2     hour    NA    NA
+##  5     BC     100 MILE HOUSE       1308    1165791 51.65 -121.30 1059.2      day  1970  1999
+##  6     BC     100 MILE HOUSE       1308    1165791 51.65 -121.30 1059.2    month  1970  1999
+##  7     BC 100 MILE HOUSE 6NE       1309    1165793 51.68 -121.22  928.0     hour    NA    NA
+##  8     BC 100 MILE HOUSE 6NE       1309    1165793 51.68 -121.22  928.0      day  1987  2017
+##  9     BC 100 MILE HOUSE 6NE       1309    1165793 51.68 -121.22  928.0    month  1987  2007
+## 10     BC     108 MILE HOUSE        626    1095796 51.75 -121.33  957.1     hour    NA    NA
+## # ... with 2.62e+04 more rows
+```
+
+
+
+---
+# Searching by station name
+
+
+```r
+stations_search(name = "Brandon")
+```
+
+--
+
+
+```
+## # A tibble: 15 x 10
+##      prov          station_name station_id climate_id   lat    lon  elev interval start   end
+##    &lt;fctr&gt;                 &lt;chr&gt;     &lt;fctr&gt;     &lt;fctr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt;
+##  1     MB BRANDON #1 WINTER BAY       3474    5010498 49.83 -99.98 396.0      day  1987  2002
+##  2     MB BRANDON #1 WINTER BAY       3474    5010498 49.83 -99.98 396.0    month  1987  2002
+##  3     MB             BRANDON A       3471    5010480 49.91 -99.95 409.4      day  1941  2012
+##  4     MB             BRANDON A       3471    5010480 49.91 -99.95 409.4     hour  1958  2012
+##  5     MB             BRANDON A       3471    5010480 49.91 -99.95 409.4    month  1941  2012
+##  6     MB             BRANDON A      50821    5010481 49.91 -99.95 409.3      day  2012  2017
+##  7     MB             BRANDON A      50821    5010481 49.91 -99.95 409.3     hour  2012  2017
+##  8     MB           BRANDON CDA       3472    5010485 49.87 -99.98 362.7      day  1890  2010
+##  9     MB           BRANDON CDA       3472    5010485 49.87 -99.98 362.7    month  1890  2007
+## 10     MB           BRANDON RCS      49909    5010490 49.90 -99.95 409.4      day  2012  2017
+## # ... with 5 more rows
+```
+
+--
+
+&lt;div class = "redbox" style = "width: 93px; height: 400px; right: 240px; top: 205px"&gt;&lt;/div&gt;
+
+---
+# Searching by station name
+
+
+```r
+stations_search(name = "Brandon", interval = "hour")
+```
+
+--
+
+
+```
+## # A tibble: 3 x 10
+##     prov station_name station_id climate_id   lat    lon  elev interval start   end
+##   &lt;fctr&gt;        &lt;chr&gt;     &lt;fctr&gt;     &lt;fctr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt;
+## 1     MB    BRANDON A       3471    5010480 49.91 -99.95 409.4     hour  1958  2012
+## 2     MB    BRANDON A      50821    5010481 49.91 -99.95 409.3     hour  2012  2017
+## 3     MB  BRANDON RCS      49909    5010490 49.90 -99.95 409.4     hour  2012  2017
+```
+
+---
+# Searching by station name
+
+```r
+stations_search(name = "(Brandon)|(Winnipeg)", interval = "hour")
+```
+
+--
+
+
+```
+## # A tibble: 8 x 10
+##     prov                station_name station_id climate_id   lat    lon  elev interval start   end
+##   &lt;fctr&gt;                       &lt;chr&gt;     &lt;fctr&gt;     &lt;fctr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt;
+## 1     MB                   BRANDON A       3471    5010480 49.91 -99.95 409.4     hour  1958  2012
+## 2     MB                   BRANDON A      50821    5010481 49.91 -99.95 409.3     hour  2012  2017
+## 3     MB                 BRANDON RCS      49909    5010490 49.90 -99.95 409.4     hour  2012  2017
+## 4     MB               WINNIPEG A CS      27174    502S001 49.92 -97.25 238.7     hour  2013  2017
+## 5     MB             WINNIPEG INTL A      51097    5023227 49.91 -97.24 238.7     hour  2013  2017
+## 6     MB    WINNIPEG RICHARDSON AWOS      47407    5023226 49.92 -97.23 238.7     hour  2008  2013
+## 7     MB WINNIPEG RICHARDSON INT'L A       3698    5023222 49.92 -97.23 238.7     hour  1953  2013
+## 8     MB          WINNIPEG THE FORKS      28051    5023262 49.89 -97.13 230.0     hour  1999  2017
+```
+
+--
+
+&lt;div class = "highlightbox" style = "top: 46%; right: 50%; height: 35px; width: 350px;"&gt;&lt;/div&gt;
+&lt;div class = "highlightbox" style = "top: 60%; right: 50%; height: 35px; width: 350px;"&gt;&lt;/div&gt;
+
+&gt; Make a note: 50821 (Brandon) and 51097 (Winnipeg)
+
+---
+# Alternative: Searching by coordinates
+
+- Alternatively search according to location: `c(latitude, longitude)`
+- Search within 10km of this location: `dist = 10`
+
+
+```r
+stations_search(coords = c(49.84847, -99.95009), dist = 10, interval = "hour")
+```
+
+--
+
+
+```
+## # A tibble: 3 x 11
+##     prov station_name station_id climate_id   lat    lon  elev interval start   end distance
+##   &lt;fctr&gt;        &lt;chr&gt;     &lt;fctr&gt;     &lt;fctr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt;    &lt;dbl&gt;
+## 1     MB  BRANDON RCS      49909    5010490 49.90 -99.95 409.4     hour  2012  2017 5.731565
+## 2     MB    BRANDON A       3471    5010480 49.91 -99.95 409.4     hour  1958  2012 6.843848
+## 3     MB    BRANDON A      50821    5010481 49.91 -99.95 409.3     hour  2012  2017 6.843848
+```
+
+
+---
+# Downloading data
+
+
+```r
+w &lt;- weather(station_ids = c(50821, 51097), start = "2017-09-01")
+```
+
+--
+
+
+```
+## # A tibble: 1,248 x 28
+##    station_name station_id   prov   lat    lon                time  hmdx hmdx_flag pressure
+##  *        &lt;chr&gt;      &lt;dbl&gt; &lt;fctr&gt; &lt;dbl&gt;  &lt;dbl&gt;              &lt;dttm&gt; &lt;dbl&gt;     &lt;chr&gt;    &lt;dbl&gt;
+##  1    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 00:00:00    26              96.21
+##  2    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 01:00:00    26              96.15
+##  3    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 02:00:00    25              96.09
+##  4    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 03:00:00    NA              96.07
+##  5    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 04:00:00    NA              96.08
+##  6    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 05:00:00    NA              96.05
+##  7    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 06:00:00    NA              96.04
+##  8    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 07:00:00    NA              96.03
+##  9    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 08:00:00    NA              96.01
+## 10    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 09:00:00    27              96.02
+## # ... with 1,238 more rows, and 19 more variables
+```
+
+
+---
+# Plotting
+
+```r
+library(ggplot2)
+
+ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
+  geom_line()
+```
+
+&lt;img src="LaZerte_PCAG_2017_weathercan_xaringan_files/figure-html/unnamed-chunk-17-1.png" width="100%" /&gt;
+
+
+---
+# With a bit of formating...
+
+
+```r
+ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
+  theme_bw() +
+  geom_line() +
+  labs(x = "Date", y = "Temperature C", colour = "Station")
+```
+
+&lt;img src="LaZerte_PCAG_2017_weathercan_xaringan_files/figure-html/unnamed-chunk-18-1.png" width="100%" /&gt;
+
+
+---
+exclude: true
+
+# Again with Pressure
+
+```r
+ggplot(data = w, aes(x = time, y = pressure, colour = station_name)) +
+  theme_bw() +
+  geom_line() +
+  labs(x = "Date", y = "Pressure (kPa)", colour = "Station")
+```
+
+&lt;img src="LaZerte_PCAG_2017_weathercan_xaringan_files/figure-html/unnamed-chunk-19-1.png" width="100%" /&gt;
+
+---
+background-image: url("./Figures/flags_vignette.png")
+background-position: 50% 90%
+background-size: 72.5%
+
+# Understanding the data
+
+
+```r
+vignette("flags", package = "weathercan")
+```
+
+
+---
+background-image: url("./Figures/glossary_vignette.png")
+background-position: 50% 90%
+background-size: 65%
+
+# Understanding the data
+
+
+```r
+vignette("glossary", package = "weathercan")
+```
+
+
+---
+# Combining with other data
+
+- Adding weather data (from a single station) to other data sets
+- Times don't always line up
+
+--
+
+.pull-left[
+#### Sediment data
+
+```
+## # A tibble: 1,392 x 2
+##                  time   amount
+##                &lt;dttm&gt;    &lt;dbl&gt;
+## 1 2017-09-01 00:05:34 168.3133
+## 2 2017-09-01 00:35:34 156.9122
+## 3 2017-09-01 01:05:34 175.6169
+## 4 2017-09-01 01:35:34 184.5908
+## 5 2017-09-01 02:05:34 163.2017
+## 6 2017-09-01 02:35:34 169.2177
+## 7 2017-09-01 03:05:34 167.8620
+## # ... with 1,385 more rows
+```
+]
+
+.pull-right[
+#### Brandon Weather data
+
+```
+## # A tibble: 624 x 3
+##                  time  temp pressure
+##                &lt;dttm&gt; &lt;dbl&gt;    &lt;dbl&gt;
+## 1 2017-09-01 00:00:00  20.8    96.21
+## 2 2017-09-01 01:00:00  20.8    96.15
+## 3 2017-09-01 02:00:00  20.0    96.09
+## 4 2017-09-01 03:00:00  19.4    96.07
+## 5 2017-09-01 04:00:00  19.2    96.08
+## 6 2017-09-01 05:00:00  18.8    96.05
+## 7 2017-09-01 06:00:00  18.9    96.04
+## # ... with 617 more rows
+```
+]
+
+&lt;div class = "highlightbox" style = "left: 18%; top: 58%; height:32%; width:8%"&gt;&lt;/div&gt;
+&lt;div class = "highlightbox" style = "right: 24.5%; top: 58%; height:32%; width:8%"&gt;&lt;/div&gt;
+
+
+---
+# Interpolating
+
+- Linear interpolation where possible
+
+
+```r
+w &lt;- weather(station_ids = 50821, start = "2017-09-01")
+```
+
+
+```r
+sediment &lt;- add_weather(data = sediment, 
+                        weather = w, 
+                        col = c("temp", "pressure"))
+```
+
+---
+# Interpolating
+
+.pull-left-55[
+#### Sediment data
+
+```
+## # A tibble: 1,392 x 4
+##                  time   amount     temp pressure
+##                &lt;dttm&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+## 1 2017-09-01 00:05:34 168.3133 20.80000 96.20443
+## 2 2017-09-01 00:35:34 156.9122 20.80000 96.17443
+## 3 2017-09-01 01:05:34 175.6169 20.72578 96.14443
+## 4 2017-09-01 01:35:34 184.5908 20.32578 96.11443
+## 5 2017-09-01 02:05:34 163.2017 19.94433 96.08814
+## 6 2017-09-01 02:35:34 169.2177 19.64433 96.07814
+## 7 2017-09-01 03:05:34 167.8620 19.38144 96.07093
+## # ... with 1,385 more rows
+```
+]
+
+.pull-right-45[
+#### Weather data
+
+```
+## # A tibble: 648 x 3
+##                  time  temp pressure
+## *              &lt;dttm&gt; &lt;dbl&gt;    &lt;dbl&gt;
+## 1 2017-09-01 00:00:00  20.8    96.21
+## 2 2017-09-01 01:00:00  20.8    96.15
+## 3 2017-09-01 02:00:00  20.0    96.09
+## 4 2017-09-01 03:00:00  19.4    96.07
+## 5 2017-09-01 04:00:00  19.2    96.08
+## 6 2017-09-01 05:00:00  18.8    96.05
+## 7 2017-09-01 06:00:00  18.9    96.04
+## # ... with 641 more rows
+```
+]
+
+&lt;div class = "highlightbox" style = "left: 34%; top: 41.5%; height:32%; width:8%"&gt;&lt;/div&gt;
+&lt;div class = "highlightbox" style = "right: 14%; top: 41.5%; height:32%; width:5%"&gt;&lt;/div&gt;
+
+
+
+---
+# Recap!
+
+--
+
+#### 1. Load `weathercan` package
+
+```r
+library(weathercan)
+```
+
+--
+
+#### 2. Find a station
+
+```r
+stations_search("Brandon")
+```
+
+--
+
+#### 3. Download weather
+
+```r
+w &lt;- weather(station_ids = 50821, start = "2017-09-01")
+```
+
+--
+
+#### 4. Add weather data to an existing data set
+
+```r
+sediment &lt;- add_weather(data = sediment, weather = w, cols = "temp")
+```
+
+---
+class: final-slide, nologo
+# Help with .red[`weathercan`]
+
+- **Tutorials and Reference:** &lt;http://steffilazerte.github.io/weathercan&gt;
+- **Bugs and Development:** &lt;http://github.com/steffilazerte/weathercan&gt;
+- **This presentation:** 
+- **Contact Steffi:** &lt;img src = "./Figures/twitter_black.jpg" style = "height: 40px; vertical-align:middle; margin-left: 25px"&gt;  @steffilazerte &lt;img src = "./Figures/github.png" style = "height: 40px; vertical-align:middle; margin-left: 25px"&gt; steffilazerte &lt;img src = "./Figures/web.png" style = "height: 40px; vertical-align:middle; margin-left: 25px"&gt; steffilazerte.ca
+
+--
+
+&lt;div style = "position:absolute; bottom: 27%"&gt; &lt;h2&gt;Thanks!&lt;/h2&gt;&lt;/div&gt;
+
+
+&lt;div style = "position:absolute; bottom: 20%; left: 4%"&gt;Dr. David J. Hill &lt;br&gt;&lt;img src = "./Figures/TRU2_bw.png" style = "height: 50px; vertical-align: middle; margin-top: 10px"&gt;&lt;/div&gt;
+
+
+
+.small[.align-bottom-left[Slides created via the R package [xaringan](https://github.com/yihui/xaringan), using [remark.js](https://remarkjs.com), [knitr](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com)&lt;br&gt; &lt;code class = "remark-inline-code"&gt;weathercan v0.2.3&lt;/code&gt;]]
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {window.dispatchEvent(new Event('resize'));});
+(function() {var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler"); if (!r) return; s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }"; d.head.appendChild(s);})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
