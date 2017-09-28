@@ -267,7 +267,7 @@ ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
   labs(x = "Date", y = "Temperature C", colour = "Station")
 ```
 
-<div class = "highlightbox" style = "top: 23%; right: 55.75%; width: 170px; height: 30px;"></div>
+<div class = "highlightbox" style = "top: 23%; right: 57%; width: 170px; height: 30px;"></div>
 <div style = "position: absolute; top: 13%; right: 63%;"><h2><strong>?<strong></h3></div>
 
 --
