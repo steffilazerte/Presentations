@@ -277,6 +277,44 @@ ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
 
 > How do we get station ids?
 
+---
+.corner-ribbon[ ]
+
+# Locating a station
+
+
+```{r, eval = FALSE}
+stations
+```
+
+--
+
+```{r, echo = FALSE}
+stations %>%
+  select(-WMO_id, -TC_id) %>%
+  arrange(station_name, station_id)
+```
+
+
+
+---
+.corner-ribbon[ ]
+# Searching by station name
+
+```{r, eval = FALSE}
+stations_search(name = "Brandon")
+```
+
+--
+
+```{r, echo = FALSE}
+stations_search(name = "Brandon") %>%
+  select(-WMO_id, -TC_id)
+```
+
+--
+
+<div class = "highlightbox" style = "width: 100px; height: 380px; right: 19%; top: 32.5%"></div>
 
 ---
 # Searching by station name
@@ -291,6 +329,28 @@ stations_search(name = "Brandon", interval = "hour")
 stations_search(name = "Brandon", interval = "hour") %>%
   select(-WMO_id, -TC_id)
 ```
+
+---
+.corner-ribbon[ ]
+
+# Searching by station name
+```{r, eval = FALSE}
+stations_search(name = "(Brandon)|(Winnipeg)", interval = "hour")
+```
+
+--
+
+```{r, echo = FALSE}
+stations_search(name = "(Brandon)|(Winnipeg)", interval = "hour") %>%
+  select(-WMO_id, -TC_id)
+```
+
+--
+
+<div class = "highlightbox" style = "top: 46.5%; right: 50%; height: 35px; width: 350px;"></div>
+<div class = "highlightbox" style = "top: 60.5%; right: 50%; height: 35px; width: 350px;"></div>
+
+> Make a note: 50821 (Brandon) and 51097 (Winnipeg)
 
 ---
 # Alternative: Searching by coordinates

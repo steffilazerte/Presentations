@@ -207,7 +207,7 @@ ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
   geom_line()
 ```
 
-&lt;img src="LaZerte_PCAG_2017_weathercan_files/figure-html/unnamed-chunk-5-1.png" width="100%" /&gt;
+&lt;img src="LaZerte_PCAG_2017_weathercan_extra_files/figure-html/unnamed-chunk-5-1.png" width="100%" /&gt;
 
 
 ---
@@ -221,7 +221,7 @@ ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
   labs(x = "Date", y = "Temperature C", colour = "Station")
 ```
 
-&lt;img src="LaZerte_PCAG_2017_weathercan_files/figure-html/unnamed-chunk-6-1.png" width="100%" /&gt;
+&lt;img src="LaZerte_PCAG_2017_weathercan_extra_files/figure-html/unnamed-chunk-6-1.png" width="100%" /&gt;
 
 ---
 exclude: true
@@ -235,7 +235,7 @@ ggplot(data = w, aes(x = time, y = pressure, colour = station_name)) +
   labs(x = "Date", y = "Pressure (kPa)", colour = "Station")
 ```
 
-&lt;img src="LaZerte_PCAG_2017_weathercan_files/figure-html/unnamed-chunk-7-1.png" width="100%" /&gt;
+&lt;img src="LaZerte_PCAG_2017_weathercan_extra_files/figure-html/unnamed-chunk-7-1.png" width="100%" /&gt;
 
 ---
 # And done!
@@ -276,6 +276,71 @@ ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
 
 &gt; How do we get station ids?
 
+---
+.corner-ribbon[ ]
+
+# Locating a station
+
+
+
+```r
+stations
+```
+
+--
+
+
+```
+## # A tibble: 26,217 x 10
+##      prov       station_name station_id climate_id   lat     lon   elev interval start   end
+##    &lt;fctr&gt;              &lt;chr&gt;     &lt;fctr&gt;     &lt;fctr&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt;
+##  1     BC     100 MILE HOUSE        625    1095790 51.65 -121.27  929.6     hour    NA    NA
+##  2     BC     100 MILE HOUSE        625    1095790 51.65 -121.27  929.6      day  1957  1959
+##  3     BC     100 MILE HOUSE        625    1095790 51.65 -121.27  929.6    month  1957  1959
+##  4     BC     100 MILE HOUSE       1308    1165791 51.65 -121.30 1059.2     hour    NA    NA
+##  5     BC     100 MILE HOUSE       1308    1165791 51.65 -121.30 1059.2      day  1970  1999
+##  6     BC     100 MILE HOUSE       1308    1165791 51.65 -121.30 1059.2    month  1970  1999
+##  7     BC 100 MILE HOUSE 6NE       1309    1165793 51.68 -121.22  928.0     hour    NA    NA
+##  8     BC 100 MILE HOUSE 6NE       1309    1165793 51.68 -121.22  928.0      day  1987  2017
+##  9     BC 100 MILE HOUSE 6NE       1309    1165793 51.68 -121.22  928.0    month  1987  2007
+## 10     BC     108 MILE HOUSE        626    1095796 51.75 -121.33  957.1     hour    NA    NA
+## # ... with 2.621e+04 more rows
+```
+
+
+
+---
+.corner-ribbon[ ]
+# Searching by station name
+
+
+```r
+stations_search(name = "Brandon")
+```
+
+--
+
+
+```
+## # A tibble: 15 x 10
+##      prov          station_name station_id climate_id   lat    lon  elev interval start   end
+##    &lt;fctr&gt;                 &lt;chr&gt;     &lt;fctr&gt;     &lt;fctr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt;
+##  1     MB BRANDON #1 WINTER BAY       3474    5010498 49.83 -99.98 396.0      day  1987  2002
+##  2     MB BRANDON #1 WINTER BAY       3474    5010498 49.83 -99.98 396.0    month  1987  2002
+##  3     MB             BRANDON A       3471    5010480 49.91 -99.95 409.4      day  1941  2012
+##  4     MB             BRANDON A       3471    5010480 49.91 -99.95 409.4     hour  1958  2012
+##  5     MB             BRANDON A       3471    5010480 49.91 -99.95 409.4    month  1941  2012
+##  6     MB             BRANDON A      50821    5010481 49.91 -99.95 409.3      day  2012  2017
+##  7     MB             BRANDON A      50821    5010481 49.91 -99.95 409.3     hour  2012  2017
+##  8     MB           BRANDON CDA       3472    5010485 49.87 -99.98 362.7      day  1890  2010
+##  9     MB           BRANDON CDA       3472    5010485 49.87 -99.98 362.7    month  1890  2007
+## 10     MB           BRANDON RCS      49909    5010490 49.90 -99.95 409.4      day  2012  2017
+## # ... with 5 more rows
+```
+
+--
+
+&lt;div class = "highlightbox" style = "width: 100px; height: 380px; right: 19%; top: 32.5%"&gt;&lt;/div&gt;
 
 ---
 # Searching by station name
@@ -296,6 +361,39 @@ stations_search(name = "Brandon", interval = "hour")
 ## 2     MB    BRANDON A      50821    5010481 49.91 -99.95 409.3     hour  2012  2017
 ## 3     MB  BRANDON RCS      49909    5010490 49.90 -99.95 409.4     hour  2012  2017
 ```
+
+---
+.corner-ribbon[ ]
+
+# Searching by station name
+
+```r
+stations_search(name = "(Brandon)|(Winnipeg)", interval = "hour")
+```
+
+--
+
+
+```
+## # A tibble: 8 x 10
+##     prov                station_name station_id climate_id   lat    lon  elev interval start   end
+##   &lt;fctr&gt;                       &lt;chr&gt;     &lt;fctr&gt;     &lt;fctr&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt;
+## 1     MB                   BRANDON A       3471    5010480 49.91 -99.95 409.4     hour  1958  2012
+## 2     MB                   BRANDON A      50821    5010481 49.91 -99.95 409.3     hour  2012  2017
+## 3     MB                 BRANDON RCS      49909    5010490 49.90 -99.95 409.4     hour  2012  2017
+## 4     MB               WINNIPEG A CS      27174    502S001 49.92 -97.25 238.7     hour  2013  2017
+## 5     MB             WINNIPEG INTL A      51097    5023227 49.91 -97.24 238.7     hour  2013  2017
+## 6     MB    WINNIPEG RICHARDSON AWOS      47407    5023226 49.92 -97.23 238.7     hour  2008  2013
+## 7     MB WINNIPEG RICHARDSON INT'L A       3698    5023222 49.92 -97.23 238.7     hour  1953  2013
+## 8     MB          WINNIPEG THE FORKS      28051    5023262 49.89 -97.13 230.0     hour  1999  2017
+```
+
+--
+
+&lt;div class = "highlightbox" style = "top: 46.5%; right: 50%; height: 35px; width: 350px;"&gt;&lt;/div&gt;
+&lt;div class = "highlightbox" style = "top: 60.5%; right: 50%; height: 35px; width: 350px;"&gt;&lt;/div&gt;
+
+&gt; Make a note: 50821 (Brandon) and 51097 (Winnipeg)
 
 ---
 # Alternative: Searching by coordinates

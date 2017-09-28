@@ -5,7 +5,10 @@ output: word_document
 PCAG - `weathercan`
 ================
 Steffi LaZerte
-2017-09-14
+2017-09-29
+
+[Presentation](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan.html)
+[Presentation (with extra slides)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan_extra.html)
 
 ### Details
 
