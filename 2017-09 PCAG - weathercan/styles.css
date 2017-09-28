@@ -1,6 +1,7 @@
 body {
   font-family: 'Droid Sans', sans-serif; 
   line-height: 1.75;
+  letter-spacing: 0.025em;
 }
 
 p {
