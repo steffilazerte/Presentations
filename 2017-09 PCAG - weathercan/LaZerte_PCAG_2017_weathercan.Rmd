@@ -6,9 +6,8 @@ date: "PCAG 2017"
 output:
   xaringan::moon_reader:
     css: styles.css
-    lib_dir: libs
     seal: false
-    self-contained: true
+    self-contained: false
     nature:
       highlightStyle: github
       highlightLines: true
