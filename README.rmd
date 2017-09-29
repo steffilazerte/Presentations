@@ -1,14 +1,12 @@
 ---
-title: "README"
 output: github_document
 ---
 
-Presentations available:
+# Presentations
 
 ## `weathercan`
 
-**2017-09 [PCAG](http://pcag.uwinnipeg.ca/PCAG2017.html)**  
-
-[Presentation](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan.html)  
-
-[Presentation (with extra slides)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan_extra.html)
+1. **2017-09 [PCAG](http://pcag.uwinnipeg.ca/PCAG2017.html)**
+  
+  - Regular Presentation [(html)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan.html) [(pdf)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan.pdf)
+  - With Extra Slides [(html)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan_extra.html) [(pdf)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan_extra.pdf)
