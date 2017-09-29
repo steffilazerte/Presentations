@@ -186,7 +186,7 @@ w &lt;- weather(station_ids = c(50821, 51097), start = "2017-09-01")
 #### Output
 
 ```
-## # A tibble: 1,296 x 28
+## # A tibble: 1,344 x 28
 ##   station_name station_id   prov   lat    lon                time  hmdx hmdx_flag pressure
 ## *        &lt;chr&gt;      &lt;dbl&gt; &lt;fctr&gt; &lt;dbl&gt;  &lt;dbl&gt;              &lt;dttm&gt; &lt;dbl&gt;     &lt;chr&gt;    &lt;dbl&gt;
 ## 1    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 00:00:00    26              96.21
@@ -194,24 +194,11 @@ w &lt;- weather(station_ids = c(50821, 51097), start = "2017-09-01")
 ## 3    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 02:00:00    25              96.09
 ## 4    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 03:00:00    NA              96.07
 ## 5    BRANDON A      50821     MB 49.91 -99.95 2017-09-01 04:00:00    NA              96.08
-## # ... with 1,291 more rows, and 19 more variables
+## # ... with 1,339 more rows, and 19 more variables
 ```
 
 ---
 # Plotting
-
-```r
-library(ggplot2)
-
-ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
-  geom_line()
-```
-
-&lt;img src="LaZerte_PCAG_2017_weathercan_extra_files/figure-html/unnamed-chunk-5-1.png" width="100%" /&gt;
-
-
----
-# With a bit of formating...
 
 
 ```r
@@ -221,10 +208,12 @@ ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
   labs(x = "Date", y = "Temperature C", colour = "Station")
 ```
 
-&lt;img src="LaZerte_PCAG_2017_weathercan_extra_files/figure-html/unnamed-chunk-6-1.png" width="100%" /&gt;
+&lt;img src="LaZerte_PCAG_2017_weathercan_extra_files/figure-html/unnamed-chunk-5-1.png" width="100%" /&gt;
 
 ---
-exclude: true
+exclude: false
+
+.corner-ribbon[ ]
 
 # Again with Pressure
 
@@ -235,7 +224,7 @@ ggplot(data = w, aes(x = time, y = pressure, colour = station_name)) +
   labs(x = "Date", y = "Pressure (kPa)", colour = "Station")
 ```
 
-&lt;img src="LaZerte_PCAG_2017_weathercan_extra_files/figure-html/unnamed-chunk-7-1.png" width="100%" /&gt;
+&lt;img src="LaZerte_PCAG_2017_weathercan_extra_files/figure-html/unnamed-chunk-6-1.png" width="100%" /&gt;
 
 ---
 # And done!
@@ -267,7 +256,7 @@ ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
   labs(x = "Date", y = "Temperature C", colour = "Station")
 ```
 
-&lt;div class = "highlightbox" style = "top: 23%; right: 57%; width: 168px; height: 30px;"&gt;&lt;/div&gt;
+&lt;div class = "highlightbox" style = "top: 23%; right: 57%; width: 170px; height: 30px;"&gt;&lt;/div&gt;
 &lt;div style = "position: absolute; top: 13%; right: 63%;"&gt;&lt;h2&gt;&lt;strong&gt;?&lt;strong&gt;&lt;/h3&gt;&lt;/div&gt;
 
 --
@@ -276,41 +265,12 @@ ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
 
 &gt; How do we get station ids?
 
----
-.corner-ribbon[ ]
-
-# Locating a station
-
-
-
-```r
-stations
-```
-
---
-
-
-```
-## # A tibble: 26,217 x 10
-##      prov       station_name station_id climate_id   lat     lon   elev interval start   end
-##    &lt;fctr&gt;              &lt;chr&gt;     &lt;fctr&gt;     &lt;fctr&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;chr&gt; &lt;int&gt; &lt;int&gt;
-##  1     BC     100 MILE HOUSE        625    1095790 51.65 -121.27  929.6     hour    NA    NA
-##  2     BC     100 MILE HOUSE        625    1095790 51.65 -121.27  929.6      day  1957  1959
-##  3     BC     100 MILE HOUSE        625    1095790 51.65 -121.27  929.6    month  1957  1959
-##  4     BC     100 MILE HOUSE       1308    1165791 51.65 -121.30 1059.2     hour    NA    NA
-##  5     BC     100 MILE HOUSE       1308    1165791 51.65 -121.30 1059.2      day  1970  1999
-##  6     BC     100 MILE HOUSE       1308    1165791 51.65 -121.30 1059.2    month  1970  1999
-##  7     BC 100 MILE HOUSE 6NE       1309    1165793 51.68 -121.22  928.0     hour    NA    NA
-##  8     BC 100 MILE HOUSE 6NE       1309    1165793 51.68 -121.22  928.0      day  1987  2017
-##  9     BC 100 MILE HOUSE 6NE       1309    1165793 51.68 -121.22  928.0    month  1987  2007
-## 10     BC     108 MILE HOUSE        626    1095796 51.75 -121.33  957.1     hour    NA    NA
-## # ... with 2.621e+04 more rows
-```
-
-
 
 ---
+exclude: false
+
 .corner-ribbon[ ]
+
 # Searching by station name
 
 
@@ -319,6 +279,7 @@ stations_search(name = "Brandon")
 ```
 
 --
+exclude: false
 
 
 ```
@@ -339,8 +300,10 @@ stations_search(name = "Brandon")
 ```
 
 --
+exclude: false
 
-&lt;div class = "highlightbox" style = "width: 100px; height: 380px; right: 19%; top: 32.5%"&gt;&lt;/div&gt;
+&lt;div class = "highlightbox" style = "width: 90px; height: 380px; right: 20.5%; top: 32.5%"&gt;&lt;/div&gt;
+
 
 ---
 # Searching by station name
@@ -363,6 +326,8 @@ stations_search(name = "Brandon", interval = "hour")
 ```
 
 ---
+exclude: false
+
 .corner-ribbon[ ]
 
 # Searching by station name
@@ -372,6 +337,7 @@ stations_search(name = "(Brandon)|(Winnipeg)", interval = "hour")
 ```
 
 --
+exclude: false
 
 
 ```
@@ -389,6 +355,7 @@ stations_search(name = "(Brandon)|(Winnipeg)", interval = "hour")
 ```
 
 --
+exclude: false
 
 &lt;div class = "highlightbox" style = "top: 46.5%; right: 50%; height: 35px; width: 350px;"&gt;&lt;/div&gt;
 &lt;div class = "highlightbox" style = "top: 60.5%; right: 50%; height: 35px; width: 350px;"&gt;&lt;/div&gt;
@@ -436,8 +403,8 @@ stations_search(coords = c(49.84847, -99.95009), dist = 10, interval = "hour")
 ## 7       5401 2017-07-01          14.3                         19.3
 ```
 
-&lt;div class = "highlightbox" style = "bottom: 40%; right: 40%; height: 35px; width: 65px;"&gt;&lt;/div&gt;
-&lt;div class = "highlightbox" style = "bottom: 40%; right: 17.5%; height: 35px; width: 65px;"&gt;&lt;/div&gt;
+&lt;div class = "highlightbox" style = "bottom: 40.5%; right: 41%; height: 35px; width: 65px;"&gt;&lt;/div&gt;
+&lt;div class = "highlightbox" style = "bottom: 40.5%; right: 18.75%; height: 35px; width: 65px;"&gt;&lt;/div&gt;
 
 ---
 background-image: url("./Figures/flags_vignette.png")
@@ -457,20 +424,20 @@ vignette("flags", package = "weathercan")
 #### Units and measurements
 
 ```
-## # A tibble: 1,296 x 6
-##    station_id       date  temp temp_dew rel_hum wind_dir
-##  *      &lt;dbl&gt;     &lt;date&gt; &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
-##  1      50821 2017-09-01  20.8     17.3      80       18
-##  2      50821 2017-09-01  20.8     17.2      80       17
-##  3      50821 2017-09-01  20.0     16.9      83       17
-##  4      50821 2017-09-01  19.4     16.9      85       16
-##  5      50821 2017-09-01  19.2     17.2      88       19
-##  6      50821 2017-09-01  18.8     17.8      93       17
-##  7      50821 2017-09-01  18.9     17.9      94       16
-##  8      50821 2017-09-01  18.3     17.7      96       18
-##  9      50821 2017-09-01  19.9     17.8      88       20
-## 10      50821 2017-09-01  20.6     18.2      86       23
-## # ... with 1,286 more rows
+## # A tibble: 1,344 x 6
+##    station_id                time  temp temp_dew rel_hum wind_dir
+##  *      &lt;dbl&gt;              &lt;dttm&gt; &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
+##  1      50821 2017-09-01 00:00:00  20.8     17.3      80       18
+##  2      50821 2017-09-01 01:00:00  20.8     17.2      80       17
+##  3      50821 2017-09-01 02:00:00  20.0     16.9      83       17
+##  4      50821 2017-09-01 03:00:00  19.4     16.9      85       16
+##  5      50821 2017-09-01 04:00:00  19.2     17.2      88       19
+##  6      50821 2017-09-01 05:00:00  18.8     17.8      93       17
+##  7      50821 2017-09-01 06:00:00  18.9     17.9      94       16
+##  8      50821 2017-09-01 07:00:00  18.3     17.7      96       18
+##  9      50821 2017-09-01 08:00:00  19.9     17.8      88       20
+## 10      50821 2017-09-01 09:00:00  20.6     18.2      86       23
+## # ... with 1,334 more rows
 ```
 
 
@@ -490,7 +457,7 @@ vignette("glossary", package = "weathercan")
 ---
 # Combining with other data
 
-- Adding weather data (from a single station) to other data sets
+- Adding weather data to other data sets
 - Times don't always line up
 
 --
@@ -517,7 +484,7 @@ vignette("glossary", package = "weathercan")
 #### Brandon Weather data
 
 ```
-## # A tibble: 648 x 3
+## # A tibble: 672 x 3
 ##                  time  temp pressure
 ##                &lt;dttm&gt; &lt;dbl&gt;    &lt;dbl&gt;
 ## 1 2017-09-01 00:00:00  20.8    96.21
@@ -527,11 +494,11 @@ vignette("glossary", package = "weathercan")
 ## 5 2017-09-01 04:00:00  19.2    96.08
 ## 6 2017-09-01 05:00:00  18.8    96.05
 ## 7 2017-09-01 06:00:00  18.9    96.04
-## # ... with 641 more rows
+## # ... with 665 more rows
 ```
 ]
 
-&lt;div class = "highlightbox" style = "left: 18.25%; top: 55%; height:32%; width:8%"&gt;&lt;/div&gt;
+&lt;div class = "highlightbox" style = "left: 18%; top: 55%; height:32%; width:8%"&gt;&lt;/div&gt;
 &lt;div class = "highlightbox" style = "right: 24.5%; top: 55%; height:32%; width:8%"&gt;&lt;/div&gt;
 
 
@@ -539,6 +506,7 @@ vignette("glossary", package = "weathercan")
 # Interpolating
 
 - Linear interpolation where possible
+- Only a single weather station at a time
 
 
 ```r
@@ -577,7 +545,7 @@ sediment &lt;- add_weather(data = sediment,
 #### Weather data
 
 ```
-## # A tibble: 648 x 3
+## # A tibble: 672 x 3
 ##                  time  temp pressure
 ## *              &lt;dttm&gt; &lt;dbl&gt;    &lt;dbl&gt;
 ## 1 2017-09-01 00:00:00  20.8    96.21
@@ -587,12 +555,12 @@ sediment &lt;- add_weather(data = sediment,
 ## 5 2017-09-01 04:00:00  19.2    96.08
 ## 6 2017-09-01 05:00:00  18.8    96.05
 ## 7 2017-09-01 06:00:00  18.9    96.04
-## # ... with 641 more rows
+## # ... with 665 more rows
 ```
 ]
 
-&lt;div class = "highlightbox" style = "left: 34.75%; top: 41%; height:32%; width:8%"&gt;&lt;/div&gt;
-&lt;div class = "highlightbox" style = "right: 14%; top: 41%; height:32%; width:5%"&gt;&lt;/div&gt;
+&lt;div class = "highlightbox" style = "left: 34%; top: 40.5%; height:32%; width:8%"&gt;&lt;/div&gt;
+&lt;div class = "highlightbox" style = "right: 14.25%; top: 40.5%; height:32%; width:5%"&gt;&lt;/div&gt;
 
 
 

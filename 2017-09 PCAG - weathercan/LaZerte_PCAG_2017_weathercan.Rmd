@@ -20,7 +20,7 @@ class: title-slide, nologo
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, cache = TRUE, out.width = "100%", dpi = 300)
+knitr::opts_chunk$set(echo = TRUE, cache = FALSE, out.width = "100%", dpi = 300)
 ```
 
 ```{r libraries, include = FALSE, cache = FALSE}
@@ -210,18 +210,8 @@ w %>% select(-date, -year, -month, -day, -hour, -qual, -weather)
 
 ---
 # Plotting
-```{r, fig.asp = 0.35, warning = FALSE}
-library(ggplot2)
 
-ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
-  geom_line()
-```
-
-
----
-# With a bit of formating...
-
-```{r, fig.asp = 0.35}
+```{r, fig.asp = 0.34}
 ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
   theme_bw() +
   geom_line() +
@@ -230,6 +220,8 @@ ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
 
 ---
 exclude: true
+
+.corner-ribbon[ ]
 
 # Again with Pressure
 ```{r, fig.asp = 0.25}
@@ -278,6 +270,31 @@ ggplot(data = w, aes(x = time, y = temp, colour = station_name)) +
 
 
 ---
+exclude: true
+
+.corner-ribbon[ ]
+
+# Searching by station name
+
+```{r, eval = FALSE}
+stations_search(name = "Brandon")
+```
+
+--
+exclude: true
+
+```{r, echo = FALSE}
+stations_search(name = "Brandon") %>%
+  select(-WMO_id, -TC_id)
+```
+
+--
+exclude: true
+
+<div class = "highlightbox" style = "width: 100px; height: 380px; right: 19%; top: 32.5%"></div>
+
+
+---
 # Searching by station name
 
 ```{r, eval = FALSE}
@@ -290,6 +307,32 @@ stations_search(name = "Brandon", interval = "hour")
 stations_search(name = "Brandon", interval = "hour") %>%
   select(-WMO_id, -TC_id)
 ```
+
+---
+exclude: true
+
+.corner-ribbon[ ]
+
+# Searching by station name
+```{r, eval = FALSE}
+stations_search(name = "(Brandon)|(Winnipeg)", interval = "hour")
+```
+
+--
+exclude: true
+
+```{r, echo = FALSE}
+stations_search(name = "(Brandon)|(Winnipeg)", interval = "hour") %>%
+  select(-WMO_id, -TC_id)
+```
+
+--
+exclude: true
+
+<div class = "highlightbox" style = "top: 46.5%; right: 50%; height: 35px; width: 350px;"></div>
+<div class = "highlightbox" style = "top: 60.5%; right: 50%; height: 35px; width: 350px;"></div>
+
+> Make a note: 50821 (Brandon) and 51097 (Winnipeg)
 
 ---
 # Alternative: Searching by coordinates
@@ -317,8 +360,8 @@ weather(station_id = 5401, start =  "2017-01-01", interval = "month") %>%
   dplyr::select(station_id, date, mean_min_temp, mean_min_temp_flag, mean_temp, mean_temp_flag)
 ```
 
-<div class = "highlightbox" style = "bottom: 40%; right: 40%; height: 35px; width: 65px;"></div>
-<div class = "highlightbox" style = "bottom: 40%; right: 17.5%; height: 35px; width: 65px;"></div>
+<div class = "highlightbox" style = "bottom: 40.5%; right: 41%; height: 35px; width: 65px;"></div>
+<div class = "highlightbox" style = "bottom: 40.5%; right: 18.75%; height: 35px; width: 65px;"></div>
 
 ---
 background-image: url("./Figures/flags_vignette.png")
@@ -337,7 +380,7 @@ vignette("flags", package = "weathercan")
 #### Units and measurements
 ```{r, echo = FALSE}
 w %>% 
-  dplyr::select(station_id, date, temp, temp_dew, rel_hum, wind_dir)
+  dplyr::select(station_id, time, temp, temp_dew, rel_hum, wind_dir)
 ```
 
 
@@ -356,7 +399,7 @@ vignette("glossary", package = "weathercan")
 ---
 # Combining with other data
 
-- Adding weather data (from a single station) to other data sets
+- Adding weather data to other data sets
 - Times don't always line up
 
 --
@@ -376,7 +419,7 @@ w %>% select(time, temp, pressure)
 ```
 ]
 
-<div class = "highlightbox" style = "left: 18.25%; top: 55%; height:32%; width:8%"></div>
+<div class = "highlightbox" style = "left: 18%; top: 55%; height:32%; width:8%"></div>
 <div class = "highlightbox" style = "right: 24.5%; top: 55%; height:32%; width:8%"></div>
 
 
@@ -384,6 +427,7 @@ w %>% select(time, temp, pressure)
 # Interpolating
 
 - Linear interpolation where possible
+- Only a single weather station at a time
 
 ```{r}
 w <- weather(station_ids = 50821, start = "2017-09-01")
@@ -412,8 +456,8 @@ w %>% select(time, temp, pressure)
 ```
 ]
 
-<div class = "highlightbox" style = "left: 34.75%; top: 41%; height:32%; width:8%"></div>
-<div class = "highlightbox" style = "right: 14%; top: 41%; height:32%; width:5%"></div>
+<div class = "highlightbox" style = "left: 34%; top: 40.5%; height:32%; width:8%"></div>
+<div class = "highlightbox" style = "right: 14.25%; top: 40.5%; height:32%; width:5%"></div>
 
 
 
