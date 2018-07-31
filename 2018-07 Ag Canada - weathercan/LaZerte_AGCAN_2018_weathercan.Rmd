@@ -593,7 +593,7 @@ ggplot(manitoba, aes(x = date, y = temp)) +
 
 # Getting the most out of `weathercan`
 
-```{r, echo = FALSE, fig.asp = 0.48, fig.width = 10}
+```{r, echo = FALSE, fig.asp = 0.48, fig.width = 10, message = FALSE}
 library(rnaturalearth)
 library(sf)
 
