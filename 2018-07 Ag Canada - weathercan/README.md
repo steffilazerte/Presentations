@@ -11,7 +11,7 @@ Agriculture and Agri-food Canada - Research and Development Centre (Brandon)
 
 ### Authors
 
-Stefanie E. LaZerte\*, Independent Consultant, Adjuct Professor Brandon University  
+Stefanie E. LaZerte\*, Independent Consultant, Adjunct Professor Brandon University  
 <sel@steffilazerte.ca>
 
 ### Title
