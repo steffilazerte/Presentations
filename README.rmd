@@ -8,7 +8,7 @@ output: github_document
 
 1. **2018-07 Ag Canada**
 
-  - Presentation [(html)](https://steffilazerte.github.io/Presentations/) [(pdf)](https://steffilazerte.github.io/Presentations/)
+  - Presentation [(html)](http://steffilazerte.github.io/Presentations/2018-07%20Ag%20Canada%20-%20weathercan/LaZerte_AGCAN_2018_weathercan.html) [(pdf)](http://steffilazerte.github.io/Presentations/2018-07%20Ag%20Canada%20-%20weathercan/LaZerte_AGCAN_2018_weathercan.pdf)
 
 1. **2017-09 [PCAG](http://pcag.uwinnipeg.ca/PCAG2017.html)**
   
