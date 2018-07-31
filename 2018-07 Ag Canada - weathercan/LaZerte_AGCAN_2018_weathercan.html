@@ -239,7 +239,7 @@ w &lt;- weather_dl(station_ids = c(50821, 51097), start = "2017-09-01", interval
 #### Output
 
 ```
-## # A tibble: 15,936 x 29
+## # A tibble: 15,984 x 29
 ##   station_name station_id station_operator prov    lat    lon  elev climate_id WMO_id TC_id
 ## * &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;            &lt;fct&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;
 ## 1 BRANDON A         50821 NAV Canada       MB     49.9 -100.0  409. 5010481    71140  YBR  
@@ -247,7 +247,7 @@ w &lt;- weather_dl(station_ids = c(50821, 51097), start = "2017-09-01", interval
 ## 3 BRANDON A         50821 NAV Canada       MB     49.9 -100.0  409. 5010481    71140  YBR  
 ## 4 BRANDON A         50821 NAV Canada       MB     49.9 -100.0  409. 5010481    71140  YBR  
 ## 5 BRANDON A         50821 NAV Canada       MB     49.9 -100.0  409. 5010481    71140  YBR  
-## # ... with 1.593e+04 more rows, and 19 more variables
+## # ... with 1.598e+04 more rows, and 19 more variables
 ```
 
 --
@@ -575,7 +575,7 @@ vignette("flags", package = "weathercan")
 #### Units and measurements
 
 ```
-## # A tibble: 15,936 x 6
+## # A tibble: 15,984 x 6
 ##    station_id time                 temp temp_dew rel_hum wind_dir
 ##  *      &lt;dbl&gt; &lt;dttm&gt;              &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
 ##  1      50821 2017-09-01 00:00:00  20.8     17.3      80       18
@@ -588,7 +588,7 @@ vignette("flags", package = "weathercan")
 ##  8      50821 2017-09-01 07:00:00  18.3     17.7      96       18
 ##  9      50821 2017-09-01 08:00:00  19.9     17.8      88       20
 ## 10      50821 2017-09-01 09:00:00  20.6     18.2      86       23
-## # ... with 1.593e+04 more rows
+## # ... with 1.597e+04 more rows
 ```
 
 
@@ -637,7 +637,7 @@ vignette("glossary", package = "weathercan")
 #### Brandon weather data
 
 ```
-## # A tibble: 7,968 x 3
+## # A tibble: 7,992 x 3
 ##   time                 temp pressure
 ##   &lt;dttm&gt;              &lt;dbl&gt;    &lt;dbl&gt;
 ## 1 2017-09-01 00:00:00  20.8     96.2
@@ -647,7 +647,7 @@ vignette("glossary", package = "weathercan")
 ## 5 2017-09-01 04:00:00  19.2     96.1
 ## 6 2017-09-01 05:00:00  18.8     96.0
 ## 7 2017-09-01 06:00:00  18.9     96.0
-## # ... with 7,961 more rows
+## # ... with 7,985 more rows
 ```
 ]
 
@@ -674,11 +674,11 @@ sediment &lt;- weather_interp(data = sediment,
 ```
 
 ```
-## temp is missing 7 out of 7968 data, interpolation may be less accurate as a result.
+## temp is missing 7 out of 7992 data, interpolation may be less accurate as a result.
 ```
 
 ```
-## pressure is missing 7 out of 7968 data, interpolation may be less accurate as a result.
+## pressure is missing 7 out of 7992 data, interpolation may be less accurate as a result.
 ```
 
 --
@@ -710,7 +710,7 @@ sediment &lt;- weather_interp(data = sediment,
 #### Original weather data
 
 ```
-## # A tibble: 7,968 x 3
+## # A tibble: 7,992 x 3
 ##   time                 temp pressure
 ## * &lt;dttm&gt;              &lt;dbl&gt;    &lt;dbl&gt;
 ## 1 2017-09-01 00:00:00  20.8     96.2
@@ -720,7 +720,7 @@ sediment &lt;- weather_interp(data = sediment,
 ## 5 2017-09-01 04:00:00  19.2     96.1
 ## 6 2017-09-01 05:00:00  18.8     96.0
 ## 7 2017-09-01 06:00:00  18.9     96.0
-## # ... with 7,961 more rows
+## # ... with 7,985 more rows
 ```
 ]
 
@@ -780,7 +780,7 @@ manitoba &lt;- weather_dl(station_ids = mb$station_id, start = "2018-07-01")
 
 
 ```r
-write_csv(manitoba, "manitoba_2018-07-01.csv")
+write_csv(manitoba, "./Data/manitoba_2018-07-01.csv")
 ```
 
 
@@ -805,6 +805,11 @@ ggplot(manitoba, aes(x = date, y = temp)) +
 
 # Getting the most out of `weathercan`
 
+
+```
+## Linking to GEOS 3.5.1, GDAL 2.1.3, proj.4 4.9.2
+```
+
 &lt;img src="LaZerte_AGCAN_2018_weathercan_files/figure-html/unnamed-chunk-29-1.png" width="100%" /&gt;
   
   
@@ -822,7 +827,7 @@ ggplot(manitoba, aes(x = date, y = temp)) +
 
 ```r
 w &lt;- weather_dl(station_ids = c(3472, 3698), interval = "month")
-write_csv(w, "brandon_historical.csv")
+write_csv(w, "./Data/brandon_winnipeg_historical.csv")
 ```
 
 

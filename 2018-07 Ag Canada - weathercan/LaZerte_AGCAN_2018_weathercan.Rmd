@@ -21,7 +21,7 @@ class: title-slide, nologo
 
 ```{r setup, include = FALSE}
 library(knitr)
-opts_chunk$set(echo = TRUE, cache = TRUE, out.width = "100%", dpi = 300)
+opts_chunk$set(echo = TRUE, cache = FALSE, out.width = "100%", dpi = 300)
 
 hook_output <- knit_hooks$get("output")
 knit_hooks$set(output = function(x, options) {
@@ -571,7 +571,7 @@ manitoba <- weather_dl(station_ids = mb$station_id, start = "2018-07-01")
 > Big data sets can take time to download: save the output for later
 
 ```{r}
-write_csv(manitoba, "manitoba_2018-07-01.csv")
+write_csv(manitoba, "./Data/manitoba_2018-07-01.csv")
 ```
 
 
@@ -643,7 +643,7 @@ gridExtra::grid.arrange(
 **Download ALL data:**
 ```{r, message = FALSE}
 w <- weather_dl(station_ids = c(3472, 3698), interval = "month")
-write_csv(w, "brandon_historical.csv")
+write_csv(w, "./Data/brandon_winnipeg_historical.csv")
 ```
 
 
