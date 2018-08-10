@@ -1,13 +1,13 @@
 
-Presentations
-=============
+Links to Presentations
+======================
 
 `cavityuse`
 -----------
 
 1.  **2018-08 [International Society for Behavioural Ecology, Minneapolis, USA](http://www.behavecol.com)**
 
-    -   Presentation [(html)](http://steffilazerte.github.io/Presentations/2018-08%20ISBE/LaZerte_ISBE_2018.html) [(pdf)](hhttp://steffilazerte.github.io/Presentations/2018-08%20ISBE/LaZerte_Gow_ISBE_cavityuse.pdf)
+    -   Presentation [(html)](http://steffilazerte.github.io/Presentations/2018-08%20ISBE/LaZerte_ISBE_2018.html) [(pdf)](http://steffilazerte.github.io/Presentations/2018-08%20ISBE/LaZerte_Gow_ISBE_cavityuse.pdf)
 
 `weathercan`
 ------------
