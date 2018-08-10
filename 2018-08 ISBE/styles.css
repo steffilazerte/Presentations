@@ -1,0 +1,510 @@
+/* ISBE: cavityuse presentation style-sheet */
+
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans:400,700|Source+Code+Pro:400,700');
+
+/* Declare main colours */
+:root {
+  --colour1: #2C8787;
+  --colour2: #C6E6E6;
+  --head1: #2C8787;  /* heading bar behind header text */
+  --h1: #FFFFFF;
+  --h1-alt: #000000;
+  --rblue: #246ABF;
+  /*--colour1: #C90000;*/ /* weathercan red */
+  /*--colour2: #F5D6D5;*/ /* weathercan blockquote */
+  /* blues: emph #246ABF; diffuse #CADEF7; */
+  
+  --large: 200%; 
+  --small: 75%; /* how small is small? */
+}
+
+/* Special, presentation-specific classes */
+
+#pcag-2017 {
+  font-size: 120% !important;
+  text-align: right;
+}
+
+/* LOGOS
+.remark-slide-content:after {
+  content: "";
+  background-size: cover;
+  display: inline-block;
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  width: 80px;
+  height: 92px;
+  margin: 5px;
+  background-image: url("./Figures/weathercan_logo.png");
+}
+*/
+
+/* Twitter handle on all slides */
+.remark-slide-content:after {
+  content: "@steffilazerte";
+  color: white;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+}
+
+.nologo.remark-slide-content:after {
+  content:"";
+  background-image: none;
+}
+
+.nologo.remark-slide-content {
+  background-image: none;
+}
+
+.nologo h1 {
+  color: var(--h1-alt);
+}
+
+/* Title Slide */
+
+.title-slide {
+  /* Background image or logo */
+  /*background-image: url("./Figures/weathercan_logo.png");*/
+  /*background-size: 250px;*/
+  /*background-position: 85% 40%;*/
+  border-color: var(--colour1);
+  border-style: solid;
+  border-width: 0 0 0 100px;
+}
+
+.title-slide.remark-slide-content {
+  background-image: none;
+}
+
+.title-slide h1 {
+  font-size: 300% !important;
+  color: var(--colour1) !important;
+  text-align: left;
+  padding-top: 70px;
+}
+
+.title-slide h2 {
+  font-size: 100% !important;
+  line-height: 1.4;
+  text-align: left;
+  font-style: italic;
+  color: black;
+  margin-top: 30px;
+}
+
+.title-slide h3 {
+  font-size: 120% !important;
+  text-align: left;
+  line-height: 1.4;
+  margin-top: 50px;
+}
+
+.title-slide .align-bottom-left {
+  left: 125px;
+}
+
+/* Final Slide */
+
+.final-slide {
+  background-image: url("./Figures/weathercan_logo.png");
+  background-size: 250px;
+  background-position: 95% 90%;
+}
+
+.final-slide h2 {
+  font-size: 300% !important;
+  color: var(--colour1) !important;
+  text-align: left;
+  padding-top: 70px;
+}
+
+/* General Styling */
+
+@page { margin: 0; }
+@media print {
+  .remark-slide-scaler {
+    width: 100% !important;
+    height: 100% !important;
+    transform: scale(1) !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+}
+
+body {
+  font-family: 'Droid Sans', sans-serif; 
+  line-height: 1.75;
+}
+
+p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+h1, h2, h3, h4 { 
+  font-weight: normal;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 180% !important;
+  margin-top: 0px;
+  margin-bottom: 60px;
+  color: var(--h1);
+}
+
+h2 {
+  font-size: 130% !important;
+  color: var(--colour1);
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin-bottom: 0px;
+  font-weight: bold;
+  font-size: 100% !important;
+}
+
+/* h4 is same as h3, but less spacing below */
+h4 {
+  font-size: 120% !important;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: var(--colour1);
+}
+
+td, th {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 18px;
+}
+
+ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+li > ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+a {
+  color: var(--colour1);
+}
+
+/* Classes */
+
+.anchorl {
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0); 
+  -o-transform: translate(-50%, 0); 
+  -ms-transform: translate(-50%, 0); /* IE 9 */
+  transform: translate(-50%, 0);
+}
+
+.anchorr {
+  -webkit-transform: translate(50%, 0); 
+  -moz-transform: translate(50%, 0);
+  -o-transform: translate(50%, 0); 
+  -ms-transform: translate(50%, 0); /* IE 9 */
+  transform: translate(50%, 0);
+}
+
+
+.fig-right {
+  position: absolute;
+  right: 40px;
+  top: 16%;
+  height: 80%;
+}
+
+.fig-left {
+  position: absolute;
+  left: 40px;
+  top: 16%;
+  height: 80%;
+}
+
+.fig-centre {
+  position: absolute;
+  right: 5%;
+  left: 5%;
+  top: 20%;
+  width: 90%;
+}
+
+.hanging {
+  padding-left: 22px;
+  text-indent: -22px;
+}
+.pull-left {
+  float: left;
+  width: 47%;
+}
+.pull-right {
+  float: right;
+  width: 47%;
+}
+
+.pull-left-c {
+  text-align: center;
+  float: left;
+  width: 47%;
+}
+.pull-right-c {
+  text-align: center;
+  float: right;
+  width: 47%;
+}
+
+.pull-right ~ * {
+  clear: both;
+}
+
+.pull-left-45 {
+  float: left;
+  width: 42%;
+}
+
+.pull-left-45-c {
+  text-align: center;
+  float: left;
+  width: 42%;
+}
+
+.pull-right-55 {
+  float: right;
+  width: 52%;
+}
+  
+.pull-left-55 {
+  float: left;
+  width: 52%;
+}
+
+.pull-right-45 {
+  float: right;
+  width: 42%;
+}
+
+.footnote {
+  position: absolute;
+  bottom: 1em;
+  padding-right: 4em;
+  font-size: 90%;
+}
+
+.remark-slide-number {
+  display: none;
+}
+
+.remark-slide-content {
+  background-image: linear-gradient(top, var(--head1) 15.5%, transparent 15.5%, transparent 100%);
+  background-image: -webkit-linear-gradient(top, var(--head1) 15.5%, transparent 15.5%, transparent 100%);
+  font-size: 25px;
+  padding-top: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+}
+
+blockquote {
+  padding: 2px 2px 2px 10px;
+  margin: 5px;
+  border-left: 10px solid var(--colour1);
+  background-color: var(--colour2);
+}
+
+.spacer {
+  margin: 3px;
+}
+
+.col {
+  color: var(--colour1)
+}
+
+.colourbox {
+  font-weight: bold;
+  font-size: 120%;
+  padding: 10px !important;
+  /*position: absolute;*/
+  border: solid 5px var(--colour1);
+  border-radius: 15px;
+}
+
+.highlightbox {
+  position: absolute;
+  background-color: var(--colour1);
+  opacity: 0.3;
+}
+
+.squish {
+  margin-top: -20px;
+}
+
+.box {
+  display: table !important;
+  margin:auto;
+  padding: 10px;
+  border: 5px solid var(--colour1);
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 7px 7px #888888;
+  font-weight: bold;
+  font-size: 120%;
+  max-height: 50px;
+  line-height: 1.2;
+}
+
+.box:before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 35px;
+  margin: auto;
+  width: 0; 
+  height: 0; 
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent; 
+  border-left: 12px solid transparent;
+  border-right:12px solid var(--colour1); 
+}
+
+.align-centre {
+  text-align: center;
+}
+.align-middle {
+  vertical-align: middle;
+}
+.align-left {
+	float: left;
+}
+.align-right {
+	float: right;
+}
+
+.align-top-right {
+  position: absolute; 
+  right: 40px; 
+  top: 40px;
+}
+
+.align-top-left {
+  position: absolute; 
+  left: 40px; 
+  top: 40px;
+}
+
+.align-bottom-left {
+  position: absolute; 
+  left: 40px; 
+  bottom: 40px;
+}
+
+.align-bottom-right {
+  position: absolute; 
+  right: 40px; 
+  bottom: 40px;
+}
+
+.centre {
+  left: 50%; 
+  -webkit-transform: translate(-50%, 0); 
+  position: absolute;
+}
+
+.attr {
+  color: white;
+  text-shadow: 1px 1px #919191;
+  font-size: var(--small);
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  line-height: 1;
+  text-align: right;
+}
+
+.caption {
+  text-align: center;
+  position: relative;
+  max-width: 100%;
+  line-height: 1.4;
+  font-size: var(--small);
+  right: 0;
+  bottom: 5px;
+}
+
+.large {
+  font-weight: bold;
+  font-size: var(--large);
+}
+
+.small {
+  font-size: var(--small);
+  line-height: 1.5;
+}
+
+.small .remark-code {
+  font-size: 65%;
+  line-height: 1.5;
+}
+
+.compact .remark-code {
+  line-height: 1.5;
+}
+
+.narrow .remark-code {
+  font-size: 65%;
+}
+
+/* Code layout */
+
+/* Squish headers a bit closer to code blocks */
+.remark-code, .remark-inline-code { 
+  font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace; 
+}
+
+code.hljs {
+  background: #e6e6e6 !important;
+  border-radius: 3px !important;
+} 
+
+code .remark-code-line {
+  background: #e6e6e6 !important;
+  border-radius: 3px !important;
+  padding-left: 0.5em;
+}
+
+h4 + pre {
+  margin-top: 10px;
+}
+
+pre + h4 {
+  margin-top: 40px;
+}
+
+
+/* Ribbons */
+
+.corner-ribbon {
+  width: 200px;
+  background: #000000;
+  position: absolute;
+  top: 25px;
+  right: -50px;
+  left: auto;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  box-shadow: 0 0 3px rgba(0,0,0,.3);
+}
+
+.corner-ribbon:after {
+  content: "Extra";
+}

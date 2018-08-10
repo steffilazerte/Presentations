@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>cavityuse</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Steffi LaZerte" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: title-slide, nologo
+
+
+
+
+.hanging[
+### Stefanie E. LaZerte &lt;br&gt;&amp; Elizabeth A. Gow]
+
+# `cavityuse`
+
+## An R Package for Detecting Cavity Use From Geolocator Data
+
+&lt;http://github.com/steffilazerte/cavityuse/&gt;  
+
+.spacer[ ]
+
+ISBE 2018
+
+.align-bottom-left[&lt;img src = "./Figures/logos/twitter_black.jpg" style = "height: 40px; vertical-align:middle"&gt;  @steffilazerte &lt;img src = "./Figures/logos/github.png" style = "height: 40px; vertical-align:middle; margin-left: 25px"&gt; steffilazerte &lt;img src = "./Figures/logos/web.png" style = "height: 40px; vertical-align:middle; margin-left: 25px"&gt; steffilazerte.ca &lt;img src = "./Figures/logos/email.svg" style = "height: 25px; vertical-align:middle; margin-left: 25px"&gt; sel@steffilazerte.ca]
+
+
+
+&lt;img src = "./Figures/logos/ubrandon.png" style = "position: absolute; right: 35%; top: 12%; height: 50px"&gt;
+&lt;img src = "./Figures/logos/usask.png" style = "position: absolute; right: 10%; top: 12%; height: 50px"&gt;
+
+---
+# Cavities, caves and burrows
+
+## Provide
+
+- Shelter
+- Nests
+- Roosts
+
+## Patterns of use indicate
+
+- Breeding behaviour
+- Parental care
+- Roosting patterns
+- Behavioural rhythms
+
+&lt;div class = "fig-right" style = "top:20%; height: 70%" &gt;
+&lt;img src = "./Figures/Vaux's_Swifts-2.jpg" style = "height: 100%"&gt;&lt;div class = "attr"&gt;Visitor7 via Wikimedia Commons&lt;/div&gt;
+&lt;div class = "caption"&gt;e.g., Roosting Vaux's swifts&lt;/div&gt;
+&lt;/div&gt;
+
+---
+layout: true
+
+# Geolocators
+
+---
+## To study migration
+- Record light levels
+- Time of noon = Longitude
+- Day length = Latitude
+
+&lt;div class = "fig-right" style = "top:20%; height: 70%" &gt;
+&lt;img src = "./Figures/locator attachment - cropped - wide.jpg" style = "height: 100%"&gt;&lt;div class = "attr"&gt;Scott Ramsay&lt;/div&gt;
+&lt;div class = "caption"&gt;Placing geolocator on white-throated sparrow&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-1-1.png" class = 'fig-left' style = 'top: 47%; height: 52%' /&gt;
+
+
+---
+
+## To study cavity use
+
+- Look for abrupt light changes
+- Periods of dark during the day
+
+&lt;div class = "fig-right" style = "top:20%; height: 70%" &gt;
+&lt;img src = "./Figures/locator attachment - cropped - wide.jpg" style = "height: 100%"&gt;&lt;div class = "attr"&gt;Scott Ramsay&lt;/div&gt;
+&lt;div class = "caption"&gt;Placing geolocator on white-throated sparrow&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-2-1.png" class = 'fig-left' style = 'top: 47%; height: 52%' /&gt;
+
+
+---
+
+## Benefits
+
+- Inexpensive
+- Independent of cavity location
+- Individual data
+- Long observation periods
+
+
+&lt;div class = "fig-right" style = "top:20%; height: 70%" &gt;
+&lt;img src = "./Figures/locator attachment - cropped - wide.jpg" style = "height: 100%"&gt;&lt;div class = "attr"&gt;Scott Ramsay&lt;/div&gt;
+&lt;div class = "caption"&gt;Placing geolocator on white-throated sparrow&lt;/div&gt;
+&lt;/div&gt;
+
+---
+## Used to 
+- Assess activity in rodents
+  - in/out of nest
+  - above/below ground
+
+&lt;div class = "fig-right" style = "top:20%; height: 70%" &gt;
+&lt;img src = "./Figures/Gilles_Gonthier_-_Tamiasciurus_hudsonicus_(by).jpg" style = "height: 100%"&gt;&lt;div class = "attr"&gt;Gilles Gonthier via Wikimedia Commons&lt;/div&gt;
+&lt;div class = "caption""&gt;e.g., American red squirrels&lt;br&gt;Cory et al. 2014&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+
+## Used to 
+- Assess activity in rodents
+  - in/out of nest
+  - above/below ground
+- Assess cavity use in northern flickers
+  - in/out of cavity
+
+&lt;div class = "fig-right" style = "top:20%; height: 70%" &gt;
+&lt;img src = "./Figures/Northern_Flicker_(Red-shafted) - cropped.jpg" style = "height: 100%"&gt;&lt;div class = "attr"&gt;Dominic Sherony via Wikimedia Commons&lt;/div&gt;
+&lt;div class = "caption"&gt;e.g., Northern flickers&lt;br&gt;Gow et al. 2015&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+
+---
+
+## Used to 
+- Assess activity in rodents
+  - in/out of nest
+  - above/below ground
+- Assess cavity use in northern flickers
+  - in/out of cavity
+- Assess incubation in shorebirds
+  - incubating/non-incubating
+
+&lt;div class = "fig-right" style = "top:20%; height: 70%" &gt;
+&lt;img src = "./Figures/Red_Knot_with_Geolocator_(9295409432) - cropped.jpg" style = "height: 100%"&gt;&lt;div class = "attr"&gt;U. S. Fish and Wildlife Service&lt;br&gt;via Wikimedia Commons&lt;/div&gt;
+&lt;div class = "caption"&gt;e.g., Red knots&lt;br&gt;Burger et al. 2012&lt;/div&gt;
+&lt;/div&gt;
+
+
+--
+
+&lt;div style = "padding: 10px;"&gt;&lt;/div&gt;
+.pull-left-45-c[.colourbox[But data processing!]]
+
+
+
+
+
+---
+layout: false
+class: center, nologo
+
+.spacer[ ]
+
+.spacer[ ]
+
+# .col[**`cavityuse`**]: An R package
+
+.spacer[ ]
+
+Leverage the power of
+
+.spacer[ ]
+
+&lt;img src = "./Figures/logos/R_sm.png" style = "width: 15%;"&gt;
+
+---
+layout: true
+# General Principles
+
+
+---
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-4-1.png" class = 'fig-centre' style = 'width: auto; height: 78%' /&gt;
+
+---
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-5-1.png" class = 'fig-centre' style = 'width: auto; height: 78%' /&gt;
+
+---
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-6-1.png" class = 'fig-centre' style = 'width: auto; height: 78%' /&gt;
+
+---
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-7-1.png" class = 'fig-centre' style = 'width: auto; height: 78%' /&gt;
+
+
+---
+layout: true
+
+# Testing `cavityuse`
+
+---
+
+&lt;div class = "anchorl" style = "position:absolute; bottom: 2%; left:25%; font-size:60%;"&gt;Gow, Weibe &amp; Fox; 2015 Ibis&lt;/div&gt;
+
+&lt;div class = "fig-left" style = "top:19%; height: 65%" &gt;
+&lt;img src = "./Figures/NOFL in hand geol copy.jpg" style = "height: 100%"&gt;&lt;div class = "attr"&gt;Elizabeth Gow&lt;/div&gt;&lt;div class = "caption" style = "font-size: 90%"&gt;Northern flickers &lt;span class = "small"&gt;(Colaptes auratus)&lt;/span&gt;&lt;br&gt;&lt;strong&gt;Cavity nesters&lt;/strong&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class = "anchorr" style = "position:absolute; bottom:2%; right:25%;font-size:60%"&gt;Otter, Mckenna, LaZerte &amp; Ramsay; 2017 AOS/SCO Conf.&lt;/div&gt;
+
+&lt;div class = "fig-right" style = "top:19%; height: 65%" &gt;
+&lt;img src = "./Figures/locator on bird - cropped.jpg" style = "height: 100%"&gt;&lt;div class = "attr"&gt;Scott Ramsay&lt;/div&gt;&lt;div class = "caption" style = "font-size: 90%"&gt;White-throated sparrows &lt;span class = "small"&gt;(Zonotrichia albicollis)&lt;/span&gt;&lt;br&gt;&lt;strong&gt;Ground nesters&lt;/strong&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;img src = "./Figures/flicker.png" style = "position: absolute; bottom: 4%; left: 0; height: 150px;"&gt;
+
+&lt;img src = "./Figures/wtsp.png" style = "position: absolute; top: 16%; right: -3%; height: 150px;"&gt;
+
+---
+
+.pull-left[&lt;span style = "font-size: 300%; text-shadow: 2px 2px #919191; color: #FFB90F;"&gt;Day&lt;/span&gt;
+
+- Easier
+- Light varies
+- Look for light/dark patterns
+
+.spacer[ ]
+
+&lt;img src = "./Figures/day.png" width = 500px height = 50px&gt;]
+
+.pull-right[&lt;span style = "font-size: 300%; text-shadow: 2px 2px #919191; color: #440154;"&gt;Night&lt;/span&gt;
+
+- Harder  
+- All dark
+- Look for sunrise/sunset patterns
+
+.spacer[ ]
+
+&lt;img src = "./Figures/night.png" width = 500px height = 50px&gt;]
+
+
+
+
+---
+layout: true
+# Daytime: Hypotheses  
+
+---
+
+## a) Overall cavity use:
+
+Birds spend more time outside than inside cavities &amp;emsp; &lt;img src = "./Figures/cavity_out.png" class = "align-middle" style = "width:100px"&gt; .large[&gt;] &lt;img src = "./Figures/cavity_in.png" width = 100px class = "align-middle"&gt;
+
+.spacer[ ]
+
+Flickers use cavities more than Sparrows &amp;emsp; &amp;emsp; &amp;emsp;&lt;img src = "./Figures/flicker.png" class = "align-middle" style = "width:150px"&gt; .large[&gt;] &lt;img src = "./Figures/wtsp.png" width = 150px class = "align-middle"&gt;
+
+---
+
+## b) Incubation cavity use:
+
+Incubating flickers use cavities more than Non-incubating (Other) flickers &amp; Sparrows  
+
+.spacer[ ]
+
+.pull-left-c[&lt;img src = "./Figures/flicker_incubating.png" class = "align-middle" style = "width:150px"&gt; .large[&gt;] &lt;img src = "./Figures/flicker.png" class = "align-middle" style = "width:150px"&gt;]
+
+.pull-right-c[&lt;img src = "./Figures/flicker_incubating.png" class = "align-middle" style = "width:150px"&gt; .large[&gt;] &lt;img src = "./Figures/wtsp.png" width = 150px class = "align-middle"&gt;]
+
+
+---
+layout: true
+
+# Daytime: Results
+
+## a) Overall cavity use
+
+---
+
+
+
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-9-1.png" class = 'fig-right' /&gt;
+
+---
+
+- Both spend more time outside than inside cavities
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-10-1.png" class = 'fig-right' /&gt;
+
+---
+
+- Both spend more time outside than inside cavities
+- Flickers spend more time inside than Sparrows
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-11-1.png" class = 'fig-right' /&gt;
+
+---
+layout: true
+
+# Daytime: Results
+
+## b) Incubation cavity use
+
+---
+
+
+
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-13-1.png" class = 'fig-right' /&gt;
+
+---
+
+- Incubating flickers use cavities more than
+  - Brooding flickers
+  
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-14-1.png" class = 'fig-right' /&gt;
+
+
+---
+
+- Incubating flickers use cavities more than
+  - Brooding flickers
+  - Other flickers (without eggs or nestlings)
+  
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-15-1.png" class = 'fig-right' /&gt;
+
+---
+
+- Incubating flickers use cavities more than
+  - Brooding flickers
+  - Other flickers (without eggs or nestlings)
+  - Sparrows
+  
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-16-1.png" class = 'fig-right' /&gt;
+
+---
+layout: true
+# Nighttime: Hypotheses
+
+---
+
+## a) Overall cavity use
+
+Sparrows do not use cavities &amp;emsp; &lt;img src = "./Figures/wtsp.png" class = "align-middle" style = "width:100px"&gt; .large[≠] &lt;img src = "./Figures/cavity_in.png" width = 100px class = "align-middle"&gt;
+
+.spacer[ ]
+
+Flickers use cavities more than Sparrows &amp;emsp; &lt;img src = "./Figures/flicker.png" class = "align-middle" style = "width:100px"&gt; .large[&gt;] &lt;img src = "./Figures/wtsp.png" width = 100px class = "align-middle"&gt;
+
+---
+
+## b) Incubation/Brooding cavity use
+
+Incubating (with eggs) and Brooding (with nestlings) flickers use cavities more than Non-Incubating/Brooding (Other) flickers &amp; Sparrows  
+
+.spacer[ ]
+
+.pull-left-c[&lt;img src = "./Figures/flicker_incubating.png" class = "align-middle" style = "width:150px"&gt; .large[&gt;] &lt;img src = "./Figures/flicker.png" class = "align-middle" style = "width:150px"&gt;]
+
+.pull-right-c[&lt;img src = "./Figures/flicker_incubating.png" class = "align-middle" style = "width:150px"&gt; .large[&gt;] &lt;img src = "./Figures/wtsp.png" width = 150px class = "align-middle"&gt;]
+
+
+---
+layout: true
+# Nighttime: Results
+
+## a) Overall cavity use
+---
+
+
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-18-1.png" class = 'fig-right' /&gt;
+
+---
+
+- Flickers use cavities more than Sparrows
+- Sparrows **do** use cavities at night **(?)**
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-19-1.png" class = 'fig-right' /&gt;
+
+---
+layout: true
+# Nighttime: Results
+
+## b) Incubation/Brooding cavity use
+
+---
+
+
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-21-1.png" class = 'fig-right' /&gt;
+
+
+
+---
+Incubating and Brooding flickers:  
+- Have similar cavity use
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-22-1.png" class = 'fig-right' /&gt;
+
+---
+
+Incubating and Brooding flickers:  
+- Have similar cavity use
+- Use cavities more than Other flickers
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-23-1.png" class = 'fig-right' /&gt;
+
+---
+
+Incubating and Brooding flickers:  
+- Have similar cavity use
+- Use cavities more than Other flickers
+- Use cavities more than Sparrows
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-24-1.png" class = 'fig-right' /&gt;
+
+---
+layout: true
+
+# Comparing computers and humans
+
+---
+
+## Gow et al. 2015
+- Measured nighttime cavity use in flickers
+- Scored use by hand
+
+## `cavityuse`
+- Scored by computer
+
+&lt;img src = "./Figures/gow_et_al_2015.png" class = "fig-right"&gt;
+
+---
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-25-1.png" class = 'fig-centre' /&gt;
+
+
+---
+layout: false
+# `cavityuse` Conclusions
+
+&lt;div class = "fig-right" style = "top:20%; height: 70%" &gt;
+&lt;img src = "./Figures/PileatedWoodpeckerNest - cropped.jpg" style = "height: 100%"&gt;&lt;div class = "attr"&gt;Pwieland via Wikimedia Commons&lt;/div&gt;
+&lt;/div&gt;
+
+## Results match expectations:
+
+--
+- Overall daytime cavity use
+--
+
+- Relative daytime vs. nighttime cavity use
+--
+
+- Behaviour
+  - Cavity-users vs. Noncavity-users
+  - Breeding cavity use
+--
+
+- Computer- vs. Human-scored
+
+--
+
+## Results don't match expectations:
+
+- Overall nighttime cavity use
+
+--
+&lt;div style = "padding: 15px;"&gt;&lt;/div&gt;
+
+&lt;div class = "colourbox" style = "position:absolute; left: 6%; bottom: 2%"&gt;Good for daytime behaviour&lt;/div&gt;
+
+---
+# What next?
+
+&lt;div class = "fig-right" style = "top:20%; height: 70%" &gt;
+&lt;img src = "./Figures/Marmota_marmota_01 - cropped.JPG" style = "height: 100%"&gt;&lt;div class = "attr"&gt;H. Zell via Wikimedia Commons&lt;/div&gt;
+&lt;/div&gt;
+
+- Improve nighttime detections
+  - Detect more types of light transitions
+
+--
+- Test different applications
+  - Different species .small[(swifts? bats? squirrels?)]
+  - Different cavities .small[(chimneys? caves? burrows?)]
+  - Different behaviour .small[(shorebird incubation?)]
+
+--
+- Compare to ground observations
+
+--
+
+.spacer[ ]
+
+.pull-left-c[.colourbox[Ground truthing!]]
+
+---
+# Check out `cavityuse`
+
+## Openly developed on GitHub &lt;img src = "./Figures/logos/github.png" style = "width: 35px; vertical-align: middle; margin-bottom: 5px;"&gt;: .small[&lt;http://github.com/steffilazerte/cavityuse&gt;]
+
+- How to download/install `cavityuse`
+- How to use `cavityuse`
+- Contribution (feature-requests, bugs, code!)
+
+--
+
+
+
+
+
+&lt;div style = "position:absolute; bottom: 30%"&gt;
+&lt;h1 style = "color: var(--colour1);"&gt;Thanks!&lt;/h1&gt;
+&lt;/div&gt;
+&lt;img src = "./Figures/wtsp.png" style = "height: 150px;position:absolute;bottom:20%;left:50%;"&gt;
+
+&lt;div style = "position:absolute; bottom: 22%"&gt; 
+&lt;img src = "./Figures/logos/ubrandon.png" style = "height: 50px"&gt;
+&lt;img src = "./Figures/logos/usask.png" style = "margin-left: 30px; height: 50px"&gt;
+&lt;/div&gt;
+
+
+&lt;div style = "position:absolute; text-align: right; bottom: 40px; right: 80px"&gt;
+&lt;div style = "margin-bottom: 20px;"&gt;
+steffilazerte.ca
+&lt;img src = "./Figures/logos/web.png" style = "height: 40px; vertical-align:middle;"&gt;&lt;br&gt;
+sel@steffilazerte.ca
+&lt;img src = "./Figures/logos/email.svg" style = "height: 25px; vertical-align:middle;margin-right:2px"&gt;
+&lt;/div&gt;
+&lt;img src = "./Figures/logos/logo_eg.png" style = "width: 350px"&gt;
+&lt;/div&gt;
+
+&lt;img src = "./Figures/flicker.png" style = "position: absolute; bottom: 28%; right: 2%; height: 150px; -webkit-transform: scaleX(-1);transform: scaleX(-1);"&gt;
+
+
+.small[.align-bottom-left[Presentation Available: &lt;https://steffilazerte.github.io/Presentations/&gt;&lt;br&gt;Slides created with the R package [xaringan](https://github.com/yihui/xaringan), using [remark.js](https://remarkjs.com), [knitr](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com)&lt;br&gt;&lt;code class = "remark-inline-code"&gt;Compiled on 2018-08-10 with cavityuse v0.1.0&lt;/code&gt;]]
+
+
+
+
+---
+# References
+
+.small[
+.hanging[
+Burger J, Niles LJ, Porter RR, Dey AD (2012). Using geolocator data to reveal incubation periods and breeding biology in Red Knots Calidris canutus rufa. Wader Study Group Bull, 119:26-36. http://www.waderstudygroup.org/article/1890/
+
+Cory TW, Wilsterman K, Kelley AD, Breton AR, Stark H, Humphries MM, McAdam AG, Barnes BM, Boutin S, Buck CL (2014). Light loggers reveal weather-driven changes in the daily activity patterns of arboreal and semifossorial rodents. Journal of Mammalogy, 95: Pages 1230–1239. https://doi.org/10.1644/14-MAMM-A-062
+
+Gow EA, Wiebe KL, Fox JW (2015). Cavity use throughout the annual cycle of a migratory woodpecker revealed by geolocators. Ibis, 157:167-170. https://doi.org/10.1111/ibi.12206
+
+Otter KA, Mckenna A, LaZerte SE, Ramsay SM (2017).The possible link between wintering grounds and continent-wide shifts in song dialects of white-throated sparrows (Oral). The joint meeting of the American Ornithological Society and the Society of Canadian Ornithologists/Société des ornithologistes du Canada (East Lansing, MI, USA).]]
+
+---
+layout: true
+# Monitoring cavity use
+
+---
+## At the cavity
+- Human observation
+- Video surveillance
+- Audio surveillance
+- RFID loggers
+
+## At the individual
+- GPS/Accelerometers collars
+- Temperature loggers
+- Light loggers (i.e. geolocators)
+- RFID loggers
+
+&lt;div class = "fig-right" style = "top:20%; height: 75%" &gt;
+&lt;img src = "./Figures/steffi_muskoka_wide.JPG" style = "height: 100%"&gt;&lt;div class = "attr"&gt;Gertrud Nürnberg&lt;/div&gt;
+&lt;/div&gt;
+
+---
+.pull-left[
+## Limitations
+- Knowing where potential cavities are
+- Individual vs. Group patterns
+- Cost (Equipment, technicians)
+- Data Processing (time, reproducibility)]
+
+
+
+---
+layout: false
+# Daytime activity for white-throated sparrows 
+
+
+
+.spacer[]
+
+.small[
+&gt; White-throated sparrows spent
+&gt;  - 0.8% (0.7 - 0.8) of their time Inside
+&gt;  - 96.9% (96.7 - 97.3) of their time Outside
+&gt;  - 0.8% (0 - 2.3) of their time was ambiguous
+]
+
+
+---
+layout: false
+
+# Nighttime
+
+## Sunrise / Sunset Detection
+
+- See sunset and sunrise → "Out"
+- See NO sunset OR sunrise →  "In"
+- See either → "Ambiguous"
+
+--
+
+## Algorithm to detect sunrise/sunset
+- Data from one geolocator to create the algorithm
+- Tested on 4 others
+- Days of calibration data
+
+--
+
+&lt;img src="LaZerte_ISBE_2018_files/figure-html/unnamed-chunk-27-1.png" class = 'fig-right' /&gt;
+
+&gt; Not bad!
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
