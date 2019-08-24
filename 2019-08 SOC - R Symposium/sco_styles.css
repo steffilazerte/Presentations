@@ -1,0 +1,41 @@
+/* SCO R symposium presentation style-sheet */
+
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans:400,700|Source+Code+Pro:400,700');
+
+/* Declare main colours */
+:root {
+  --colour1: #246ABF;
+  --colour2: #C6E6E6;
+  --head1: #246ABF;  /* heading bar behind header text */
+  --h1: #FFFFFF;
+  --h1-alt: #000000;
+  --rblue: #246ABF;
+  /*--colour1: #C90000;*/ /* weathercan red */
+  /*--colour2: #F5D6D5;*/ /* weathercan blockquote */
+  /* blues: emph #246ABF; diffuse #CADEF7; */
+  
+  /*--logo: url("./Figures/weathercan_logo.png");*/
+  /*--logo-size: 250px;*/
+  /*--logo-pos: right 5% bottom 5%;*/
+  
+  --logo: none;
+  --logo-size: none;
+  --logo-pos: none;
+  
+  --large: 200%; 
+  --small: 75%; /* how small is small? */
+}
+
+.white {
+  color: white;
+  font-weight: bold;
+}
+
+.hl {
+  background-color: yellow;
+}
+
+.rblue {
+  color: var(--rblue);
+  font-weight: bold;
+}

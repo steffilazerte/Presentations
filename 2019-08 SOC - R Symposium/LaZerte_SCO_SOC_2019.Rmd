@@ -1,0 +1,441 @@
+---
+title: "R for Ornithologists: How R can benefit the study of Ornithology"
+subtitle: "Symposium: R for Ornithologist: Perspectives from useRs to programmeRs"
+author: "Steffi LaZerte"
+date: "August 2019"
+output:
+  xaringan::moon_reader:
+    css: [sco_styles.css, ../global_styles.css]
+    seal: false
+    self-contained: false
+    nature:
+      beforeInit: "../macros.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+
+
+---
+class: title-slide, nologo, nobar
+
+
+```{r prep, include = FALSE}
+library(tidyverse)
+library(knitr)
+library(here)
+
+opts_chunk$set(echo = FALSE, cache = FALSE, dpi = 300,
+               out.extra = "class = 'fig-right'", fig.width = 3.5,
+               fig.height = 3.75)
+
+hook_output <- knit_hooks$get("output")
+knit_hooks$set(output = function(x, options) {
+  extra <- options$extra
+  
+  if(is.null(extra)) {
+    return(hook_output(x, options))  # pass to default hook
+  }
+  x <- hook_output(x, options)
+  if(any(extra == "squish")) x <- paste0("\n.narrow[", x, "]")
+  if(any(extra == "pause")) x <- paste0("--\n", x)
+  x
+})
+
+theme_pres <- theme_bw() +
+  theme(axis.title.x = element_blank(),
+        legend.position = "top", legend.background = element_blank(),
+        legend.margin = margin(),
+        legend.box.margin = margin(),
+        legend.box.spacing = unit(c(2,0,0,0), units = "pt"),
+        plot.margin = unit(c(0, 0, 0, 5), units = "pt"))
+
+```
+
+.hanging[
+### Stefanie E. LaZerte]
+
+![:img left: 450px, top: 75px, 200px, , ](./Figures/logos/ubrandon.png)
+
+# R for Ornithologists
+### How R can benefit the study of Ornithology
+
+![:spacer 30px]()
+
+*Symposium: R for Ornithologist: Perspectives from useRs to programmeRs*  
+
+![:spacer 10px]()
+
+SCO-SOC 2019
+
+![:info h, , bottom: 10px]()
+
+???
+Ornithologists “in the era of new technologies” have access to ever increasing
+sources of data, which in turn leads to large quantities of data. This wealth of
+data is exciting, but sometimes overwhelming, and with new technologies for
+collecting data, we need new technologies for processing and analyzing data. One
+such technology is the free and open source programming language, R. R is a
+powerful (and economical) tool that is highly extensible through ‘packages’ for
+performing specific tasks. Because there are so many packages, many
+ornithologists are not aware of the many ways in which R can be useful, or which
+packages are available for purposes beyond statistical analysis. However, there
+are numerous packages which have been developed for specific scientific, or even
+ornithological applications. Such examples include those for accessing relevant
+online data sources (e.g., climate data, eBird, population data, etc.), genomic
+analyses, bioacoustic analyses, analyses of animal movements, reproducible
+research workflow, and dissemination (e.g., graphs, maps, and interactive
+visualizations). This presentation will introduce ornithologists to these tools
+which make ornithological research quicker, easier, more affordable, and
+stronger.
+
+---
+# What is R?
+
+--
+
+## R is a Free and Open Source programming language and environment
+
+--
+
+> A programming **language** is a way to give instructions in order to get a computer to do something
+
+![:spacer 30px]()
+
+- You need to know the language (i.e. the code)
+- Computers don't know what you mean, only what you type (unfortunately)
+- Spelling, punctuation, and capitalization all matter!
+
+--
+- This may (will) lead to frustration
+
+---
+# What is R?
+
+## R uses packages
+
+- Packages extend R (i.e. `nlme` and `lme4` add mixed modeling)
+- Packages can be written by anyone  
+
+- Some are ok, some are good, some are AMAZING
+- .rblue[Base R] is R without any extra packages (also good)
+
+> There are 1000's of packages!
+
+---
+background-image: url(`r "./Figures/R_hard.png"`)
+background-position: right 15% bottom 10%
+background-size: 70%
+
+# R is hard
+
+---
+background-image: url(`r "./Figures/impostR.png"`)
+background-position: center center
+background-size: 70%
+
+# Impost**R** Syndrome
+
+---
+background-image: url(`r "./Figures/impostR.png"`)
+background-position: right 75px top 23%
+background-size: 30%
+
+# Impost**R** Syndrome
+
+![:img left: 25px, bottom: 170px, 60%, , David Whittaker](./Figures/imposter.jpg)
+
+--
+
+![:box 50%, 80%, 75%](<strong>Moral of the story?</strong><br>Make friends, code in groups, learn together and don't beat yourself up)
+
+---
+background-image: url(`r "./Figures/impostR.png"`)
+background-position: right 75px top 23%
+background-size: 30%
+
+# Impost**R** Syndrome
+![:spacer 210px]()
+![:img left: 25px, bottom: 170px, 60%, , David Whittaker](./Figures/imposter.jpg)
+
+
+**Using R in the undergraduate biology classroom**: Hurdles, hints, and aha moments  
+(.rblue[Here @ 1:45pm])
+
+
+
+---
+background-image: url(`r "./Figures/owl_computer.jpg"`)
+background-position: right 75px bottom 125px
+background-size: 45%
+
+# Ornithologists and R
+
+## What I **am not** going to do
+
+- Teach you R
+- Talk about statistics
+
+--
+
+## What I **am** going to do
+
+- Explain how R can benefit ornithologists
+- Showcase useful packages
+- Give you resources to get started
+
+--
+- Inspire you to take your .rblue[R] to the next level!
+
+???
+- What??!?!! Can you have a presentation about R without these two things?
+- The goal of this presentation is not to explain how to use R, but rather 
+
+---
+background-image: url(`r "./Figures/R_powerful2_edit.png"`)
+background-position: center bottom 40%
+background-size: 70%
+
+# Why ornithologists should use R
+
+## R is powerful!
+
+--
+
+.footer[(I made these slides with **R**markdown)]
+
+---
+# Why ornithologists should use R
+## R is powerful!
+
+![:spacer 15px]()
+
+**The blessing and curse of automated data collection:**  
+  R and dealing with big data in a modern age  
+  (.rblue[Here @ 10:45am])
+
+![:spacer 40px]()
+
+**Super-computing with R:**  
+  Harnessing the power of the cloud to analyze big-bird-data, or just run your simulations, models, and cross-validations faster  
+(.rblue[Here @ 11:15am])
+
+---
+# Why ornithologists should use R
+## Reproducible Science
+
+- Scripts are records of your work  
+
+```{r eval = FALSE, echo = TRUE}
+m <- lm(mpg ~ cyl, data = mtcars)
+summary(m)
+```
+
+--
+
+- Scripts can be compiled into pdf/html reports with [**`rmarkdown`**](https://rmarkdown.rstudio.com/) and [**`knitr`**](https://yihui.name/knitr/)  
+  (In RStudio: `File > Compile Report`)
+
+![:img right: 250px, bottom: 50px, 15%, , ](./Figures/rmarkdown_logo.png)
+![:img right: 50px, bottom: 50px, 15%, , ](./Figures/knitr_logo.png)
+
+---
+# Why ornithologists should use R
+## Reproducible Science
+
+- Keep track of code AND output
+![:img right: 0px, top: 0px, 60%, , ](./Figures/repro1.png)
+
+--
+
+- Keep track of data
+![:img right: 0px, top: 0px, 60%, , ](./Figures/repro2.png)
+
+--
+- Keep track of software
+![:img right: 0px, top: 0px, 60%, , ](./Figures/repro3.png)
+
+
+---
+# Why ornithologists should use R
+
+## Find Data!
+
+- Many online data sources are accessible through R
+- Reproducible science includes data sources!
+
+--
+
+### Packages
+- Observations from [ebird](https://ebird.org) with [**`auk`**](https://github.com/CornellLabofOrnithology/auk)
+![:img right: 300px, top: 120px, 15%, , ](./Figures/auk_logo.png)
+
+--
+- Observations from [NatureCounts](https://naturecounts.ca) with [**`naturecounts`**](https://github.com/birdstudiescanada/naturecounts) (.rblue[Here @ 11:00am])
+
+--
+- Recordings of vocalizations from [xeno-canto](https://www.xeno-canto.org/) with [**`warbleR`**](https://github.com/maRce10/warbleR)
+![:img right: 30px, top: 200px, 20%, , ](./Figures/warbleR_logo.png)
+
+--
+- Weather data from [Environment and Climate Change Canada](http://climate.weather.gc.ca/) with [**`weathercan`**](https://github.com/ropensci/weathercan)
+![:img right: 25px, top: 275px, 15%, , ](./Figures/weathercan_logo.png)
+
+--
+- DNA Sequences from [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) with [**`phylotaR`**](https://github.com/ropensci/phylotaR)
+![:img right: 100px, top: 470px, 16%, , ](./Figures/phylotaR_logo.png)
+
+--
+- Taxomonic data with [**`taxize`**](https://github.com/ropensci/taxize)
+
+--
+- IUCN Red Lists with [**`rredlist`**](https://github.com/ropensci/rredlist)
+
+???
+- brranching: Includes methods for fetching 'phylogenies' from a variety of sources, including the 'Phylomatic' web service (<http://phylodiversity.net/phylomatic>), and 'Phylocom' (<https://github.com/phylocom/phylocom/>).
+- Data published on [dryad](https://datadryad.org/) with [**`rdryad`**](https://github.com/ropensci/rdryad)
+
+---
+#  Why use R
+## Dealing with Data
+
+
+![:img center, bottom: 25px, 85%, , <a href = "https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/">Forbes.com</a>](./Figures/forbes_cleaning.jpg)
+
+--
+
+![:img center, bottom: 25px, 85%, , <a href = "https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/">Forbes.com</a>](./Figures/forbes_cleaning_hl.png)
+
+---
+class: split-50
+#  Why use R
+
+.columnl[
+## Dealing with Data
+- Reproducible!
+- Cleaning
+  - Fix typos
+  - Fix/explore odd/missing values
+- Filtering
+- Summarizing
+- Transforming
+- Exploring
+]
+
+--
+
+.columnr[
+## Packages to Use
+- Base R (i.e. no special packages)
+- [`data.table`](http://r-datatable.com) (<http://r-datatable.com>)
+- [`tidyverse`](http://tidyverse.org) (<http://tidyverse.org>)
+  - Suite of packages
+  - Learn more: [R for Data Science](https://r4ds.had.co.nz/)
+
+]
+
+![:img right: 350px, bottom: 75px, 15%, , ](./Figures/datatable_logo.png)
+![:img right: 150px, bottom: 75px, 15%, , ](./Figures/tidyverse_logo.png)
+
+
+???
+I don't know about you, but I've never come back from the field and thought, great, my data is perfectly ready for analysis.
+---
+# Why ornithologists should use R
+
+## 100's of Specialized packages
+
+### For example...
+
+--
+- Phylogenetic comparative analyses [**`adephylo`**](https://github.com/thibautjombart/adephylo)
+
+--
+- Bioacoustic analyses with [**`seewave`**](http://rug.mnhn.fr/seewave/)
+![:img left: 50px, bottom: 100px, 35%, , ](./Figures/seewave_logo.png)
+
+--
+- Animal home ranges with [**`adehabitatHR`**](https://cran.r-project.org/web/packages/adehabitatHR/)
+
+--
+- Hierarchical Bayesian modelling of Breeding Bird Survey data with [**`bbsBayes`**](https://github.com/BrandonEdwards/bbsBayes)  (.rblue[Here @ 11:30am])
+![:img left: 575px, bottom: 30px, 15%, , ](./Figures/bbsBayes_logo.png)
+
+--
+- Systematic reviews with [**`litsearchr`**](https://elizagrames.github.io/litsearchr/) (.rblue[Here @ 1:30pm])
+![:img right: 150px, bottom: 30px, 15%, , ](./Figures/litsearchr_logo.png)
+
+???
+- Animal movements detected by RFID with [**`feedr`**](https://github.com/animalnexus/feedr)
+
+---
+```{r ggplot2, include = FALSE, fig.asp = 0.75, fig.width = 6, dpi = 300, fig.align="right", fig.path = here("./2019-08 SOC - R Symposium/Figures/")}
+library(tidyverse)
+
+iris %>%
+  gather(Measure, Value, -Species) %>%
+  separate(Measure, into = c("Type", "Measure"), convert = TRUE) %>%
+ ggplot(aes(x = Value, fill = Species)) +
+    facet_grid(Type ~ Measure, scales = "free") +
+    geom_density(alpha = 0.6) +
+    theme_bw() +
+    scale_fill_viridis_d()
+```
+
+# Why ornithologists should use R
+
+## Dissemination and Visualizations
+
+- Beautiful plots with [**`ggplot2`**](https://ggplot2.tidyverse.org/)
+![:img left: 75px, bottom: 160px, 15%, , ](./Figures/ggplot2_logo.png)
+![:img right: 25px, bottom: 75px, 50%, , ](./Figures/ggplot2-1.png)
+
+
+--
+- Complex maps with [**`sf`**](https://r-spatial.github.io/sf/), [**`tmap`**](https://github.com/mtennekes/tmap)
+![:img left: 260px, bottom: 162px, 17%, , ](./Figures/sf_logo.gif)
+![:img right: 25px, bottom: 75px, 50%, , ](./Figures/tmap.png)
+
+--
+- Interactive visualizations with [**`shiny`**](https://shiny.rstudio.com/)
+
+![:img right: 25px, bottom: 25px, 55%, ,Finch movements](./Figures/shiny_feedr.png)
+![:img left: 175px, bottom: 5px, 15%, , ](./Figures/shiny_logo.png)
+
+---
+# Why ornithologists should use R
+## Find More Packages!
+
+- Not an exhaustive list!
+- Check out package collections
+   - [metaverse](https://rmetaverse.github.io/) (<https://rmetaverse.github.io/>)
+   - [ropensci](https://ropensci.org/) (<https://ropensci.org/>)
+   - [tidyverse](https://tidyverse.org/) (<https://tidyverse.org/>)
+- Look in journals, i.e. Methods in Ecology and Evolution
+- Look in methods sections of articles
+
+--
+![:spacer 30px]()
+
+
+> Always cite packages and package versions!
+
+---
+# R for Ornithologists: Stay tuned...
+
+
+
+
+**QR Code for presentation location**
+
+![:img , bottom: 22%, 150px, , ](./Figures/logos/ubrandon.png)
+
+![:info v, right: 25px, bottom: 250px]()
+
+![:img right: 25px, bottom: 50px, 350px, , ](./Figures/logos/logo_eg.png)
+
+.footer-right[Compiled on `r Sys.Date()`]
+
+.footer[
+Presentation Available: <https://steffilazerte.github.io/Presentations/>  
+Slides created with the R package [xaringan](https://github.com/yihui/xaringan), using [remark.js](https://remarkjs.com), [knitr](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com)]
