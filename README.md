@@ -7,9 +7,14 @@
     Ornithologists](https://www.sco-soc.ca/) 2019 Meeting in Québec
     City, Canada <http://sco-soc-quebec2019.org/>**
     
-      - Presentation
-        [(html)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019.html)
-        [(pdf)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019.pdf)
+      - Presentation [(English
+        html)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_en.html)
+        [(English
+        pdf)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_en.pdf)
+        [(French
+        html)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_fr.html)
+        [(French
+        pdf)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_fr.pdf)
 
 ## `cavityuse`
 

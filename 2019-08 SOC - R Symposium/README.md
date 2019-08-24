@@ -3,7 +3,7 @@ SCO-SOC - R for Ornithologists Symposium
 Steffi LaZerte
 2019-08-27
 
-Presentation [(html)](http://steffilazerte.github.io/Presentations/2018-08%20ISBE/LaZerte_ISBE_2018.html) [(pdf)](http://steffilazerte.github.io/Presentations/2018-08%20ISBE/LaZerte_Gow_ISBE_cavityuse.pdf)
+Presentation [(English html)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_en.html) [(English pdf)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_en.pdf) [(French html)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_fr.html) [(French pdf)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_fr.pdf)
 
 ### Details
 
