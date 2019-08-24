@@ -6,6 +6,9 @@
 :root {
   --colour1: #246ABF;
   --colour2: #C6E6E6;
+  --t1: 300%;
+  --t2: 100%;
+  --t3: 150%;
   --head1: #246ABF;  /* heading bar behind header text */
   --h1: #FFFFFF;
   --h1-alt: #000000;
@@ -24,6 +27,10 @@
   
   --large: 200%; 
   --small: 75%; /* how small is small? */
+}
+
+.title-slide h3 {
+  font-size: 500% !important;
 }
 
 .white {

@@ -38,14 +38,14 @@
 }
 
 .title-slide h1 {
-  font-size: 300% !important;
+  font-size: var(--t1) !important;
   color: var(--colour1) !important;
   text-align: left;
   padding-top: 70px;
 }
 
 .title-slide h2 {
-  font-size: 100% !important;
+  font-size: var(--t2) !important;
   line-height: 1.4;
   text-align: left;
   font-style: italic;
@@ -54,7 +54,7 @@
 }
 
 .title-slide h3 {
-  font-size: 120% !important;
+  font-size: var(--t3) !important;
   text-align: left;
   line-height: 1.4;
   margin-top: 50px;

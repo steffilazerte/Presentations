@@ -15,7 +15,6 @@ output:
       countIncrementalSlides: false
       ratio: "16:9"
 
-
 ---
 class: title-slide, nologo, nobar
 
@@ -52,23 +51,18 @@ theme_pres <- theme_bw() +
 
 ```
 
-.hanging[
-### Stefanie E. LaZerte]
 
-![:img left: 450px, top: 75px, 200px, , ](./Figures/logos/ubrandon.png)
+### Symposium
 
 # R for Ornithologists
-### How R can benefit the study of Ornithology
 
-![:spacer 30px]()
+### .rblue[Perspectives from useRs to programmeRs (to birdeRs)]
 
-*Symposium: R for Ornithologist: Perspectives from useRs to programmeRs*  
+**10:30-14:15**  Salle des Plaines II
 
-![:spacer 10px]()
+![:img right: 150px, bottom: 25px, 300px, , ](./Figures/R_bird.png)
 
-SCO-SOC 2019
-
-![:info h, , bottom: 10px]()
+.footer[SCO-SOC 2019]
 
 ???
 Ornithologists “in the era of new technologies” have access to ever increasing
@@ -90,27 +84,34 @@ which make ornithological research quicker, easier, more affordable, and
 stronger.
 
 ---
-# What is R?
+class: title-slide, nologo, nobar
 
---
+.hanging[
+### Stefanie E. LaZerte]
 
-## R is a Free and Open Source programming language and environment
+![:img left: 500px, top: 75px, 200px, , ](./Figures/logos/ubrandon.png)
 
---
+![:img right: 25px, top: 25px, 200px, , ](./Figures/QR.svg)
 
-> A programming **language** is a way to give instructions in order to get a computer to do something
+# R for Ornithologists
+### How R can benefit the study of Ornithology
 
 ![:spacer 30px]()
 
-- You need to know the language (i.e. the code)
-- Computers don't know what you mean, only what you type (unfortunately)
-- Spelling, punctuation, and capitalization all matter!
 
---
-- This may (will) lead to frustration
+![:info h, , bottom: 10px]()
+
+![:img left: 150px, bottom: 100px, 200px, , ](./Figures/R_bird.png)
 
 ---
 # What is R?
+
+--
+
+## A statistical programming language and environment
+(free and open source!)
+
+--
 
 ## R uses packages
 
@@ -200,10 +201,6 @@ background-size: 70%
 
 ## R is powerful!
 
---
-
-.footer[(I made these slides with **R**markdown)]
-
 ---
 # Why ornithologists should use R
 ## R is powerful!
@@ -286,7 +283,7 @@ summary(m)
 ![:img right: 100px, top: 470px, 16%, , ](./Figures/phylotaR_logo.png)
 
 --
-- Taxomonic data with [**`taxize`**](https://github.com/ropensci/taxize)
+- Taxonomic data with [**`taxize`**](https://github.com/ropensci/taxize)
 
 --
 - IUCN Red Lists with [**`rredlist`**](https://github.com/ropensci/rredlist)
@@ -296,7 +293,7 @@ summary(m)
 - Data published on [dryad](https://datadryad.org/) with [**`rdryad`**](https://github.com/ropensci/rdryad)
 
 ---
-#  Why use R
+# Why ornithologists should use R
 ## Dealing with Data
 
 
@@ -308,7 +305,7 @@ summary(m)
 
 ---
 class: split-50
-#  Why use R
+# Why ornithologists should use R
 
 .columnl[
 ## Dealing with Data
@@ -352,18 +349,21 @@ I don't know about you, but I've never come back from the field and thought, gre
 
 --
 - Bioacoustic analyses with [**`seewave`**](http://rug.mnhn.fr/seewave/)
-![:img left: 50px, bottom: 100px, 35%, , ](./Figures/seewave_logo.png)
+![:img left: 50px, bottom: 75px, 35%, , ](./Figures/seewave_logo.png)
+
+--
+- Automatic detection of vocalizations with [**`monitoR`**](http://www.uvm.edu/rsenr/vtcfwru/R/?Page=monitoR/monitoR.htm)
 
 --
 - Animal home ranges with [**`adehabitatHR`**](https://cran.r-project.org/web/packages/adehabitatHR/)
 
 --
 - Hierarchical Bayesian modelling of Breeding Bird Survey data with [**`bbsBayes`**](https://github.com/BrandonEdwards/bbsBayes)  (.rblue[Here @ 11:30am])
-![:img left: 575px, bottom: 30px, 15%, , ](./Figures/bbsBayes_logo.png)
+![:img left: 575px, bottom: 5px, 14%, , ](./Figures/bbsBayes_logo.png)
 
 --
 - Systematic reviews with [**`litsearchr`**](https://elizagrames.github.io/litsearchr/) (.rblue[Here @ 1:30pm])
-![:img right: 150px, bottom: 30px, 15%, , ](./Figures/litsearchr_logo.png)
+![:img right: 150px, bottom: 5px, 14%, , ](./Figures/litsearchr_logo.png)
 
 ???
 - Animal movements detected by RFID with [**`feedr`**](https://github.com/animalnexus/feedr)
@@ -421,16 +421,24 @@ iris %>%
 > Always cite packages and package versions!
 
 ---
-# R for Ornithologists: Stay tuned...
+# **Symposium:** R for Ornithologists
+
+- **Stay tuned for 6 more .rblue[R]-related presentations** 
+- **2:00pm: Round-Table Discussion on Ornithological perspectives on R**
 
 
+--
+
+![:spacer 30px]()
+
+# .rblue[Thank you!]
+
+![:img right: 25px, top: 22%, 150px, , ](./Figures/logos/ubrandon.png)
+![:img left: 35px, bottom: 100px, 200px, , ](./Figures/QR.svg)
+![:img left: 350px, bottom: 100px, 300px, , ](./Figures/R_bird.png)
 
 
-**QR Code for presentation location**
-
-![:img , bottom: 22%, 150px, , ](./Figures/logos/ubrandon.png)
-
-![:info v, right: 25px, bottom: 250px]()
+![:info v, right: 25px, bottom: 200px]()
 
 ![:img right: 25px, bottom: 50px, 350px, , ](./Figures/logos/logo_eg.png)
 
