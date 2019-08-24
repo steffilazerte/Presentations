@@ -3,9 +3,9 @@
 
 ## R For Ornithologists
 
-1.  **2019-08** [Society for Canadian
+1.  **2019-08 [Society for Canadian
     Ornithologists](https://www.sco-soc.ca/) 2019 Meeting in Québec
-    City, Canada <http://sco-soc-quebec2019.org/>
+    City, Canada <http://sco-soc-quebec2019.org/>**
     
       - Presentation
         [(html)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019.html)
