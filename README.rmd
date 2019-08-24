@@ -4,6 +4,13 @@ output: github_document
 
 # Links to Presentations
 
+## R For Ornithologists
+
+1. **2019-08** [Society for Canadian Ornithologists](https://www.sco-soc.ca/) 2019 Meeting in Québec City, Canada
+<http://sco-soc-quebec2019.org/>
+
+    - Presentation [(html)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019.html) [(pdf)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019.pdf)
+
 ## `cavityuse`
 
 1. **2018-08 [International Society for Behavioural Ecology, Minneapolis, USA](http://www.behavecol.com)**
