@@ -1,22 +1,38 @@
 
-Links to Presentations
-======================
+# Links to Presentations
 
-`cavityuse`
------------
+## R For Ornithologists
 
-1.  **2018-08 [International Society for Behavioural Ecology, Minneapolis, USA](http://www.behavecol.com)**
+1.  **2019-08** [Society for Canadian
+    Ornithologists](https://www.sco-soc.ca/) 2019 Meeting in Québec
+    City, Canada <http://sco-soc-quebec2019.org/>
+    
+      - Presentation
+        [(html)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019.html)
+        [(pdf)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019.pdf)
 
-    -   Presentation [(html)](http://steffilazerte.github.io/Presentations/2018-08%20ISBE/LaZerte_ISBE_2018.html) [(pdf)](http://steffilazerte.github.io/Presentations/2018-08%20ISBE/LaZerte_Gow_ISBE_cavityuse.pdf)
+## `cavityuse`
 
-`weathercan`
-------------
+1.  **2018-08 [International Society for Behavioural Ecology,
+    Minneapolis, USA](http://www.behavecol.com)**
+    
+      - Presentation
+        [(html)](http://steffilazerte.github.io/Presentations/2018-08%20ISBE/LaZerte_ISBE_2018.html)
+        [(pdf)](http://steffilazerte.github.io/Presentations/2018-08%20ISBE/LaZerte_Gow_ISBE_cavityuse.pdf)
+
+## `weathercan`
 
 1.  **2018-07 Ag Canada**
-
-    -   Presentation [(html)](http://steffilazerte.github.io/Presentations/2018-07%20Ag%20Canada%20-%20weathercan/LaZerte_AGCAN_2018_weathercan.html) [(pdf)](http://steffilazerte.github.io/Presentations/2018-07%20Ag%20Canada%20-%20weathercan/LaZerte_AGCAN_2018_weathercan.pdf)
+    
+      - Presentation
+        [(html)](http://steffilazerte.github.io/Presentations/2018-07%20Ag%20Canada%20-%20weathercan/LaZerte_AGCAN_2018_weathercan.html)
+        [(pdf)](http://steffilazerte.github.io/Presentations/2018-07%20Ag%20Canada%20-%20weathercan/LaZerte_AGCAN_2018_weathercan.pdf)
 
 2.  **2017-09 [PCAG](http://pcag.uwinnipeg.ca/PCAG2017.html)**
-
-    -   Regular Presentation [(html)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan.html) [(pdf)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan.pdf)
-    -   With Extra Slides [(html)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan_extra.html) [(pdf)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan_extra.pdf)
+    
+      - Regular Presentation
+        [(html)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan.html)
+        [(pdf)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan.pdf)
+      - With Extra Slides
+        [(html)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan_extra.html)
+        [(pdf)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan_extra.pdf)
