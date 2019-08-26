@@ -6,9 +6,12 @@
 :root {
   --colour1: #246ABF;
   --colour2: #C6E6E6;
-  --t1: 300%;
+  --t1: 275%;
+  --t1pad: 10px;
   --t2: 100%;
+  --t2mar: 15px;
   --t3: 150%;
+  --t3mar: 20px;
   --head1: #246ABF;  /* heading bar behind header text */
   --h1: #FFFFFF;
   --h1-alt: #000000;
