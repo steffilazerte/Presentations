@@ -58,7 +58,7 @@ theme_pres <- theme_bw() +
 
 # R pour ornithologue
 
-### .rblue[Points de vue des utilisateuRs aux les programmeuRs]
+### .rblue[Points de vue des utilisateuRs et programmeuRs]
 
 ![:spacer 30px]()
 
@@ -145,14 +145,14 @@ background-size: 70%
 # R is hard
 
 ---
-background-image: url(`r "./Figures/impostR.png"`)
+background-image: url(`r "./Figures/impostR_en.png"`)
 background-position: center center
 background-size: 70%
 
 # Impost**R** Syndrome
 
 ---
-background-image: url(`r "./Figures/impostR.png"`)
+background-image: url(`r "./Figures/impostR_en.png"`)
 background-position: right 75px top 23%
 background-size: 30%
 
