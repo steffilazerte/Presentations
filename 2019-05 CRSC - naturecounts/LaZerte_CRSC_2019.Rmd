@@ -1,0 +1,116 @@
+---
+title: "`naturecounts`"
+subtitle: "a new R package to access standardized data on bird populations"
+author: "Steffi LaZerte"
+date: "May 2019"
+output:
+  xaringan::moon_reader:
+    css: styles.css
+    seal: false
+    self-contained: false
+    nature:
+      beforeInit: "macros.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+
+
+---
+class: title-slide, nologo
+
+
+```{r prep, include = FALSE}
+
+```
+
+.hanging[
+### Stefanie E. LaZerte <br>& Denis Lepage]
+
+# `naturecounts`
+
+## a new R package to access standardized data on plant and animal populations
+
+.spacer[ ]
+
+<https://github.com/BirdStudiesCanada/naturecounts>  
+
+.spacer[ ]
+
+CRSC 2019
+
+.align-bottom-left[<img src = "./Figures/logos/twitter_black.jpg" style = "height: 40px; vertical-align:middle">  @steffilazerte <img src = "./Figures/logos/github.png" style = "height: 40px; vertical-align:middle; margin-left: 25px"> steffilazerte <img src = "./Figures/logos/email.svg" style = "height: 25px; vertical-align:middle; margin-left: 25px"> sel@steffilazerte.ca]
+
+<img src = "./Figures/logos/ubrandon.png" style = "position: absolute; right: 425px; top: 9.5%; height: 50px">
+<img src = "./Figures/logos/BSClogo.gif" style = "position: absolute; right: 50px; top: 5%; height: 125px">
+
+---
+# NatureCounts.ca
+
+## Online repository
+- Data stored in a standardized format
+- 128 million occurrence records (>400 sources)
+- 12,000 dataset requests
+- 2.3 billion total record requests by 1850 users
+
+## Goals
+1. Safely archive data
+2. Facilitate data entry into repository
+3. Facilitate data access
+4. Develop tools for exploration, analysis,   
+  interpretation, and decision support
+
+<img src = "./Figures/naturecounts_map.png" style = "position: absolute; right: 0px; bottom: 0px; width: 49%">
+<img src = "./Figures/naturecounts.png" style = "position: absolute; right: 0px; top: 82px; width: 49%">
+
+---
+# `naturecounts`
+
+.pull-left[
+
+## R package
+- Access raw data (dataframe, database)
+- Access metadata (species taxonomy, etc.)
+- Data formating (dates, zero-fill)
+- Quick and reproducible
+
+## Users
+- Sign up on NatureCounts.ca (basic access)
+- Request access to other datasets
+
+## Development Status
+- **Download tools**: Alpha
+- **Data tools**: In Development
+]
+
+
+.pull-right[
+
+## Basic Usage
+
+```{r, eval = FALSE}
+library(naturecounts) 
+
+# Find species id
+species_search(name = "Northern Cardinal")
+
+# Download to dataframe
+cardinals <- nc_data_dl(species = 19360, 
+                        username = "sample")
+
+# Download to SQLite Database
+cardinals <- nc_data_dl(species = 19360, 
+                        sql_db = "cardinals",
+                        username = "sample")
+```
+
+.small[
+## Package Source
+<https://github.com/BirdStudiesCanada/naturecounts>  
+
+## Support (Tutorials, Examples)
+<https://birdstudiescanada.github.io/naturecounts/>
+]
+]
+
+

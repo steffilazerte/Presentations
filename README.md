@@ -16,6 +16,15 @@
         [(French
         pdf)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_fr.pdf)
 
+## `naturecounts`
+
+1.  **2019-05 [Canada Research Software
+    Conference](https://www.canarie.ca/software/canadian-research-software-conference/program-details/)**
+    
+      - Presentation
+        [(html)](http://steffilazerte.github.io/Presentations/2019-05%20CRSC%20-%20naturecounts/LaZerte_CRSC_2019.html)
+        [(pdf)](http://steffilazerte.github.io/Presentations/2019-05%20CRSC%20-%20naturecounts/LaZerte_CRSC_2019.pdf)
+
 ## `cavityuse`
 
 1.  **2018-08 [International Society for Behavioural Ecology,
