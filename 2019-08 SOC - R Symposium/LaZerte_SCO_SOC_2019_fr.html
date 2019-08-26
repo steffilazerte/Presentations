@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>R pour Ornithologues: Comment R profite à l’étude de l’ornithologie</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Steffi LaZerte" />
+    <link rel="stylesheet" href="sco_styles.css" type="text/css" />
+    <link rel="stylesheet" href="../global_styles.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: title-slide, nologo, nobar
+
+
+
+
+
+### Symposium
+
+![:spacer 30px]()
+
+# R pour ornithologue
+
+### .rblue[Points de vue des utilisateuRs aux les programmeuRs]
+
+![:spacer 30px]()
+
+# R for Ornithologists
+
+### .rblue[Perspectives from useRs to programmeRs (to birdeRs)]
+
+![:spacer 10px]()
+
+**10:30-14:15**  Salle des Plaines II
+
+![:img right: 75px, top: 25px, 300px, , ](./Figures/R_bird.png)
+
+.footer[SCO-SOC 2019]
+
+???
+Ornithologists “in the era of new technologies” have access to ever increasing
+sources of data, which in turn leads to large quantities of data. This wealth of
+data is exciting, but sometimes overwhelming, and with new technologies for
+collecting data, we need new technologies for processing and analyzing data. One
+such technology is the free and open source programming language, R. R is a
+powerful (and economical) tool that is highly extensible through ‘packages’ for
+performing specific tasks. Because there are so many packages, many
+ornithologists are not aware of the many ways in which R can be useful, or which
+packages are available for purposes beyond statistical analysis. However, there
+are numerous packages which have been developed for specific scientific, or even
+ornithological applications. Such examples include those for accessing relevant
+online data sources (e.g., climate data, eBird, population data, etc.), genomic
+analyses, bioacoustic analyses, analyses of animal movements, reproducible
+research workflow, and dissemination (e.g., graphs, maps, and interactive
+visualizations). This presentation will introduce ornithologists to these tools
+which make ornithological research quicker, easier, more affordable, and
+stronger.
+
+---
+class: title-slide, nologo, nobar
+
+![:spacer 10px]()
+
+.hanging[
+### Stefanie E. LaZerte]
+
+![:img left: 500px, top: 75px, 200px, , ](./Figures/logos/ubrandon.png)
+
+![:img right: 25px, top: 25px, 200px, , ](../QR.svg)
+
+![:spacer 50px]()
+
+# R pour ornithologues
+### Comment R profite à l'étude de l'ornithologie
+
+![:spacer 30px]()
+
+
+![:info h, , bottom: 10px]()
+
+![:img left: 150px, bottom: 100px, 200px, , ](./Figures/R_bird.png)
+
+---
+# Qu’est-ce que c’est que R?
+
+--
+
+## Un langage de programmation statistique
+(Source libre et ouverte!)
+
+--
+
+## R utilise des packages
+
+- Les packages étendent R (i.e. `nlme` and `lme4 `modèles à effets mixtes)
+- Les packages peuvent être écrits par n'importe qui  
+
+- Certains vont bien, d'autres sont géniaux, d'autres sont INCROYABLES!
+- .rblue[R Base] est R sans packages supplémentaire (aussi bon)
+
+&gt; Il y a des milliers de packages!
+
+---
+background-image: url(./Figures/R_hard.png)
+background-position: right 15% bottom 10%
+background-size: 70%
+
+# R est difficile
+
+---
+background-image: url(./Figures/impostR.png)
+background-position: center center
+background-size: 70%
+
+# Impost**R** Syndrome
+
+---
+background-image: url(./Figures/impostR.png)
+background-position: right 75px top 23%
+background-size: 30%
+
+# Impost**R** Syndrome
+
+![:img left: 25px, bottom: 170px, 60%, , David Whittaker](./Figures/imposter.jpg)
+
+--
+
+![:box 50%, 80%, 80%](&lt;strong&gt;Morale de l'histoire?&lt;/strong&gt;&lt;br&gt;Faites-vous des amis, codez en groupes, apprenez ensemble et ne vous en faites pas)
+
+---
+background-image: url(./Figures/impostR.png)
+background-position: right 75px top 23%
+background-size: 30%
+
+# Impost**R** Syndrome
+![:spacer 210px]()
+![:img left: 25px, bottom: 170px, 60%, , David Whittaker](./Figures/imposter.jpg)
+
+
+**Using R in the undergraduate biology classroom**: Hurdles, hints, and aha moments  
+(.rblue[Ici @ 13:45pm])
+
+
+
+---
+background-image: url(./Figures/owl_computer.jpg)
+background-position: right 75px bottom 125px
+background-size: 45%
+
+# Ornithologues et R
+
+## Ce que je **ne vais pas** faire
+
+- Vous enseigner R
+- Parler de statistiques
+
+--
+
+![:spacer 10px]()
+## Ce que je **vais** faire
+
+- Expliquer comment R peut profiter   
+  aux ornithologues
+- Présenter des packages utiles
+- Vous donner des ressources pour   
+  commencer
+
+--
+- Vous inspirer à prendre votre .rblue[R] au prochain niveau!
+
+---
+background-image: url(./Figures/R_powerful2_edit.png)
+background-position: center bottom 40%
+background-size: 70%
+
+# Pourquoi les ornithologues devraient utiliser R
+
+## R est puissant!
+
+---
+# Pourquoi les ornithologues devraient utiliser R
+## R est puissant!
+
+![:spacer 15px]()
+
+**The blessing and curse of automated data collection:**  
+  R and dealing with big data in a modern age  
+  (.rblue[Ici @ 10:45])
+
+![:spacer 40px]()
+
+**Super-computing with R:**  
+  Harnessing the power of the cloud to analyze big-bird-data, or just run your simulations, models, and cross-validations faster  
+(.rblue[Ici @ 11:15])
+
+---
+# Pourquoi les ornithologues devraient utiliser R
+## Science reproductible
+
+- Les scripts sont des enregistrements de votre travail   
+
+
+```r
+m &lt;- lm(mpg ~ cyl, data = mtcars)
+summary(m)
+```
+
+--
+
+- Les scripts peuvent être compilés dans des rapports pdf / html avec [**`rmarkdown`**](https://rmarkdown.rstudio.com/) et [**`knitr`**](https://yihui.name/knitr/)  
+  (RStudio: `File &gt; Compile Report`)
+
+![:img right: 250px, bottom: 50px, 15%, , ](./Figures/rmarkdown_logo.png)
+![:img right: 50px, bottom: 50px, 15%, , ](./Figures/knitr_logo.png)
+
+---
+# Pourquoi les ornithologues devraient utiliser R
+## Science reproductible
+
+- Gardez une trace du code ET  
+  de la sortie
+![:img right: 0px, top: 100px, 60%, , ](./Figures/repro1.png)
+
+--
+
+- Garder une trace des données
+![:img right: 0px, top: 100px, 60%, , ](./Figures/repro2.png)
+
+--
+- Garder une trace du logiciel
+![:img right: 0px, top: 100px, 60%, , ](./Figures/repro3.png)
+
+
+---
+# Pourquoi les ornithologues devraient utiliser R
+
+## Trouver des données!
+
+- De nombreuses sources de données en ligne sont accessibles via R
+- La science reproductible inclut le suivi des sources de données!
+
+--
+
+### Packages
+- Observations de [ebird](https://ebird.org) avec [**`auk`**](https://github.com/CornellLabofOrnithology/auk)
+![:img right: 100px, top: 115px, 14%, , ](./Figures/auk_logo.png)
+
+--
+- Observations de [NatureCounts](https://naturecounts.ca) avec [**`naturecounts`**](https://github.com/birdstudiescanada/naturecounts) (.rblue[Ici @ 11:00])
+
+--
+- Enregistrements de vocalisations de [xeno-canto](https://www.xeno-canto.org/) avec [**`warbleR`**](https://github.com/maRce10/warbleR)
+![:img right: 300px, top: 300px, 20%, , ](./Figures/warbleR_logo.png)
+
+--
+- Données météorologiques de [Environnement et Changement climatique Canada](http://climate.weather.gc.ca/)  
+  avec [**`weathercan`**](https://github.com/ropensci/weathercan)
+![:img right: 25px, top: 300px, 14%, , ](./Figures/weathercan_logo.png)
+
+--
+- Séquences d'ADN de [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) avec [**`phylotaR`**](https://github.com/ropensci/phylotaR)
+![:img right: 95px, bottom: 10px, 15%, , ](./Figures/phylotaR_logo.png)
+
+--
+- Données taxonomiques avec [**`taxize`**](https://github.com/ropensci/taxize)
+
+--
+- Liste rouge de l’UICN avec [**`rredlist`**](https://github.com/ropensci/rredlist)
+
+???
+- brranching: Includes methods for fetching 'phylogenies' from a variety of sources, including the 'Phylomatic' web service (&lt;http://phylodiversity.net/phylomatic&gt;), and 'Phylocom' (&lt;https://github.com/phylocom/phylocom/&gt;).
+- Data published on [dryad](https://datadryad.org/) with [**`rdryad`**](https://github.com/ropensci/rdryad)
+
+---
+# Pourquoi les ornithologues devraient utiliser R
+## Traitement des données
+
+
+![:img center, bottom: 25px, 85%, , &lt;a href = "https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/"&gt;Forbes.com&lt;/a&gt;](./Figures/forbes_cleaning.jpg)
+
+--
+
+![:img center, bottom: 25px, 85%, , &lt;a href = "https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/"&gt;Forbes.com&lt;/a&gt;](./Figures/forbes_cleaning_hl.png)
+
+---
+class: split-50
+# Pourquoi les ornithologues devraient utiliser R
+
+.columnl[
+## Traitement des données
+- Science reproductible!
+- Nettoyage
+  - Corriger les fautes de frappe
+  - Trouver/Corriger des valeurs manquantes/impaires
+- Filtration
+- Résumant
+- Transformation
+- Exploration
+]
+
+--
+
+.columnr[
+## Packages à utiliser
+- Base R (i.e. pas de packages spéciaux)
+- [`data.table`](http://r-datatable.com) (&lt;http://r-datatable.com&gt;)
+- [`tidyverse`](http://tidyverse.org) (&lt;http://tidyverse.org&gt;)
+  - Collection de packages
+  - Apprendre encore plus: [Anglais: R for Data Science](https://r4ds.had.co.nz/); [Français: Data Science avec R](https://bookdown.org/fousseynoubah/dswr_book/)
+
+]
+
+![:img right: 350px, bottom: 75px, 15%, , ](./Figures/datatable_logo.png)
+![:img right: 150px, bottom: 75px, 15%, , ](./Figures/tidyverse_logo.png)
+
+
+???
+I don't know about you, but I've never come back from the field and thought, great, my data is perfectly ready for analysis.
+
+---
+# Pourquoi les ornithologues devraient utiliser R
+
+## Des centaines de packages spécialisés
+
+### Par exemple...
+
+--
+- Des analyses phylogénétiques comparatives [**`adephylo`**](https://github.com/thibautjombart/adephylo)
+
+--
+- Analyses bioacoustiques avec [**`seewave`**](http://rug.mnhn.fr/seewave/)
+![:img right: 50px, top: 275px, 35%, , ](./Figures/seewave_logo.png)
+
+--
+- Détection automatique des vocalisations avec [**`monitoR`**](http://www.uvm.edu/rsenr/vtcfwru/R/?Page=monitoR/monitoR.htm)
+
+--
+- Domaines vitaux d'un animal avec [**`adehabitatHR`**](https://cran.r-project.org/web/packages/adehabitatHR/)
+
+--
+- Modélisation bayésienne hiérarchique des données du Relevé des oiseaux nicheurs avec [**`bbsBayes`**](https://github.com/BrandonEdwards/bbsBayes)  (.rblue[Ici @ 11:30])
+![:img right: 325px, bottom: 5px, 14%, , ](./Figures/bbsBayes_logo.png)
+
+--
+- Revues systématiques avec [**`litsearchr`**](https://elizagrames.github.io/litsearchr/) (.rblue[Ici @ 13:30])
+![:img right: 100px, bottom: 5px, 14%, , ](./Figures/litsearchr_logo.png)
+
+???
+- Animal movements detected by RFID with [**`feedr`**](https://github.com/animalnexus/feedr)
+
+---
+
+
+# Pourquoi les ornithologues devraient utiliser R
+
+## Dissémination et visualisations
+
+- Belles figures avec [**`ggplot2`**](https://ggplot2.tidyverse.org/)
+![:img left: 75px, bottom: 160px, 15%, , ](./Figures/ggplot2_logo.png)
+![:img right: 25px, bottom: 75px, 50%, , ](./Figures/ggplot2-1.png)
+
+
+--
+- Cartes complexes avec [**`sf`**](https://r-spatial.github.io/sf/), [**`tmap`**](https://github.com/mtennekes/tmap)
+![:img left: 260px, bottom: 162px, 17%, , ](./Figures/sf_logo.gif)
+![:img right: 25px, bottom: 75px, 50%, , ](./Figures/tmap.png)
+
+--
+- Visualisations interactives avec [**`shiny`**](https://shiny.rstudio.com/)
+
+![:img right: 25px, bottom: 25px, 55%, ,Finch movements](./Figures/shiny_feedr.png)
+![:img left: 175px, bottom: 5px, 15%, , ](./Figures/shiny_logo.png)
+
+---
+# Pourquoi les ornithologues devraient utiliser R
+## Trouver plus de packages!
+
+- Liste non exhaustive!
+- Collections de packages
+   - [metaverse](https://rmetaverse.github.io/) (&lt;https://rmetaverse.github.io/&gt;)
+   - [ropensci](https://ropensci.org/) (&lt;https://ropensci.org/&gt;)
+   - [tidyverse](https://tidyverse.org/) (&lt;https://tidyverse.org/&gt;)
+- Ressources pour les francophones &lt;https://github.com/frrrenchies/frrrenchies&gt;
+- Rechercher dans les journaux, i.e. Methods in Ecology and Evolution
+- Rechercher dans les sections de méthodes des articles
+
+--
+![:spacer 30px]()
+
+
+&gt; Citez toujours les packages et leurs versions!
+
+---
+# **Symposium:** R pour Ornithologues
+
+### Restez à l'écoute pour 6 autres présentations liées au .rblue[R]
+### 14:00 Table ronde sur les perspectives ornithologiques sur la .rblue[R]
+
+
+--
+
+![:spacer 30px]()
+
+# .rblue[Merci!]
+
+![:img right: 25px, top: 22%, 150px, , ](./Figures/logos/ubrandon.png)
+![:img left: 35px, bottom: 100px, 200px, , ](../QR.svg)
+![:img left: 350px, bottom: 100px, 300px, , ](./Figures/R_bird.png)
+
+
+![:info v, right: 25px, bottom: 200px]()
+
+![:img right: 25px, bottom: 50px, 350px, , ](./Figures/logos/logo_eg.png)
+
+.footer-right[Compilé le 2019-08-26]
+
+.footer[
+Présentation disponible: &lt;https://steffilazerte.github.io/Presentations/&gt;  
+Diapositives créées avec le package [xaringan](https://github.com/yihui/xaringan), avec [remark.js](https://remarkjs.com), [knitr](http://yihui.name/knitr), et [R Markdown](https://rmarkdown.rstudio.com)]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="../macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
