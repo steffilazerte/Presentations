@@ -443,9 +443,11 @@ iris %>%
 
 --
 
-![:spacer 30px]()
+![:spacer 0px]()
 
-# .rblue[Thank you!]
+## .rblue[Thank you!]
+
+**Thanks to Denis LePage for help on the French version**
 
 ![:img right: 25px, top: 22%, 150px, , ](./Figures/logos/ubrandon.png)
 ![:img left: 35px, bottom: 100px, 200px, , ](../QR.svg)
