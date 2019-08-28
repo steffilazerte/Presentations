@@ -446,9 +446,11 @@ iris %>%
 
 --
 
-![:spacer 30px]()
+![:spacer 0px]()
 
-# .rblue[Merci!]
+## .rblue[Merci!]
+
+**Merci à Denis LePage pour son aide en français**
 
 ![:img right: 25px, top: 22%, 150px, , ](./Figures/logos/ubrandon.png)
 ![:img left: 35px, bottom: 100px, 200px, , ](../QR.svg)
