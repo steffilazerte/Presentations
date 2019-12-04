@@ -3,7 +3,7 @@ ROpenSci Community Call: Last Night, Testing Saved my Life
 Steffi LaZerte
 2019-11-05
 
-Presentation [(html)](http://steffilazerte.github.io/Presentations/2019-11%20ROpenSciC%20-%20Testing/2019-11_ROpenSci_Testing.html) [(pdf)](http://steffilazerte.github.io/Presentations/2019-11%20ROpenSciC%20-%20Testing/2019-11_ROpenSci_Testing.pdf)
+Presentation [(html)](http://steffilazerte.github.io/Presentations/2019-11%20ROpenSci%20-%20Testing/2019-11_ROpenSci_Testing.html) [(pdf)](http://steffilazerte.github.io/Presentations/2019-11%20ROpenSci%20-%20Testing/2019-11_ROpenSci_Testing.pdf)
 
 
 ### Title

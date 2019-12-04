@@ -1,7 +1,7 @@
 
 # Links to Presentations
 
-## Testing in R
+## ROpenSci Community Call
 
 1.  **2019-11 ROpenSci Community Call: Last Night, Testing Saved my
     Life**
@@ -9,8 +9,8 @@
 <!-- end list -->
 
   - Presentation
-    [(html)](http://steffilazerte.github.io/Presentations/2019-11%20ROpenSciC%20-%20Testing/2019-11_ROpenSci_Testing.html)
-    [(pdf)](http://steffilazerte.github.io/Presentations/2019-11%20ROpenSciC%20-%20Testing/2019-11_ROpenSci_Testing.pdf)
+    [(html)](http://steffilazerte.github.io/Presentations/2019-11%20ROpenSci%20-%20Testing/2019-11_ROpenSci_Testing.html)
+    [(pdf)](http://steffilazerte.github.io/Presentations/2019-11%20ROpenSci%20-%20Testing/2019-11_ROpenSci_Testing.pdf)
 
 ## R For Ornithologists
 
