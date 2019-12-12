@@ -26,17 +26,16 @@
         html)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_fr.html)
         [(French
         pdf)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_fr.pdf)
-
-### From other presenters:
-
-  - [naturecounts: a new R package for accessing standardized data on
-    bird
-    populations](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/SCO_2019_naturecounts_R_Ethier_Final.pdf)
-    - Denis Lepage, Danielle Ethier, Steffi LaZerte
-  - [An automated approach to identifying search terms for systematic
-    reviews](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/Grames_SCO-SOC_slides.pdf)
-    - Eliza M. Grames, Andrew N. Stillman, Morgan W. Tingley, and Christ
-    S. Elphick
+      - From other presenters:
+          - [naturecounts: a new R package for accessing standardized
+            data on bird
+            populations](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/SCO_2019_naturecounts_R_Ethier_Final.pdf)
+            - Denis Lepage, Danielle Ethier, Steffi LaZerte
+          - [An automated approach to identifying search terms for
+            systematic
+            reviews](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/Grames_SCO-SOC_slides.pdf)
+            - Eliza M. Grames, Andrew N. Stillman, Morgan W. Tingley,
+            and Christ S. Elphick
 
 ## `naturecounts`
 
