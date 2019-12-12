@@ -35,7 +35,7 @@
             systematic
             reviews](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/Grames_SCO-SOC_slides.pdf)
             - Eliza M. Grames, Andrew N. Stillman, Morgan W. Tingley,
-            and Christ S. Elphick
+            and Chris S. Elphick
 
 ## `naturecounts`
 
