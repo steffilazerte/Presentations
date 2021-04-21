@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>rOpenSci Community Call: Set Up Your Package to Foster a Community</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Steffi LaZerte" />
+    <meta name="date" content="2021-04-22" />
+    <script src="2021-04_rOpenSci_community_files/header-attrs-2.7/header-attrs.js"></script>
+    <link rel="stylesheet" href="pres_styles.css" type="text/css" />
+    <link rel="stylesheet" href="global_styles.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: title-slide, nologo, nobar
+
+
+
+
+![:spacer 10px]()
+
+.hanging[
+### Steffi LaZerte]
+
+![:spacer 50px]()
+
+# Set Up Your Package to Foster a Community
+### Labelling issues
+
+![:spacer 30px]()
+
+![:info h, , bottom: 10px]()
+
+
+---
+# My package's community took me by surprise!
+
+
+&lt;blockquote align = "center" class="twitter-tweet" data-cards="hidden"&gt;&lt;p lang="en" dir="ltr"&gt;&lt;a href="https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#rstats&lt;/a&gt; packages grow up so fast these days :)&lt;/p&gt;&amp;mdash; Alex K (@Alex_Koiter) &lt;a href="https://twitter.com/Alex_Koiter/status/1380667063597989890?ref_src=twsrc%5Etfw"&gt;April 9, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt; 
+
+
+---
+# Low-hanging fruit: Issue labels!
+
+1\. **Why bother?**
+- Users can be shy (esp. new users); "Help wanted" is an open invitation
+- Labels can be searched
+  - [All rOpenSci issues](https://github.com/search?q=org%3Aropensci++state%3Aopen&amp;type=Issues)
+  - ['Help wanted' rOpenSci issues](https://github.com/search?q=org%3Aropensci+label%3A%22help+wanted%22+state%3Aopen&amp;type=Issues)
+  
+--
+
+.spacer[]
+
+2\. **rOpenSci Contributing Guide** -  [contributing.ropensci.org](https://contributing.ropensci.org/resources.html#issues)
+
+--
+
+.spacer[]
+
+
+3\. **Let's Go** - [For example...](https://github.com/ropensci/weathercan)
+
+
+--
+.spacer[]
+
+4\. **Who has the time?**
+  - I'm terrible at this!
+
+---
+class: split-60
+# rOpenSci Social Label-athon
+
+.columnl[
+.center[
+**Thursday, 29 April 2021**  
+**16:00 UTC / 9:00 Pacific** (1.5 hrs)  
+Registration encouraged
+
+
+.spacer[]
+
+**Online social!**  
+Co-working* to make our packages contributor-friendly
+
+Code of Conduct? Contributing guide? Roadmap and expectations? 
+Open and label issues to invite contributions?
+
+
+![:img right: 25px, bottom:50px, 40%, , ](./Figures/labelathon_event.png)
+
+.spacer[] 
+
+**Afterwards, we'll tweet links to"help wanted" issues**
+]
+
+.footnote[
+\* Working at the same time on our own projects  
+&lt;https://ropensci.org/events/labelathon01&gt;]
+]
+
+---
+# We can learn together!
+
+![:img center, bottom:5px, 70%, , ](./Figures/use_github_labels_wt.png)
+
+
+---
+# Social Experiment
+
+.spacer[]
+
+.center[**Experimental feature!**]
+
+- Four label-athons (or more?)
+- Alternating times to accommodate our community around the world
+- **Thursdays April 29, May 13, May 27, June 10**
+
+.spacer[]
+
+.center[
+**More Information:** &lt;https://ropensci.org/events/labelathon01&gt;
+
+**Interested? [Please register!](https://form.jotform.com/210906095013043)**
+]
+
+--
+
+.spacer[]
+
+.center[
+##Time for a poll!
+]
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
