@@ -67,6 +67,8 @@ theme_pres <- theme_bw() +
 ![:info h, , bottom: 10px]()
 
 
+April 22, 2021
+
 ---
 # My package's community took me by surprise!
 
