@@ -1,0 +1,333 @@
+---
+title: "Using rOpenSci packages to access open data for ecology"
+subtitle: ""
+author: "Steffi LaZerte"
+output:
+  xaringan::moon_reader:
+    css: [pres_styles.css, global_styles.css]
+    seal: false
+    self-contained: false
+    nature:
+      #autoplay: 15000
+      beforeInit: ["https://platform.twitter.com/widgets.js", "macros.js"]
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+class: title-slide, nologo, nobar, split-50
+
+
+```{r prep, include = FALSE}
+library(tidyverse)
+library(knitr)
+library(here)
+library(icons)
+library(glue)
+
+opts_chunk$set(echo = FALSE, cache = FALSE, dpi = 300,
+               out.extra = "class = 'fig-right'", fig.width = 3.5,
+               fig.height = 3.75)
+
+hook_output <- knit_hooks$get("output")
+knit_hooks$set(output = function(x, options) {
+  extra <- options$extra
+
+  if(is.null(extra)) {
+    return(hook_output(x, options))  # pass to default hook
+  }
+  x <- hook_output(x, options)
+  if(any(extra == "squish")) x <- paste0("
+.narrow[", x, "]")
+  if(any(extra == "pause")) x <- paste0("--
+", x)
+  x
+})
+
+theme_pres <- theme_bw() +
+  theme(axis.title.x = element_blank(),
+        legend.position = "top", legend.background = element_blank(),
+        legend.margin = margin(),
+        legend.box.margin = margin(),
+        legend.box.spacing = unit(c(2,0,0,0), units = "pt"),
+        plot.margin = unit(c(0, 0, 0, 5), units = "pt"))
+
+icon2 <- function(icon, title, icon_fun = ionicons) {
+  icon <- icon_fun(icon)
+  icon <- as.character(icon)
+  if(str_detect(icon, "<title>")) {
+    str_replace(icon, "<title></title>", glue("<title>{title}</title>")) %>%
+      icons:::add_class("icon")
+  } else {
+    str_replace(icon, 
+                "(http://www.w3.org/2000/svg\">\n )", 
+                glue("\\1<title>{title}</title>")) %>% 
+      icons:::add_class("icon")
+  }
+}
+```
+
+![:spacer 10px]()
+
+.hanging[
+### Stefanie E. LaZerte]
+
+
+![:img right: 100px, top: 55px, 200px, black text reads rOpenSci, ](https://raw.githubusercontent.com/ropensci/logos/master/lettering_black.svg)
+
+![:spacer 30px]()
+
+.medium[
+**ESA 2021**  
+INS 6: **Open Data Resources During a Global Pandemic**  
+**Live Discussion**: Tuesday August 3 2021, 11am - 12pm Pacific
+]
+
+
+
+![:spacer 30px]()
+
+# Using rOpenSci packages to access open data for ecology
+
+
+
+
+.footnote[
+`r icon2("logo-twitter", "Twitter")` @steffilazerte   
+`r icon2("logo-github", "GitHub")` steffilazerte
+`r icon2("globe-outline", "World wide web")` steffilazerte.ca 
+]
+
+.footnote-right[
+`r icon2("logo-twitter", "Twitter")` @rOpenSci
+`r icon2("globe-outline", "World wide web")` rOpenSci.org
+]
+
+
+
+---
+class: nobar, nologo
+
+![:img center, bottom: 10%, 90%, rOpenSci home page: Transforming science through open data&comma; software and reproducibility. We help develop R packages for the sciences via community driven learning&comma; review and maintenance of contributed software in the R ecosystem, , , https://ropensci.org/](Figures/ropensci.png)
+
+
+
+???
+rOpenSci is an orgnaization, which, among other things curates a collection of peer-reviewed packages to support open data, open science and reproducibility
+
+---
+# Open data 
+
+![:img center, top: 150px, 50%, rOpenSci fosters a culture that values open and reproducible research using shared data and reusable software, , , https://ropensci.org/about/](Figures/ropensci_mission.png)
+
+![:spacer 100px]()
+
+.center[
+**We do this by**  
+
+"Creating technical infrastructure in the form of carefully vetted,   
+staff and community-contributed R software tools that  
+**lower barriers to working with scientific data sources on the web**"]
+
+
+![:spacer 30px]()
+
+.center[
+### Open Data `r icon2("arrow-forward", "Right Arrow")` Open Science `r icon2("arrow-forward", "Right Arrow")` Better Science
+]
+
+???
+- Large, global datasets can be unweildly, so
+- Lowering barriers is important because we can have all the open data in the world, but
+if scientists can't access them, it's moot
+
+- I'm going to highlight some rOpenSci packages which can be used to access large, global datasets for ecological research in different situations
+
+
+
+
+---
+# Open data to study ecology
+
+### Complement field data
+
+![:spacer 15px]()
+
+<!-- For HTML Version: -->
+
+<center>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">We also use satellite and weather data from <a href="https://twitter.com/NASA?ref_src=twsrc%5Etfw">@NASA</a> &amp; <a href="https://twitter.com/NOAA?ref_src=twsrc%5Etfw">@NOAA</a> for modeling and forecasting rodent abundances collected by <a href="https://twitter.com/skmorgane?ref_src=twsrc%5Etfw">@skmorgane</a>&#39;s group (currently the fantastic team of <a href="https://twitter.com/bleds22e?ref_src=twsrc%5Etfw">@bleds22e</a> &amp; <a href="https://twitter.com/diaz_renm?ref_src=twsrc%5Etfw">@diaz_renm</a> soon to be joint by <a href="https://twitter.com/patdumandan?ref_src=twsrc%5Etfw">@patdumandan</a>).</p>&mdash; Ethan White (@ethanwhite) <a href="https://twitter.com/ethanwhite/status/1263442365362077696?ref_src=twsrc%5Etfw">May 21, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+
+
+<!-- For PDF Version: -->
+
+<!-- ![:img center, bottom: 40px, 50%, Tweet screenshot go to link for text, , , https://twitter.com/ethanwhite/status/1263441634823454720](Figures/tweet.png) -->
+
+
+
+???
+- This tweet was inspired by a rOpenSci blog post asking how scientists use open data in their work.  
+- What you can see here is an example of using open data to complement ecological field work.   
+- This works particularly well in ecology with data related to weather, soil and other large-scale landscape metrics.
+- Specially in this example, Ethan's lab is using data from NASA and NOAA
+
+---
+class: split-60, space-list
+# Open data to study ecology
+
+### Complement field data
+
+![:spacer 15px]()
+
+.footnote[.small[***rOpenSci blog** [POWER to the People](https://ropensci.org/blog/2019/05/14/nasapower/) by Adam Sparks]]
+
+.columnl[
+- **rnoaa: [NOAA](https://www.ncdc.noaa.gov/) weather, climate, tides, ice, etc.**   
+   .small[(Scott Chamberlain, 2021)]
+
+- **nasapower: [NASA POWER](https://power.larc.nasa.gov/) Global Meteorology, Surface Solar Energy and Climatology**  
+  .small[(Adam Sparks, 2018)]
+  
+- **riem: Weather data from international airports via Iowa Environment Mesonet**   
+  .small[(Maëlle Salmon, 2016)]
+
+![:img right: 15px, bottom: 20%, 40%, Map of the earth in graded colours (no outlines) with the x axis showing longitude and the y axis showing latitude. The map runs from blue at the north to green to yellow at the equator back to green then blue and purple at the south representing annual average temperatures with yellow being the warmest and purple the coldest. The outlines of the continents and mountain ranges are just visible via slightly different colours reflecting different temperatures., , Global 30-year annual average temperature modelled from satellite data accessed via rnoaa<sup>*</sup>](https://d33wubrfki0l68.cloudfront.net/5540191f748c25a706bcf1b37132c4dfbb420f9b/c96cb/img/blog-images/2019-05-14-nasapower/global-t2m-1.png)
+
+]
+
+???
+- and so it's great that rOpenSci has packages which can be used to access these kinds of data
+- Large global datasets
+
+
+---
+class: space-list
+# Open data to study ecology **during a pandemic**
+
+### When field or lab work is not an option<sup>*</sup>
+
+![:spacer 5px]()
+
+
+- **rgbif: Download taxonomy and occurrences from  [Global Biodiversity Information Facility](https://www.gbif.org/)**   
+  .small[(Scott Chamberlain & Damiano Oldoni, 2021)]
+  - all taxonomic groups
+- **rinat: Download observations from `r icon2("inaturalist", "iNaturalist logo: black bird flying facing right", academicons)` [iNaturalist](https://www.inaturalist.org/)**   
+   .small[(Vijay Barve, Edmund Hart & Stéphane Guillou, 2021)]
+  - all taxonomic groups
+- **auk: Manage observations from [eBird](https://ebird.org)**  
+   .small[(Matthew Strimas-Mackey, Eliot Miller & Wesley Hochachka, 2018)]
+  - avian observations
+   
+   
+![:img right: 15px, bottom: 17%, 40%, Dashboard with heat map showing Africa and Asia with hotspots of blue ranging through green and yellow to red., , Heatmap of asian elephant observations using rgbif<sup>**</sup> ](https://discuss.ropensci.org/uploads/default/original/2X/7/76e40a18f3f36031d6940c0664340600697b22be.jpeg)
+   
+.footnote[.small[***rOpenSci blog** [When Field or Lab Work is not an Option - Leveraging Open Data Resources for Remote Research](https://ropensci.org/blog/2020/05/19/covid-19-open-data/) by The rOpenSci Team *et al.*
+
+****rOpenSci use cases** [Mapping asian elephant observations with rgbif](https://discuss.ropensci.org/t/mapping-asian-elephant-observations-with-rgbif/2524) by Tuija Sonkkila]]
+
+
+???
+During this pandemic, field work is often not an option, but with rOpenSci packages research can continue as scientists take advantage of the massive amounts of open scientific data that are freely available.
+
+
+---
+class: space-list
+# Open data to study ecology **of a pandemic**
+
+### Explore how birds change their use of urban landscapes during a pandemic<sup>*</sup>
+
+![:spacer 15px]()
+
+- Pandemic resulted in declines in human activity
+- How does this affect use of urban areas by birds?
+- Open data from eBird
+- rOpenSci **auk** package to manage huge eBird data sets
+
+![:img right: 10%, bottom: 30%, 20%, Hexagonal logo with blue-grey background and a flying sea bird in black and white (an auk)](Figures/auk_logo.png)
+
+
+.footnote[
+.small[***Science Advances** Reduced human activity during COVID-19 alters avian land use across North America<br>
+(accepted pending revisions) by Michael Schrimpf *et al.* ]]
+
+---
+# Open data to study ecology **of a pandemic**
+
+### Explore how birds change their use of urban landscapes during a pandemic<sup>*</sup>
+
+
+![:img center, bottom: 75px, 43%, Figure with distance to road in km on the x axis and expected count on the y axis. An orange curved line representing 2017 to 2019 goes from high expected counts at a far distance from the road to low expected counts near the road. A purple line representint 2020 is nearly flat. There is a black bird in the upper left corner with long tail feathers (the silhouette of a barn swallow)](Figures/auk_example.png)  
+
+
+
+
+.footnote[
+.small[***Science Advances** Reduced human activity during COVID-19 alters avian land use across North America<br>
+(accepted pending revisions) by Michael Schrimpf *et al.* ]]
+
+---
+class: split-60, space-list
+# Open data to study **a virus**
+
+### Data on the coronaviruses<sup>*</sup>
+
+- **rentrez: Search, download data from, and otherwise interact with NCBI databases**  
+  .small[(David Winter, 2017)]
+  
+- **taxize: Search by species names for taxonomic hierarchical information**   
+   .small[(Scott Chamberlain & Eduard Szocs, 2013)]
+  
+
+![:img center, bottom: 10%, 90%, Flow diagram showing workflow using rentrez for searching and extracting coronavirus sequences and obtaining tidy host data&comma; then using taxize to resolve inconsistent host names and to find full host taxonomic groupings](Figures/virus_study_pipeline.png)  
+
+
+.footnote[.small[***rOpenSci blog** [Using Open-Access Tools (rentrez, taxize) to Find Coronaviruses, Their Genetic Sequences, and Their Hosts](https://ropensci.org/blog/2020/11/10/coronaviruses-and-hosts/) by Liam Brierley]]
+
+
+???
+- Disease Ecology
+- Get genetic information
+- Information on disease hosts
+
+
+---
+class: title-slide, nologo, nobar, split-50
+
+### Open Data `r icon2("arrow-forward", "Right arrow")` Open Science `r icon2("arrow-forward", "Right arrow")` Better Science
+
+![:spacer 30px]()
+
+# .rblue[Thank you!]
+
+![:spacer 65px]()
+
+.columnl[
+![:img left: 120px, bottom: 45%, 300px, Black text and black mechanical gears in the upper right corner with the letters S and L. The text reads Dr. Steffi LaZerte analysis and data tools for science](https://steffilazerte.ca/images/logo_eg.png)
+.small[
+`r icon2("logo-twitter", "Twitter")` @steffilazerte   
+`r icon2("logo-github", "GitHub")` steffilazerte
+`r icon2("globe-outline", "World wide web")` steffilazerte.ca 
+]]
+
+.columnr[
+![:img right: 275px, bottom: 40%, 300px, black text reads rOpenSci, ](https://raw.githubusercontent.com/ropensci/logos/master/lettering_black.svg)
+.small[
+`r icon2("logo-twitter", "Twitter")` @rOpenSci
+`r icon2("globe-outline", "World wide web")` rOpenSci.org
+]]
+
+
+
+
+
+
+.footnote[
+.small[
+Compiled `r Sys.Date()`    
+Available: <https://steffilazerte.ca/presentations><br>
+Slides created with the R package [xaringan](https://github.com/yihui/xaringan), using [remark.js](https://remarkjs.com), [knitr](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com)   
+Icons from [Ionicons](https://ionic.io/ionicons) and [Academicicons](https://jpswalsh.github.io/academicons/)]
+
+]

@@ -1,0 +1,101 @@
+---
+title: 'Handout: Using rOpenSci packages to access open data for ecology'
+author: "Steffi LaZerte on behalf of rOpenSci"
+output:
+  pdf_document: default
+urlcolor: blue
+---
+
+> **ESA 2021**    
+> **INS 6: Open Data Resources During a Global Pandemic**  
+> **Live Discussion**: Tuesday August 3 2021, 11am - 12pm Pacific  
+> **Presentation Slides:** <https://steffilazerte.ca/presentations>
+
+## Contact Steffi LaZerte
+- Twitter: [\@steffilazerte](https://twitter.com/steffilazerte)
+- GitHub: [steffilazerte](https://github.com/steffilazerte)
+- Web: <https://steffilazerte.ca>
+
+## Connect with rOpenSci
+- Twitter: [\@rOpenSci](https://twitter.com/ropensci)
+- Web: <https://ropensci.org>
+
+## Links
+
+- [NOAA](https://www.ncdc.noaa.gov/)
+- [NASA POWER](https://power.larc.nasa.gov/)
+- [Global Biodiversity Information Facility](https://www.gbif.org/)
+- [iNaturalist](https://www.inaturalist.org/)
+- [eBird](https://ebird.org/)
+
+## Paper Citations
+Michael B. Schrimpf, Paulson Des Brisay, Alison Johnston, Adam C. Smith, 
+Jessica Sánchez-Jasso, Barry G. Robinson, Miyako H. Warrington, Nancy A. Mahony,
+Andrew G. Horn, Matthew Strimas-Mackey, Lenore Fahrig, Nicola Koper. (accepted pending revisions). Reduced human activity during COVID-19 alters avian land use across North
+America. Science Advances.
+
+*As presentations are prepared before the the conference, this paper 
+ may be In Press by the time you see this presentation*
+
+**For more information:**
+
+- [C19-Wild Research Group](https://www.c19-wild.org/)
+- Contact [Michael Schrimpf](mailto:michael.schrimpf@umanitoba.ca)
+
+## rOpenSci Resources
+
+### Use cases
+
+- [All use cases](https://discuss.ropensci.org/c/usecases/10)
+- [Mapping asian elephant observations with rgbif](https://discuss.ropensci.org/t/mapping-asian-elephant-observations-with-rgbif/2524) - by Tuija Sonkkila
+
+### Blog posts
+
+- [POWER to the People](https://ropensci.org/blog/2019/05/14/nasapower/) - by Adam Sparks
+    
+- [When Field or Lab Work is not an Option - Leveraging Open Data Resources for Remote Research](https://ropensci.org/blog/2020/05/19/covid-19-open-data/) - by The rOpenSci Team, Brooke Anderson, Robin Lovelace, Ben Marwick, 
+      Ben Raymond, Anton Van de Putte, Louise Slater, Sam Zipper, 
+      Ilaria Prosdocimi, Sam Albers, Claudia Vitolo
+
+- [Using Open-Access Tools (rentrez, taxize) to Find Coronaviruses, Their Genetic Sequences, and Their Hosts](https://ropensci.org/blog/2020/11/10/coronaviruses-and-hosts/) - by Liam Brierley
+
+
+### Packages mentioned   
+
+
+
+- **rnoaa**  
+  - Documentation: <https://docs.ropensci.org/rnoaa>
+  - Citation: Scott Chamberlain (2021). rnoaa: 'NOAA' Weather Data from R. R package version 1.3.4.
+  https://CRAN.R-project.org/package=rnoaa
+
+- **nasapower**
+  - Documentation: <https://docs.ropensci.org/nasapower>
+  - Citation: Adam Sparks (2018). nasapower: A NASA POWER Global Meteorology, Surface Solar Energy and Climatology Data Client for R. Journal of Open Source Software, 3(30), 1035
+
+- **riem**
+  - Documentation: <https://docs.ropensci.org/riem>
+  - Blog Post: Where to Live <https://masalmon.eu/2017/11/16/wheretoliveus/>
+  - Citation: Maëlle Salmon (2016). riem: Accesses Weather Data from the Iowa Environment Mesonet
+
+- **rgbif**
+  - Documentation: <https://docs.ropensci.org/rgbif>
+  - Citation: Scott Chamberlain and Damiano Oldoni (2021). rgbif: Interface to the Global Biodiversity Information Facility API. https://CRAN.R-project.org/package=rgbif
+
+- **rinat**
+  - Documentation: <https://docs.ropensci.org/rinat>
+  - Citation: Vijay Barve and Edmund Hart (2021). rinat: Access 'iNaturalist' Data Through APIs. https://CRAN.R-project.org/package=rinat
+
+- **auk**
+  - Documentation: <https://docs.ropensci.org/auk>
+  - Citation: Matthew Strimas-Mackey, Eliot Miller, and Wesley Hochachka (2018). auk: eBird Data Extraction and Processing with AWK. R package version 0.3.0. https://cornelllabofornithology.github.io/auk/
+
+\newpage
+
+- **rentrez**
+  - Documentation: <https://cornelllabofornithology.github.io/auk/>
+  - Citation: David J. Winter. (2017) rentrez: an R package for the NCBI eUtils API The R Journal 9(2):520-526
+
+- **taxize**
+  - Documentation: <https://docs.ropensci.org/taxize>
+  - Citation: Scott Chamberlain and Eduard Szocs (2013). taxize - taxonomic search and retrieval in R. F1000Research, 2:191. URL: https://f1000research.com/articles/2-191/v2
