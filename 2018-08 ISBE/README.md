@@ -3,7 +3,7 @@ ISBE - `cavityuse`
 Steffi LaZerte
 2018-08-11
 
-Presentation [(html)](http://steffilazerte.github.io/Presentations/2018-08%20ISBE/LaZerte_ISBE_2018.html) [(pdf)](http://steffilazerte.github.io/Presentations/2018-08%20ISBE/LaZerte_Gow_ISBE_cavityuse.pdf)
+> [Presentations available here](https://steffilazerte.ca/Presentations/)
 
 ### Details
 
