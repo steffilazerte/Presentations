@@ -1,0 +1,435 @@
+---
+title: "How can ornithologists find R packages?"
+subtitle: "Symposium: Great R packages for Ornithologists"
+author: "Steffi LaZerte"
+date: "2021-07-28"
+output:
+  xaringan::moon_reader:
+    css: [pres_styles.css, global_styles.css]
+    seal: false
+    self-contained: false
+    nature:
+      beforeInit: "macros.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+class: title-slide, nologo, nobar
+
+
+```{r prep, include = FALSE}
+library(tidyverse)
+library(knitr)
+library(here)
+library(stringr)
+library(icons)
+library(glue)
+
+opts_chunk$set(echo = FALSE, cache = FALSE, dpi = 300,
+               out.extra = "class = 'fig-right'", fig.width = 3.5,
+               fig.height = 3.75)
+
+hook_output <- knit_hooks$get("output")
+knit_hooks$set(output = function(x, options) {
+  extra <- options$extra
+
+  if(is.null(extra)) {
+    return(hook_output(x, options))  # pass to default hook
+  }
+  x <- hook_output(x, options)
+  if(any(extra == "squish")) x <- paste0("
+.narrow[", x, "]")
+  if(any(extra == "pause")) x <- paste0("--
+", x)
+  x
+})
+
+theme_pres <- theme_bw() +
+  theme(axis.title.x = element_blank(),
+        legend.position = "top", legend.background = element_blank(),
+        legend.margin = margin(),
+        legend.box.margin = margin(),
+        legend.box.spacing = unit(c(2,0,0,0), units = "pt"),
+        plot.margin = unit(c(0, 0, 0, 5), units = "pt"))
+
+
+icon2 <- function(icon, title, icon_fun = ionicons) {
+  icon <- icon_fun(icon)
+  icon <- as.character(icon)
+  if(str_detect(icon, '<title>')) {
+    str_replace(icon, '<title></title>', glue('<title>{title}</title>')) %>%
+      icons:::add_class('icon')
+  } else {
+    str_replace(icon,
+                '(http://www.w3.org/2000/svg">
+ )',
+                  glue('\1<title>{title}</title>')) %>%
+                    icons:::add_class('icon')
+}
+}
+
+```
+
+![:spacer 10px]()
+.hanging[
+### Steffi LaZerte]
+
+![:img right: 525px, bottom: 25px, 300px, Black text and black mechanical gears in the upper right corner with the letters S and L. The text reads Dr. Steffi LaZerte analysis and data tools for science](https://steffilazerte.ca/images/logo_eg.png)
+
+![:img right: 275px, bottom: 25px, 200px, , ](https://www.brandonu.ca/communications/files/Brandon-University-Horizontal-Logo-1-Colour-Black-RGB.png)
+
+![:spacer 50px]()
+
+# **How can ornithologists find R packages?**
+# **Comment les ornithologues peuvent-ils trouver des packages R?**
+
+
+![:spacer 10px]()
+
+## Symposium: Great R packages for Ornithologists, AOS & SCO-SOC 2021
+
+![:spacer 30px]()
+
+
+.footnote[
+`r icon2('logo-twitter', 'Twitter')` @steffilazerte
+`r icon2('logo-github', 'GitHub')` steffilazerte
+`r icon2('globe-outline', 'World wide web')` steffilazerte.ca
+]
+
+???
+Hi Everyone!  
+I'm Steffi LaZerte from Brandon, Manitoba in Canada   
+Welcome to our Lightning symposium: Great R packages for Ornithologists.   
+I'm excited to get the ball rolling with "How can ornithologists find R packages?
+
+
+---
+# What is R?  |  Qu'est ce que R?
+
+
+## A statistical programming language and environment
+- Great for data management/manipulation (not just stats)
+- Free and Open Source Software (FOSS)
+- Almost infinitely extensible with packages
+
+![:spacer 1px]()
+
+
+
+## Un environment et langage de programmation statistique
+- Idéal pour la gestion/manipulation des données (pas seulement les stats)
+- Source libre et ouvert
+- Presque infiniment extensible avec des packages
+
+
+![:img right:25px, bottom: 35%, 20%, ALT](https://www.r-project.org/Rlogo.png)
+
+--
+
+.center[.large[**Sounds great! | Parfait!**]]
+
+---
+# Too many packages! | Trop de packages!
+
+![:spacer 4%]()
+
+.center[.large[How can ornithologists find R packages?]]
+
+![:spacer 4%]()
+
+.center[.large[Comment les ornithologues peuvent-ils trouver des packages R?]]
+
+---
+class: split-50
+# Package collections | Collections de packages
+
+.center[
+### rOpenSci 
+.small[(<https://ropensci.org>)]
+
+![:img center, bottom:40%, 15%, ALT, ,](https://raw.githubusercontent.com/ropensci/logos/master/stickers/blue_short_hexsticker.png)
+
+
+![:spacer 7%]()
+
+.columnl[
+### tidyverse 
+.small[(<https://tidyverse.org/>)]
+]
+![:img left: 18.5%, bottom: 5%, 15%, ALT, , ](https://www.rstudio.com/wp-content/uploads/2014/04/tidyverse.png)
+
+.columnr[
+### metaverse 
+.small[(<https://rmetaverse.github.io/>)]
+]
+]
+
+![:img right: 18.5%, bottom: 5%, 15%, ALT, , ](https://rmetaverse.github.io/metaverse/reference/figures/metaverse_hex.png)
+
+???
+rOpenSci is an organization that curates and performs software review of R packages for accessing data, and are now also branching out into reviewing statistical packages as well
+
+tidyverse is a collection of R packages that work well together for manipulating/munging data
+
+metaverse is a collection of R packages for metadata analysis
+
+---
+class: nobar, split-30
+
+.columnl[]
+.columnr[
+<https://r-universe.dev>
+.medium[**In development, soon with tags and categories!<br>
+En développement, bientôt avec des tags et des catégories!**]
+]
+
+![:img left: 10.5%, top: 5%, 20%, ALT, , ](Figures/runiverse.png)
+
+![:img center, bottom: 0%, 79%, ALT, , ](Figures/runiverse_predictiveecology.png)
+
+???
+A related and relatively new platform is the R-universe by rOpenSci
+
+Here, individuals or organizations can create their own "universes" which we can than
+explore.
+
+Important to note that this platform is still in development, and they're planing on 
+adding other metrics, like tags or categories, which we'll be able to use to search 
+for packages. So I'm really excited for when this becomes more mature.
+
+
+
+
+---
+class: split-50
+# R Task Views
+
+.columnl[
+## Annotated collections of packages
+
+- Browse on CRAN .small[(main network of R packages)]<br>.small[<https://cran.r-project.org/web/views/>]
+- [Environmetrics](https://cran.r-project.org/web/views/Environmetrics.html), [Spatial](https://cran.r-project.org/web/views/Spatial.html), [Survival](https://cran.r-project.org/web/views/Survival.html), [Tracking](https://cran.r-project.org/web/views/Tracking.html)
+]
+
+.columnr[
+## Collections annotées de packages
+- Naviguez sur CRAN .small[(réseau principal de packages R)]<br>.small[<https://cran.r-project.org/web/views/>]
+- [Environmetrics](https://cran.r-project.org/web/views/Environmetrics.html), [Spatial](https://cran.r-project.org/web/views/Spatial.html), [Survival](https://cran.r-project.org/web/views/Survival.html), [Tracking](https://cran.r-project.org/web/views/Tracking.html)
+]
+
+
+--
+
+![:spacer 10%]()
+
+.large[**Stay tuned! | Restez à l'écoute!**]
+
+> Symposium: Great R packages for Ornithologists
+> 
+> **Putting it all together: Ornithometrics — a task view for ornithology**
+> 
+> Marc-Olivier Beausoleil  
+> Tuesday Aug 10th 11:05am Eastern
+
+![:img right: 20px, bottom: 20%, 15%, ALT, , ](https://raw.githubusercontent.com/beausoleilmo/Ornithometrics-ctv/main/images/ornitho_logo.png)
+
+???
+And even more relevant, we have Marc-Olivier Beausoleil talking in this symposium, about
+his new Ornithometrics task view.
+
+So I encourage you to check that out!
+
+---
+class: split-50
+# Methods *journals* | *Journaux* de méthodes
+
+.columnl[
+### Methods in Ecology and Evolution
+.small[<http://www.methodsinecologyandevolution.org/>]
+]
+![:img left:20px, bottom: 0, 43%, Description, , ](Figures/MEE.png)
+
+.columnlr[
+### Journal of Open Source Software
+.small[<https://joss.theoj.org/>]
+]
+![:img right:80px, bottom: 0, 45%, Description, , ](Figures/JOSS.png)
+
+
+---
+class: split-70
+# Methods *sections* | *Sections* méthodes
+
+
+![:img center, center, 40%, ALT](Figures/methods.png)
+
+![:img left:6.5%, bottom: 40%, 15%, ALT](https://raw.githubusercontent.com/tidyverse/ggplot2/master/man/figures/logo.png)
+![:img left:5%, bottom: 30%, 20%, ALT](https://rug.mnhn.fr/seewave/PICT/seewave_logo.png)
+
+.footnote[.small[LaZerte et al. 2019. More Mountain Chickadees (*Poecile gambeli*) sing atypical songs in urban than in rural areas]]
+
+--
+
+.columnl[]
+
+
+.columnr[
+![:spacer 40px]()
+.center[What does this imply?<br>**Cite R packages you use!!!**]
+
+![:spacer 40px]()
+
+.center[Qu'est-ce que cela implique?<br>**Citez les packages R que vous utilisez!!!**]
+]
+
+???
+You should cite the R pacakges you use 
+
+a) because it makes your work more reproducible, 
+
+b) it give credit to the package authors and 
+
+c) it makes it easier for your colleages to find new and cool packages as well!
+
+
+---
+# Methods *sections* | *Sections* méthodes
+
+![:img center, top: 25%, 40%, ALT](https://rug.mnhn.fr/seewave/PICT/seewave_logo.png)
+
+![:spacer 100px]()
+
+> Symposium: Great R packages for Ornithologists
+> 
+> **seewave and tuneR: Sound analysis in ornithology**
+> 
+> Sunny Tseng  
+> Tuesday Aug 10th 10:17am Eastern
+
+
+???
+On that note, if I peaked your interest with the seewave package we have a talk in this symposium on Seewave and tuneR by Sunny Tseng
+
+---
+# Ask your colleagues! | Demandez à vos collègues!
+
+.center[Don't code alone `r emo::ji("grin")` Ne code pas seul]
+
+.center[Follow `#RStats` on Twitter | Suivez `#RStats` sur Twitter]
+
+![:img center, bottom: 0, 68%, ALT](https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/r_rollercoaster.png)
+
+
+.footnote[Artwork|Oeuvre [@allisonhorst](https://twitter.com/allison_horst)]
+
+???
+Lastly, but definitely not least, ask your colleagues!
+
+Coding alone is frustrating, and talking to others is a great way to get new ideas and learn about new packages.
+
+If you're on twitter, follow the RSTATS hashtag, twitter has a great R community
+
+---
+# Ask your colleagues! | Demandez à vos collègues!
+
+## In this symposium alone... | Dans ce seul symposium...
+
+.small[
+- **dplyr**: A useful toolbox for manipulating data
+- **sf**, **raster**, and **tmap**: The spatial data trinity
+- **osmdata**: Roadless areas and avian diversity,
+- **seewave** and **tuneR**: Sound analysis in ornithology
+- **warbler** and **Rraven**: Bioacoustics in R
+- **soundecology**: Using acoustic indices for landscape assessment and monitoring
+- **naturecounts**: Millions of bird occurrence records at your fingertips
+- **bbsAssistant**: An R package for downloading and handling data and information from the North American Breeding Bird Survey
+- **motus**: Managing motus data in R
+- **track2KBA**: An R package for identifying important sites for biodiversity from tracking data
+- **MixSIAR**: An R package for avian diet analysis
+- **INLA**: A way for ecologists to overcome their worst impulses
+- **pavo**: Color analysis in birds
+- moult and **moultmcmc**: Inference for moult phenology models
+]
+
+.medium[
+> 18 packages used by your colleagues... Who else has exciting things to share?<br>
+> 18 packages utilisés par vos collègues... Qui d'autre a des choses passionnantes à partager?]
+
+???
+In this symposium alone there are 18 R packages that your colleagues are going to talk about. Just imagine who else might have something exciting to share?
+
+
+---
+class: split-50
+# Take home | Conclusion
+
+
+![:spacer 10px]()
+
+.columnl[
+.align-right[
+LOTS of packages for ornithologists!<br>
+R is not just for Stats<br>
+Cite the packages you use<br>
+Don't code alone `r emo::ji("grin")`<br>
+Ask your colleagues!
+]]
+
+.columnr[
+BEAUCOUP de paquets pour les ornithologues!<br>
+R n'est pas seulement pour les statistiques<br>
+Citez les packages que vous utilisez<br>
+`r emo::ji("grin")` Ne code pas seul<br>
+Demandez à vos collègues!<br>
+]
+
+![:img left: 5%, top: 30%, 10%, ALT](Figures/R_bird.png)
+
+--
+
+![:spacer 10%]()
+
+.columnl[
+.align-right[
+**Thanks to the [Software Sustainability Institute](https://www.software.ac.uk/about) for sponsoring this symposium!**
+]]
+
+
+.columnr[
+**Merci au [Software Sustainability Institute](https://www.software.ac.uk/about)
+d'avoir parrainé ce symposium!**
+]
+
+
+![:img left: 3%, bottom: 18%, 300px, Black text and black mechanical gears in the upper right corner with the letters S and L. The text reads Dr. Steffi LaZerte analysis and data tools for science](https://steffilazerte.ca/images/logo_eg.png)
+
+![:img left: 33%, bottom: 19%, 175px, , ](https://www.brandonu.ca/communications/files/Brandon-University-Horizontal-Logo-1-Colour-Black-RGB.png)
+
+.columnr[
+![:spacer 12%]()
+.small[
+.center[
+
+]]]
+
+.footnote[
+.small[
+`r icon2('logo-twitter', 'Twitter')` @steffilazerte | `r icon2('logo-github', 'GitHub')` steffilazerte | `r icon2('globe-outline', 'World wide web')` steffilazerte.ca<br>
+Slides: <https://steffilazerte.ca/presentations.html>; Created with the R package [xaringan](https://github.com/yihui/xaringan), using [remark.js](https://remarkjs.com), [knitr](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com)<br>
+Icons from [Ionicons](https://ionic.io/ionicons) and [Academicons](https://jpswalsh.github.io/academicons/); Compiled on `r Sys.Date()`]]
+
+
+.footnote-right[
+.small[
+]]
+
+<!-- ![:img right: 450px, bottom: 15px, 125px, , ](../QR.svg) -->
+
+
+???
+
+And I want to give a special thanks to the Software Sustainability Institute for
+sponsoring this symposium
+
