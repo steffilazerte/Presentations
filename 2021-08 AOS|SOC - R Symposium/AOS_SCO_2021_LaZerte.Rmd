@@ -77,7 +77,7 @@ icon2 <- function(icon, title, icon_fun = ionicons) {
 
 ![:img right: 525px, bottom: 25px, 300px, Black text and black mechanical gears in the upper right corner with the letters S and L. The text reads Dr. Steffi LaZerte analysis and data tools for science](https://steffilazerte.ca/images/logo_eg.png)
 
-![:img right: 275px, bottom: 25px, 200px, , ](https://www.brandonu.ca/communications/files/Brandon-University-Horizontal-Logo-1-Colour-Black-RGB.png)
+![:img right: 275px, bottom: 25px, 200px, Black text reads 'Brandon University' next to a shield with two open books above an inverted V and three stalks of wheat](https://www.brandonu.ca/communications/files/Brandon-University-Horizontal-Logo-1-Colour-Black-RGB.png)
 
 ![:spacer 50px]()
 
@@ -124,7 +124,7 @@ I'm excited to get the ball rolling with "How can ornithologists find R packages
 - Presque infiniment extensible avec des packages
 
 
-![:img right:25px, bottom: 35%, 20%, ALT](https://www.r-project.org/Rlogo.png)
+![:img right:25px, bottom: 35%, 20%, Blue R with grey circle outline around the top half](https://www.r-project.org/Rlogo.png)
 
 --
 
@@ -149,7 +149,7 @@ class: split-50
 ### rOpenSci 
 .small[(<https://ropensci.org>)]
 
-![:img center, bottom:40%, 15%, ALT, ,](https://raw.githubusercontent.com/ropensci/logos/master/stickers/blue_short_hexsticker.png)
+![:img center, bottom:40%, 15%, Sky blue hex sticker with a large white letters R and O. The O is made up of a circular arrow](https://raw.githubusercontent.com/ropensci/logos/master/stickers/blue_short_hexsticker.png)
 
 
 ![:spacer 7%]()
@@ -158,7 +158,7 @@ class: split-50
 ### tidyverse 
 .small[(<https://tidyverse.org/>)]
 ]
-![:img left: 18.5%, bottom: 5%, 15%, ALT, , ](https://www.rstudio.com/wp-content/uploads/2014/04/tidyverse.png)
+![:img left: 18.5%, bottom: 5%, 15%, Dark blue hex sticker with the text tidyverse and multicoloured dots](https://www.rstudio.com/wp-content/uploads/2014/04/tidyverse.png)
 
 .columnr[
 ### metaverse 
@@ -166,7 +166,7 @@ class: split-50
 ]
 ]
 
-![:img right: 18.5%, bottom: 5%, 15%, ALT, , ](https://rmetaverse.github.io/metaverse/reference/figures/metaverse_hex.png)
+![:img right: 18.5%, bottom: 5%, 15%, Hex sticker with the image of a pink and beach nebula dotted with stars and the text metaverse](https://rmetaverse.github.io/metaverse/reference/figures/metaverse_hex.png)
 
 ???
 rOpenSci is an organization that curates and performs software review of R packages for accessing data, and are now also branching out into reviewing statistical packages as well
@@ -185,9 +185,9 @@ class: nobar, split-30
 En développement, bientôt avec des tags et des catégories!**]
 ]
 
-![:img left: 10.5%, top: 5%, 20%, ALT, , ](Figures/runiverse.png)
+![:img left: 10.5%, top: 5%, 20%, Grey box with white text saying ROpenSci R-universe. The O in ROpenSci is a planet with rings and moons](Figures/runiverse.png)
 
-![:img center, bottom: 0%, 79%, ALT, , ](Figures/runiverse_predictiveecology.png)
+![:img center, bottom: 0%, 79%, A screenshot of the R-universe dashboard featuring a list of packages for the 'predictiveecology' universe and title on the side bar 'Predictive Ecology Group' and description 'Ecological forecasting models and data'. There is a stylized logo with an orange and yellow flame overlaid with a green and brown tree and brown silhouettes of a cariboo and an insect.](Figures/runiverse_predictiveecology.png)
 
 ???
 A related and relatively new platform is the R-universe by rOpenSci
@@ -233,7 +233,7 @@ class: split-50
 > Marc-Olivier Beausoleil  
 > Tuesday Aug 10th 11:05am Eastern
 
-![:img right: 20px, bottom: 20%, 15%, ALT, , ](https://raw.githubusercontent.com/beausoleilmo/Ornithometrics-ctv/main/images/ornitho_logo.png)
+![:img right: 20px, bottom: 20%, 15%, A hex sticker with the text 'Ornithometrics' and a nautilus that blends into a bird](https://raw.githubusercontent.com/beausoleilmo/Ornithometrics-ctv/main/images/ornitho_logo.png)
 
 ???
 And even more relevant, we have Marc-Olivier Beausoleil talking in this symposium, about
@@ -249,13 +249,13 @@ class: split-50
 ### Methods in Ecology and Evolution
 .small[<http://www.methodsinecologyandevolution.org/>]
 ]
-![:img left:20px, bottom: 0, 43%, Description, , ](Figures/MEE.png)
+![:img left:20px, bottom: 0, 43%, A screen shot of a list of papers with 'R package' in the title](Figures/MEE.png)
 
 .columnlr[
 ### Journal of Open Source Software
 .small[<https://joss.theoj.org/>]
 ]
-![:img right:80px, bottom: 0, 45%, Description, , ](Figures/JOSS.png)
+![:img right:80px, bottom: 0, 45%, A screen shot of a list of papers with the tag 'R' below them](Figures/JOSS.png)
 
 
 ---
@@ -263,10 +263,10 @@ class: split-70
 # Methods *sections* | *Sections* méthodes
 
 
-![:img center, center, 40%, ALT](Figures/methods.png)
+![:img center, center, 40%, A screen shot of a paragraph from an articles methods section reading 'To determine whether the odds of being an atypical singer increased with urbanization&#44; we performed a logistic regression of male singer type (atypical/typical&rpar; against the urbanization index using R statistical software (version 3.3.2; R Core Team 2016&rpar;. We calculated bias-corrected and adjusted (BCa&rpar; bootstrap 95% CI for coefficients. We performed 10000 replicates using the boot package for R (version 1.3-20; Angelo and Ripley 2017&rpar;. Figures were created using the R package ggplot2 (version 2.2.1; Wickham 2009&rpar;. Spectrograms were created with Hanning window lengths of 1024 using the R packages ggplot2 and seewave (version 2.0.5; Sueur et al. 2008&rpar;.' The final two sentences are highlighted in bright yellow.](Figures/methods.png)
 
-![:img left:6.5%, bottom: 40%, 15%, ALT](https://raw.githubusercontent.com/tidyverse/ggplot2/master/man/figures/logo.png)
-![:img left:5%, bottom: 30%, 20%, ALT](https://rug.mnhn.fr/seewave/PICT/seewave_logo.png)
+![:img left:6.5%, bottom: 40%, 15%,Hex sticker with grey border and white background. Text says ggplot2 with blue dots creating a zig zag pattern across the top connected by grey lines](https://raw.githubusercontent.com/tidyverse/ggplot2/master/man/figures/logo.png)
+![:img left:5%, bottom: 30%, 20%, Black text reads 'seewave' followed by a pale green tilde](https://rug.mnhn.fr/seewave/PICT/seewave_logo.png)
 
 .footnote[.small[LaZerte et al. 2019. More Mountain Chickadees (*Poecile gambeli*) sing atypical songs in urban than in rural areas]]
 
@@ -297,7 +297,7 @@ c) it makes it easier for your colleages to find new and cool packages as well!
 ---
 # Methods *sections* | *Sections* méthodes
 
-![:img center, top: 25%, 40%, ALT](https://rug.mnhn.fr/seewave/PICT/seewave_logo.png)
+![:img center, top: 25%, 40%, Black text reads 'seewave' followed by a pale green tilde](https://rug.mnhn.fr/seewave/PICT/seewave_logo.png)
 
 ![:spacer 100px]()
 
@@ -319,7 +319,7 @@ On that note, if I peaked your interest with the seewave package we have a talk 
 
 .center[Follow `#RStats` on Twitter | Suivez `#RStats` sur Twitter]
 
-![:img center, bottom: 0, 68%, ALT](https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/r_rollercoaster.png)
+![:img center, bottom: 0, 68%, A cartoon graph with 'How much I think I know about R' on the y axis ranging from 'I know nothing' to 'I know lots!' and Time on the x axis. A purple line accompanied by smiley faces and grimaces increases then plunges then increases again to a higher point then plunges again with the words 'join R community on twitter' and a smiley face with 'mind blown'.](https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/r_rollercoaster.png)
 
 
 .footnote[Artwork|Oeuvre [@allisonhorst](https://twitter.com/allison_horst)]
@@ -385,7 +385,7 @@ Citez les packages que vous utilisez<br>
 Demandez à vos collègues!<br>
 ]
 
-![:img left: 5%, top: 30%, 10%, ALT](Figures/R_bird.png)
+![:img left: 5%, top: 30%, 10%, Blue R with grey circle outline around the top half. A black beack is added to the front of the round part of the R and a black circle for an eye is added to the center of the R. A hazy black wing has been added to the lower back of the R.](Figures/R_bird.png)
 
 --
 
@@ -403,9 +403,9 @@ d'avoir parrainé ce symposium!**
 ]
 
 
-![:img left: 3%, bottom: 18%, 300px, Black text and black mechanical gears in the upper right corner with the letters S and L. The text reads Dr. Steffi LaZerte analysis and data tools for science](https://steffilazerte.ca/images/logo_eg.png)
+![:img left: 3%, bottom: 18%, 300px, Black text and black mechanical gears in the upper right corner with the letters S and L. The text reads 'Dr. Steffi LaZerte' in big and in smaller letters below 'Analysis and Data Tools for Science'](https://steffilazerte.ca/images/logo_eg.png)
 
-![:img left: 33%, bottom: 19%, 175px, , ](https://www.brandonu.ca/communications/files/Brandon-University-Horizontal-Logo-1-Colour-Black-RGB.png)
+![:img left: 33%, bottom: 19%, 175px, Black text reads 'Brandon University' next to a shield with two open books above an inverted V and three stalks of wheat](https://www.brandonu.ca/communications/files/Brandon-University-Horizontal-Logo-1-Colour-Black-RGB.png)
 
 .columnr[
 ![:spacer 12%]()
