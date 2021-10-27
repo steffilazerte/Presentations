@@ -1,0 +1,340 @@
+---
+title: "rOpenSci"
+author: "Steffi LaZerte"
+date: "2021-10-28"
+output:
+  xaringan::moon_reader:
+    css: [pres_styles.css, global_styles.css]
+    seal: false
+    self-contained: false
+    nature:
+      beforeInit: "macros.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+class: title-slide, nologo, nobar
+
+
+```{r prep, include = FALSE}
+library(tidyverse)
+library(knitr)
+library(here)
+library(stringr)
+library(icons)
+library(glue)
+
+opts_chunk$set(echo = FALSE, cache = FALSE, dpi = 300,
+               out.extra = "class = 'fig-right'", fig.width = 3.5,
+               fig.height = 3.75)
+
+hook_output <- knit_hooks$get("output")
+knit_hooks$set(output = function(x, options) {
+  extra <- options$extra
+
+  if(is.null(extra)) {
+    return(hook_output(x, options))  # pass to default hook
+  }
+  x <- hook_output(x, options)
+  if(any(extra == "squish")) x <- paste0("
+.narrow[", x, "]")
+  if(any(extra == "pause")) x <- paste0("--
+", x)
+  x
+})
+
+theme_pres <- theme_bw() +
+  theme(axis.title.x = element_blank(),
+        legend.position = "top", legend.background = element_blank(),
+        legend.margin = margin(),
+        legend.box.margin = margin(),
+        legend.box.spacing = unit(c(2,0,0,0), units = "pt"),
+        plot.margin = unit(c(0, 0, 0, 5), units = "pt"))
+
+
+icon2 <- function(icon, title, icon_fun = ionicons) {
+  icon <- icon_fun(icon)
+  icon <- as.character(icon)
+  if(str_detect(icon, '<title>')) {
+    str_replace(icon, '<title></title>', glue('<title>{title}</title>')) %>%
+      icons:::add_class('icon')
+  } else {
+    str_replace(icon,
+                '(http://www.w3.org/2000/svg">
+ )',
+                  glue('\1<title>{title}</title>')) %>%
+                    icons:::add_class('icon')
+}
+}
+
+```
+
+
+
+![:img left: 15%, top: 10%, 800px, Black text reads R OpenSci with a blue geometric pattern behind the R and O](https://camo.githubusercontent.com/4527408f5cde3adf58dbad6aec449bdfc96e8714d855d0b92f74de7cadb28758/68747470733a2f2f7261776769742e636f6d2f726f70656e7363692f6c6f676f732f6d61737465722f69636f6e5f6c6574746572696e675f636f6c6f722e737667)
+
+
+![:img left: 10%, bottom: 3%, 350px, Black text and black mechanical gears in the upper right corner with the letters S and L. The text reads 'Dr. Steffi LaZerte' in big and in smaller letters below 'Analysis and Data Tools for Science'](https://steffilazerte.ca/images/logo_eg.png)
+
+.footnote-right[
+`r icon2('logo-twitter', 'Twitter')` @steffilazerte | `r icon2('logo-github', 'GitHub')` steffilazerte | `r icon2('globe-outline', 'World wide web')` steffilazerte.ca
+]
+
+???
+
+---
+class: nobar
+background-image: url("Figures/office.jpg")
+background-size: cover
+background-position: center
+
+# **This is me!**
+
+---
+class: nobar
+
+![:img left: -20px, bottom: -70px, 52%](Figures/steffi_and_nami.jpg)
+![:img right: 0, bottom: 0, 50%](Figures/alex_and_nami.jpg)
+
+# **These are my creatures**
+
+---
+class: nobar
+
+![:img center, bottom: 0, 100%](Figures/garden.jpg)
+
+# **This is my garden**
+
+---
+# **This is my work***
+
+
+![:img right:38%, bottom: 48%, 15%](https://avatars.githubusercontent.com/u/916280?s=200&v=4)
+
+![:img right:10%, bottom: 51%, 20%](https://upload.wikimedia.org/wikipedia/commons/c/c9/Rural_Hours_-_Red-Headed_Woodpecker.jpg)
+
+![:img left:13%, bottom: 65%, 10%](https://upload.wikimedia.org/wikipedia/commons/e/ef/Moose_%28PSF%29.png)
+
+![:img right:10%, bottom: 21%, 20%](https://upload.wikimedia.org/wikipedia/commons/7/7f/Western_Rattlesnake_%28Crotalus_oreganus%29_illustration.jpg)
+
+![:img left:10%, bottom: 8%, 10%](https://upload.wikimedia.org/wikipedia/commons/a/ad/Meat_ant.jpg)
+
+
+![:img left: 42%, bottom: 15%, 15%](https://rstudio-education.github.io/shiny-course/images/shiny.png)
+
+![:img left:10%, bottom: 30%, 15%](https://raw.githubusercontent.com/ropensci/weathercan/master/inst/assets/weathercan_logo.png)
+
+![:img left:20%, bottom: 10%, 25%](https://motus.org/images/motus-logo.png)
+
+![:img right:50%, bottom: 30%, 25%](https://camo.githubusercontent.com/8eb3f9bc0f60dfac66ad867126346c96c67bc58f567c7a2bc60005d6feeec764/68747470733a2f2f7261776769742e636f6d2f726f70656e7363692f6c6f676f732f6d61737465722f69636f6e5f73686f72745f636f6c6f722e737667)
+
+![:img right:24%, bottom: 23%, 15%](https://raw.githubusercontent.com/rstudio/rmarkdown/main/man/figures/logo.png)
+
+![:img right:29%, bottom: 10%, 15%](https://birdscanada.b-cdn.net/wp-content/uploads/2020/02/BirdsCanada-logo-en.png)
+
+![:img right:29%, bottom: 73%, 25%](Figures/logo_agri-food.png)
+
+
+
+
+.footnote[.small[(On, with, for, and where)]]
+
+
+---
+# **This is my work***
+
+
+![:img right:38%, bottom: 48%, 15%](https://avatars.githubusercontent.com/u/916280?s=200&v=4)
+
+![:img right:10%, bottom: 51%, 20%](https://upload.wikimedia.org/wikipedia/commons/c/c9/Rural_Hours_-_Red-Headed_Woodpecker.jpg)
+
+![:img left:13%, bottom: 65%, 10%](https://upload.wikimedia.org/wikipedia/commons/e/ef/Moose_%28PSF%29.png)
+
+![:img right:10%, bottom: 21%, 20%](https://upload.wikimedia.org/wikipedia/commons/7/7f/Western_Rattlesnake_%28Crotalus_oreganus%29_illustration.jpg)
+
+![:img left:10%, bottom: 8%, 10%](https://upload.wikimedia.org/wikipedia/commons/a/ad/Meat_ant.jpg)
+
+
+![:img left: 42%, bottom: 15%, 15%](https://rstudio-education.github.io/shiny-course/images/shiny.png)
+
+![:img left:10%, bottom: 30%, 15%](https://raw.githubusercontent.com/ropensci/weathercan/master/inst/assets/weathercan_logo.png)
+
+![:img left:20%, bottom: 10%, 25%](https://motus.org/images/motus-logo.png)
+
+![:img right:24%, bottom: 23%, 15%](https://raw.githubusercontent.com/rstudio/rmarkdown/main/man/figures/logo.png)
+
+![:img right:29%, bottom: 10%, 15%](https://birdscanada.b-cdn.net/wp-content/uploads/2020/02/BirdsCanada-logo-en.png)
+
+![:img right:29%, bottom: 73%, 25%](Figures/logo_agri-food.png)
+
+
+![:img center, bottom: 5%, 100%](Figures/transparent.png)
+
+![:img right:50%, bottom: 30%, 25%](https://camo.githubusercontent.com/8eb3f9bc0f60dfac66ad867126346c96c67bc58f567c7a2bc60005d6feeec764/68747470733a2f2f7261776769742e636f6d2f726f70656e7363692f6c6f676f732f6d61737465722f69636f6e5f73686f72745f636f6c6f722e737667)
+
+.footnote[.small[(On, with, for, and where)]]
+
+
+
+---
+# What is rOpenSci?
+
+
+![:img center, bottom: 20px, 80%](Figures/ropensci.png)
+
+
+---
+# What is rOpenSci?
+
+![:img right:10px, bottom: 7%, 60%](Figures/how.png)
+![:img left:10px, bottom: 30%, 50%](Figures/about.png)
+
+
+---
+# What is rOpenSci?
+
+![:img right:10px, bottom: 7%, 60%](Figures/how_emph.png)
+![:img left:10px, bottom: 30%, 50%](Figures/about.png)
+
+
+---
+# What is rOpenSci?
+
+![:img center, bottom: 10px, 60%](Figures/staff.png)
+
+--
+
+![:img center, bottom: 10px, 60%](Figures/staff_emph.png)
+
+---
+class: space-list
+# Packages!
+
+![:img right: 0, bottom: 0, 64%](Figures/packages.png)
+
+- Community contributed 
+  - .medium[[Submit a package!](https://ropensci.org/software-review/)]  
+  
+
+--
+
+- Formally peer-reviewed 
+  - .medium[[Volunteer to be a reviewer!](https://contributing.ropensci.org/resources.html?q=review#devguide)]
+  - Recently added *Statistical*<br>softare peer-review
+  
+
+--
+
+- Optional workflow for<br>submitting to journals
+  - .medium[Journal of Open Source Software]
+  - .medium[Methods in Ecology and Evolution]
+  
+  
+--
+
+- Use packages!
+  - Cite them
+  - Submit usecases to [forum](https://discuss.ropensci.org/c/usecases/10)
+
+![:img right: 30px, bottom: 0, 62%](https://upload.wikimedia.org/wikipedia/commons/9/9f/White_box_132x100.png)
+![:img right: 0, bottom: 0, 62%](https://upload.wikimedia.org/wikipedia/commons/9/9f/White_box_132x100.png)
+![:img right:20px, bottom: 10%, 60%](Figures/usecases.png)
+
+
+---
+class: space-list
+
+# Community!
+
+- Blog (read or write)
+  
+![:img right:10%, bottom: 0, 37%](Figures/blog.png)
+  
+--
+
+- Community Calls
+  - Next: **Tuesday Dec 7, 9:00am PDT**
+  - **Enhancing Software Peer-Review<br>with GitHub**
+
+![:img right: 0, bottom: 0, 47%](https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/768px-Solid_white.svg.png)
+![:img right:5px, bottom: 20%, 50%](Figures/commcalls.png)
+
+--
+
+- Coworking and Office Hours
+  - Work on anything R related, ask questions
+  - First Tuesday of the month (alt. time zones)
+  - Next: **Tuesday Nov 2nd, 9:30am PDT**
+  
+![:img right: 0, bottom: 0, 47%](https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/768px-Solid_white.svg.png)
+![:img right:20px, bottom: 20%, 50%](Figures/coworking.png)
+
+--
+
+- Semi-open slack
+  - See [Contributing Guide](https://contributing.ropensci.org/resources.html#channels-slack) for more details
+  
+  
+---
+# Guides
+
+### Developing guide
+- [devguide.ropensci.org](https://devguide.ropensci.org)
+![:img right:20%, bottom: 13px, 32%](https://devguide.ropensci.org/images/cover.png)
+
+--
+
+![:spacer 25px]()
+
+### Contributing guide
+- [contributing.ropensci.org](https://contributing.ropensci.org/)
+![:img right:20%, bottom: 10px, 36%](https://contributing.ropensci.org/images/contrib_guide_cover.png)
+
+
+---
+# R-universe
+
+- You can set up your own 'universe'
+- Builds your packages *and* Rmarkdown files
+- Easier to install from a 'universe' than with `remotes`
+
+![:img center, bottom: 5px, 85%](Figures/runiverse.png)
+
+
+---
+class: split-35
+# Things to do
+
+.columnl[
+- [Use packages](https://ropensci.org/packages)
+- [Submit packages](https://ropensci.org/software-review/)
+- [Review packages](https://contributing.ropensci.org/resources.html?q=review#devguide)
+- [Submit usecases](https://discuss.ropensci.org/c/usecases/10)
+- [Attend community calls](https://ropensci.org/commcalls/)
+- [Attend co-working sessions](https://ropensci.org/events/)
+- [Read the blog](https://ropensci.org/blog/)
+]
+--
+
+.columnr[
+![:spacer 6%]()
+.center[.large[.large[.large[Thank you!]]]]
+]
+![:img left: 3%, bottom: 18%, 350px, Black text and black mechanical gears in the upper right corner with the letters S and L. The text reads 'Dr. Steffi LaZerte' in big and in smaller letters below 'Analysis and Data Tools for Science'](https://steffilazerte.ca/images/logo_eg.png)
+
+![:img right:37%, bottom: 19%, 250px, Black text reads 'Brandon University' next to a shield with two open books above an inverted V with an oil lamp and three stalks of wheat](https://www.brandonu.ca/communications/files/Brandon-University-Horizontal-Logo-1-Colour-Black-RGB.png)
+
+![:img right: 3%, bottom:17%, 300px, black text reads rOpenSci, ](https://raw.githubusercontent.com/ropensci/logos/master/lettering_black.svg)
+
+
+.footnote[
+.small[
+`r icon2('logo-twitter', 'Twitter')` @steffilazerte | `r icon2('logo-github', 'GitHub')` steffilazerte | `r icon2('globe-outline', 'World wide web')` steffilazerte.ca<br>
+Slides: <https://steffilazerte.ca/presentations.html>; Created with the R package [xaringan](https://github.com/yihui/xaringan), using [remark.js](https://remarkjs.com), [knitr](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com)<br>
+Icons from [Ionicons](https://ionic.io/ionicons); Compiled on `r Sys.Date()`]]
+
+???
+
+
+

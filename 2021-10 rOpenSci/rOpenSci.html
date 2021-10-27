@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>rOpenSci</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Steffi LaZerte" />
+    <meta name="date" content="2021-10-28" />
+    <script src="rOpenSci_files/header-attrs-2.9/header-attrs.js"></script>
+    <link rel="stylesheet" href="pres_styles.css" type="text/css" />
+    <link rel="stylesheet" href="global_styles.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: title-slide, nologo, nobar
+
+
+
+
+
+
+![:img left: 15%, top: 10%, 800px, Black text reads R OpenSci with a blue geometric pattern behind the R and O](https://camo.githubusercontent.com/4527408f5cde3adf58dbad6aec449bdfc96e8714d855d0b92f74de7cadb28758/68747470733a2f2f7261776769742e636f6d2f726f70656e7363692f6c6f676f732f6d61737465722f69636f6e5f6c6574746572696e675f636f6c6f722e737667)
+
+
+![:img left: 10%, bottom: 3%, 350px, Black text and black mechanical gears in the upper right corner with the letters S and L. The text reads 'Dr. Steffi LaZerte' in big and in smaller letters below 'Analysis and Data Tools for Science'](https://steffilazerte.ca/images/logo_eg.png)
+
+.footnote-right[
+&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;title&gt;Twitter&lt;/title&gt;  &lt;path d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"&gt;&lt;/path&gt;&lt;/svg&gt; @steffilazerte | &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;title&gt;GitHub&lt;/title&gt;  &lt;path d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z"&gt;&lt;/path&gt;&lt;/svg&gt; steffilazerte | &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;title&gt;World wide web&lt;/title&gt;  &lt;path d="M256,48C141.13,48,48,141.13,48,256s93.13,208,208,208,208-93.13,208-208S370.87,48,256,48Z" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px"&gt;&lt;/path&gt;  &lt;path d="M256,48c-58.07,0-112.67,93.13-112.67,208S197.93,464,256,464s112.67-93.13,112.67-208S314.07,48,256,48Z" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px"&gt;&lt;/path&gt;  &lt;path d="M117.33,117.33c38.24,27.15,86.38,43.34,138.67,43.34s100.43-16.19,138.67-43.34" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"&gt;&lt;/path&gt;  &lt;path d="M394.67,394.67c-38.24-27.15-86.38-43.34-138.67-43.34s-100.43,16.19-138.67,43.34" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"&gt;&lt;/path&gt;  &lt;line x1="256" y1="48" x2="256" y2="464" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px"&gt;&lt;/line&gt;  &lt;line x1="464" y1="256" x2="48" y2="256" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px"&gt;&lt;/line&gt;&lt;/svg&gt; steffilazerte.ca
+]
+
+???
+
+---
+class: nobar
+background-image: url("Figures/office.jpg")
+background-size: cover
+background-position: center
+
+# **This is me!**
+
+---
+class: nobar
+
+![:img left: -20px, bottom: -70px, 52%](Figures/steffi_and_nami.jpg)
+![:img right: 0, bottom: 0, 50%](Figures/alex_and_nami.jpg)
+
+# **These are my creatures**
+
+---
+class: nobar
+
+![:img center, bottom: 0, 100%](Figures/garden.jpg)
+
+# **This is my garden**
+
+---
+# **This is my work***
+
+
+![:img right:38%, bottom: 48%, 15%](https://avatars.githubusercontent.com/u/916280?s=200&amp;v=4)
+
+![:img right:10%, bottom: 51%, 20%](https://upload.wikimedia.org/wikipedia/commons/c/c9/Rural_Hours_-_Red-Headed_Woodpecker.jpg)
+
+![:img left:13%, bottom: 65%, 10%](https://upload.wikimedia.org/wikipedia/commons/e/ef/Moose_%28PSF%29.png)
+
+![:img right:10%, bottom: 21%, 20%](https://upload.wikimedia.org/wikipedia/commons/7/7f/Western_Rattlesnake_%28Crotalus_oreganus%29_illustration.jpg)
+
+![:img left:10%, bottom: 8%, 10%](https://upload.wikimedia.org/wikipedia/commons/a/ad/Meat_ant.jpg)
+
+
+![:img left: 42%, bottom: 15%, 15%](https://rstudio-education.github.io/shiny-course/images/shiny.png)
+
+![:img left:10%, bottom: 30%, 15%](https://raw.githubusercontent.com/ropensci/weathercan/master/inst/assets/weathercan_logo.png)
+
+![:img left:20%, bottom: 10%, 25%](https://motus.org/images/motus-logo.png)
+
+![:img right:50%, bottom: 30%, 25%](https://camo.githubusercontent.com/8eb3f9bc0f60dfac66ad867126346c96c67bc58f567c7a2bc60005d6feeec764/68747470733a2f2f7261776769742e636f6d2f726f70656e7363692f6c6f676f732f6d61737465722f69636f6e5f73686f72745f636f6c6f722e737667)
+
+![:img right:24%, bottom: 23%, 15%](https://raw.githubusercontent.com/rstudio/rmarkdown/main/man/figures/logo.png)
+
+![:img right:29%, bottom: 10%, 15%](https://birdscanada.b-cdn.net/wp-content/uploads/2020/02/BirdsCanada-logo-en.png)
+
+![:img right:29%, bottom: 73%, 25%](Figures/logo_agri-food.png)
+
+
+
+
+.footnote[.small[(On, with, for, and where)]]
+
+
+---
+# **This is my work***
+
+
+![:img right:38%, bottom: 48%, 15%](https://avatars.githubusercontent.com/u/916280?s=200&amp;v=4)
+
+![:img right:10%, bottom: 51%, 20%](https://upload.wikimedia.org/wikipedia/commons/c/c9/Rural_Hours_-_Red-Headed_Woodpecker.jpg)
+
+![:img left:13%, bottom: 65%, 10%](https://upload.wikimedia.org/wikipedia/commons/e/ef/Moose_%28PSF%29.png)
+
+![:img right:10%, bottom: 21%, 20%](https://upload.wikimedia.org/wikipedia/commons/7/7f/Western_Rattlesnake_%28Crotalus_oreganus%29_illustration.jpg)
+
+![:img left:10%, bottom: 8%, 10%](https://upload.wikimedia.org/wikipedia/commons/a/ad/Meat_ant.jpg)
+
+
+![:img left: 42%, bottom: 15%, 15%](https://rstudio-education.github.io/shiny-course/images/shiny.png)
+
+![:img left:10%, bottom: 30%, 15%](https://raw.githubusercontent.com/ropensci/weathercan/master/inst/assets/weathercan_logo.png)
+
+![:img left:20%, bottom: 10%, 25%](https://motus.org/images/motus-logo.png)
+
+![:img right:24%, bottom: 23%, 15%](https://raw.githubusercontent.com/rstudio/rmarkdown/main/man/figures/logo.png)
+
+![:img right:29%, bottom: 10%, 15%](https://birdscanada.b-cdn.net/wp-content/uploads/2020/02/BirdsCanada-logo-en.png)
+
+![:img right:29%, bottom: 73%, 25%](Figures/logo_agri-food.png)
+
+
+![:img center, bottom: 5%, 100%](Figures/transparent.png)
+
+![:img right:50%, bottom: 30%, 25%](https://camo.githubusercontent.com/8eb3f9bc0f60dfac66ad867126346c96c67bc58f567c7a2bc60005d6feeec764/68747470733a2f2f7261776769742e636f6d2f726f70656e7363692f6c6f676f732f6d61737465722f69636f6e5f73686f72745f636f6c6f722e737667)
+
+.footnote[.small[(On, with, for, and where)]]
+
+
+
+---
+# What is rOpenSci?
+
+
+![:img center, bottom: 20px, 80%](Figures/ropensci.png)
+
+
+---
+# What is rOpenSci?
+
+![:img right:10px, bottom: 7%, 60%](Figures/how.png)
+![:img left:10px, bottom: 30%, 50%](Figures/about.png)
+
+
+---
+# What is rOpenSci?
+
+![:img right:10px, bottom: 7%, 60%](Figures/how_emph.png)
+![:img left:10px, bottom: 30%, 50%](Figures/about.png)
+
+
+---
+# What is rOpenSci?
+
+![:img center, bottom: 10px, 60%](Figures/staff.png)
+
+--
+
+![:img center, bottom: 10px, 60%](Figures/staff_emph.png)
+
+---
+class: space-list
+# Packages!
+
+![:img right: 0, bottom: 0, 64%](Figures/packages.png)
+
+- Community contributed 
+  - .medium[[Submit a package!](https://ropensci.org/software-review/)]  
+  
+
+--
+
+- Formally peer-reviewed 
+  - .medium[[Volunteer to be a reviewer!](https://contributing.ropensci.org/resources.html?q=review#devguide)]
+  - Recently added *Statistical*&lt;br&gt;softare peer-review
+  
+
+--
+
+- Optional workflow for&lt;br&gt;submitting to journals
+  - .medium[Journal of Open Source Software]
+  - .medium[Methods in Ecology and Evolution]
+  
+  
+--
+
+- Use packages!
+  - Cite them
+  - Submit usecases to [forum](https://discuss.ropensci.org/c/usecases/10)
+
+![:img right: 30px, bottom: 0, 62%](https://upload.wikimedia.org/wikipedia/commons/9/9f/White_box_132x100.png)
+![:img right: 0, bottom: 0, 62%](https://upload.wikimedia.org/wikipedia/commons/9/9f/White_box_132x100.png)
+![:img right:20px, bottom: 10%, 60%](Figures/usecases.png)
+
+
+---
+class: space-list
+
+# Community!
+
+- Blog (read or write)
+  
+![:img right:10%, bottom: 0, 37%](Figures/blog.png)
+  
+--
+
+- Community Calls
+  - Next: **Tuesday Dec 7, 9:00am PDT**
+  - **Enhancing Software Peer-Review&lt;br&gt;with GitHub**
+
+![:img right: 0, bottom: 0, 47%](https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/768px-Solid_white.svg.png)
+![:img right:5px, bottom: 20%, 50%](Figures/commcalls.png)
+
+--
+
+- Coworking and Office Hours
+  - Work on anything R related, ask questions
+  - First Tuesday of the month (alt. time zones)
+  - Next: **Tuesday Nov 2nd, 9:30am PDT**
+  
+![:img right: 0, bottom: 0, 47%](https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/768px-Solid_white.svg.png)
+![:img right:20px, bottom: 20%, 50%](Figures/coworking.png)
+
+--
+
+- Semi-open slack
+  - See [Contributing Guide](https://contributing.ropensci.org/resources.html#channels-slack) for more details
+  
+  
+---
+# Guides
+
+### Developing guide
+- [devguide.ropensci.org](https://devguide.ropensci.org)
+![:img right:20%, bottom: 13px, 32%](https://devguide.ropensci.org/images/cover.png)
+
+--
+
+![:spacer 25px]()
+
+### Contributing guide
+- [contributing.ropensci.org](https://contributing.ropensci.org/)
+![:img right:20%, bottom: 10px, 36%](https://contributing.ropensci.org/images/contrib_guide_cover.png)
+
+
+---
+# R-universe
+
+- You can set up your own 'universe'
+- Builds your packages *and* Rmarkdown files
+- Easier to install from a 'universe' than with `remotes`
+
+![:img center, bottom: 5px, 85%](Figures/runiverse.png)
+
+
+---
+class: split-35
+# Things to do
+
+.columnl[
+- [Use packages](https://ropensci.org/packages)
+- [Submit packages](https://ropensci.org/software-review/)
+- [Review packages](https://contributing.ropensci.org/resources.html?q=review#devguide)
+- [Submit usecases](https://discuss.ropensci.org/c/usecases/10)
+- [Attend community calls](https://ropensci.org/commcalls/)
+- [Attend co-working sessions](https://ropensci.org/events/)
+- [Read the blog](https://ropensci.org/blog/)
+]
+--
+
+.columnr[
+![:spacer 6%]()
+.center[.large[.large[.large[Thank you!]]]]
+]
+![:img left: 3%, bottom: 18%, 350px, Black text and black mechanical gears in the upper right corner with the letters S and L. The text reads 'Dr. Steffi LaZerte' in big and in smaller letters below 'Analysis and Data Tools for Science'](https://steffilazerte.ca/images/logo_eg.png)
+
+![:img right:37%, bottom: 19%, 250px, Black text reads 'Brandon University' next to a shield with two open books above an inverted V with an oil lamp and three stalks of wheat](https://www.brandonu.ca/communications/files/Brandon-University-Horizontal-Logo-1-Colour-Black-RGB.png)
+
+![:img right: 3%, bottom:17%, 300px, black text reads rOpenSci, ](https://raw.githubusercontent.com/ropensci/logos/master/lettering_black.svg)
+
+
+.footnote[
+.small[
+&lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;title&gt;Twitter&lt;/title&gt;  &lt;path d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"&gt;&lt;/path&gt;&lt;/svg&gt; @steffilazerte | &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;title&gt;GitHub&lt;/title&gt;  &lt;path d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z"&gt;&lt;/path&gt;&lt;/svg&gt; steffilazerte | &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;title&gt;World wide web&lt;/title&gt;  &lt;path d="M256,48C141.13,48,48,141.13,48,256s93.13,208,208,208,208-93.13,208-208S370.87,48,256,48Z" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px"&gt;&lt;/path&gt;  &lt;path d="M256,48c-58.07,0-112.67,93.13-112.67,208S197.93,464,256,464s112.67-93.13,112.67-208S314.07,48,256,48Z" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px"&gt;&lt;/path&gt;  &lt;path d="M117.33,117.33c38.24,27.15,86.38,43.34,138.67,43.34s100.43-16.19,138.67-43.34" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"&gt;&lt;/path&gt;  &lt;path d="M394.67,394.67c-38.24-27.15-86.38-43.34-138.67-43.34s-100.43,16.19-138.67,43.34" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"&gt;&lt;/path&gt;  &lt;line x1="256" y1="48" x2="256" y2="464" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px"&gt;&lt;/line&gt;  &lt;line x1="464" y1="256" x2="48" y2="256" style="fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px"&gt;&lt;/line&gt;&lt;/svg&gt; steffilazerte.ca&lt;br&gt;
+Slides: &lt;https://steffilazerte.ca/presentations.html&gt;; Created with the R package [xaringan](https://github.com/yihui/xaringan), using [remark.js](https://remarkjs.com), [knitr](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com)&lt;br&gt;
+Icons from [Ionicons](https://ionic.io/ionicons); Compiled on 2021-10-27]]
+
+???
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
