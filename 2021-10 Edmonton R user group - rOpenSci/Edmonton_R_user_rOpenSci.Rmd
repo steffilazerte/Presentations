@@ -138,7 +138,7 @@ class: nobar
 
 
 
-.footnote[.small[(On, with, for, and where)]]
+.footnote[.small[(On, with, and for)]]
 
 
 ---
@@ -173,7 +173,7 @@ class: nobar
 
 ![:img right:50%, bottom: 30%, 25%](https://camo.githubusercontent.com/8eb3f9bc0f60dfac66ad867126346c96c67bc58f567c7a2bc60005d6feeec764/68747470733a2f2f7261776769742e636f6d2f726f70656e7363692f6c6f676f732f6d61737465722f69636f6e5f73686f72745f636f6c6f722e737667)
 
-.footnote[.small[(On, with, for, and where)]]
+.footnote[.small[(On, with, and for)]]
 
 
 
@@ -182,6 +182,9 @@ class: nobar
 
 
 ![:img center, bottom: 20px, 80%](Figures/ropensci.png)
+
+???
+rOpenSci is a non-profit initiative founded in 2011. We create technical and community infrastructure for open and reproducible research in the R language. This includes a curated collection of over 300 R packages, a software peer review system, the R-universe platform for building, testing, and publishing packages, and documentation community engagement programs to support scientific R developers.
 
 
 ---
