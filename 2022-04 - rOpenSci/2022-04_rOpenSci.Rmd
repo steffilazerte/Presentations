@@ -185,20 +185,20 @@ class: nobar
 .footnote[.small[(On, with, and for)]]
 
 
----
-# What about you?
+<!-- --- -->
+<!-- # What about you? -->
 
-- Who are you?
-- Who are your creatures? (human, animal, plant, mineral)
-- What is your work?
+<!-- - Who are you? -->
+<!-- - Who are your creatures? (human, animal, plant, mineral) -->
+<!-- - What is your work? -->
 
-(Answer as many as you feel like sharing `r emo::ji("wink")`)
+<!-- (Answer as many as you feel like sharing `r emo::ji("wink")`) -->
 
---
+<!-- -- -->
 
-![:spacer 20px]()
+<!-- ![:spacer 20px]() -->
 
-> Great! Onwards...
+<!-- > Great! Onwards... -->
 
 ---
 # What is rOpenSci?
@@ -302,19 +302,24 @@ class: section, nobar
 ---
 # Citing R and R packages
 
-## Why cite?
+## Why cite? Which packages?
 
 > **Activity**
 >
 > (5 min) In small groups discuss: 
 > 
 >  - Why cite R and R packages?
+>  - Which packages should you cite?
+>    - All of them?
+>    - If only some, which? How do you pick?
 
 
 ---
 # Citing R and R packages
 
 ## Why cite?
+
+--
 
 - Developer Credit
 - Repeatable Science
@@ -325,26 +330,7 @@ class: section, nobar
 
 ## Which packages?
 
-
-> **Activity**
->
-> (5 min) In small groups discuss: 
-> 
->  - Which packages should you cite?
->    - All of them?
->    - If only some, which? How do you pick?
-
----
-# Citing R and R packages
-
-## Why cite?
-
-- Developer Credit
-- Repeatable Science
-  - .small[Not the same as *reproducible*]
-- Gratitude
-
-## Which packages?
+--
 
 - Tricky!
 - FORCE11 SCIWG:  "Software important to the research outcome"<sup>*</sup>
@@ -453,14 +439,14 @@ class: space-list
 
 - Blog (read or write)
   
-![:img right:10%, bottom: 0, 37%](Figures/blog.png)
+![:img right:5%, bottom: 10px, 37%](Figures/blog2.png)
   
 --
 
 - Community Calls
   - Next: TBA
 
-![:img right: 0, bottom: 0, 47%](https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/768px-Solid_white.svg.png)
+![:img right: 0, bottom: 0, 48%](https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Solid_white.svg/768px-Solid_white.svg.png)
 ![:img right:5px, bottom: 20%, 50%](Figures/commcalls.png)
 
 --
@@ -551,7 +537,7 @@ class: split-40
 >
 > - Go to https://r-universe.dev
 > - Take a couple of minutes to look for packages which might be relevant
->   - E.g., search for "wildlife", "tracking", "conservation", "mapping"...
+>   - E.g., search for "birds", "wildlife", "tracking", "conservation", "mapping"...
 > - What did you find?
 
 
