@@ -1,0 +1,459 @@
+---
+format: 
+  revealjs:
+    author-steffi: true
+    title: "Participatory science:<br>Oh, the Places You'll Go!"
+    workshop: "Brandon University Science Seminar Series 2024"
+    date: today
+    date-format: iso
+    title-slide-attributes: 
+      data-background-image: figs/steffi_muskoka.JPG
+      data-background-size: "45%"
+      data-background-position: "100% 50%"
+    template-partials:
+      - title-slide.html
+    theme: [default, styles.scss]
+    width: 1200
+    slide-number: true
+    fontsize: 1.7em
+engine: knitr
+---
+
+## Participatory Science
+
+```{r}
+#| include: false
+qrcode::qr_code("https://steffilazerte.ca/Presentations/2024-11 Participatory science") |>
+  qrcode::generate_svg("figs/qr.svg")
+```
+
+
+::::{.columns}
+
+:::{.column}
+Participatory sciences include
+
+:::{style="margin-left: 2%"}
+- **community science**
+- **citizen science**
+- **community-based monitoring**
+- **volunteer research**
+- etc.
+:::
+:::
+:::{.column .center style="margin-top: 5%"}
+
+Research and monitoring efforts that depend on [knowledge]{.hl}, [insights]{.hl}, and [observations]{.hl} from members of the public.
+:::
+::::
+
+![](figs/citsci_VirginiaGreene.png){.absolute bottom=5% left=37.5% width=25%}
+[Virginia Greene]{.absolute .attrib left=53% bottom=6%}
+
+[From the [Association for Advancing Participatory Sciences](https://participatorysciences.org/)]{.footnote}
+
+
+
+
+## Types of projects
+
+:::{style="margin-bottom:-40px"}
+```{dot graph}
+//|  fig-height: 10%
+//|  fig-width: 100%
+
+digraph D {
+ graph [pad="0.05", nodesep="2", ranksep="5"];
+ rankdir=LR;
+ node[shape = box, color = white, fontname="Source Sans Pro"];
+ edge[fontname="Source Sans Pro"];
+ 
+ a[label="Researcher Driven"]
+ b[label="Community Driven"]
+ 
+ a -> b [dir=both] [label="It's a continuum"]
+
+}
+```
+:::
+
+
+::::{.columns}
+
+:::{.column .center width=50%}
+[Projects developed by researchers,   
+people sign up to participate]{.hl}
+:::
+
+:::{.column .center width=50%}
+[Projects developed  
+closely with/by the community]{.hl}
+
+:::
+
+::::
+
+
+
+::::{.columns .fragment}
+
+:::{.column .small .center width=50%}
+
+**Examples** 
+
+[Christmas Bird Count](https://www.birdscanada.org/bird-science/christmas-bird-count) (Birds Canada)   
+[Woodpecker Cavity Cam](https://www.zooniverse.org/projects/elwest/woodpecker-cavity-cam)  (University of Minnesota)   
+[Are we alone in the universe?](https://www.zooniverse.org/projects/ucla-seti-group/are-we-alone-in-the-universe)   (NASA)
+
+![](figs/finches_cropped.JPG){width=80%}
+[Steffi LaZerte]{.absolute .attrib left=37% bottom=-4%}
+
+:::
+
+
+:::{.column .small .center width=50%}
+**Examples**   
+
+[Community Water Monitoring](https://keepersofthewater.ca) (Keepers of the Water)   
+[Berry Contamination Study](https://wbea.org/monitoring-programs/community-based-monitoring/) (WBEA)
+
+
+![](figs/secchi.jpg){width=70% style="padding-top:30px"}
+[Gertrud Nürnberg]{.absolute .attrib right=8% bottom=-2%}
+:::
+
+::::  
+
+
+
+## Why Participate? {{< fa binoculars >}} 
+
+### As a researcher
+
+- Community engagement
+- Science communication
+- Learn about community needs/interests
+- Give back to community
+- Quantity of data
+
+### Considerations
+- [Partnerships]{.hl} & [Communication]{.hl} (two-way)
+- Avoid extractive science
+- Consider needs of the community
+- Take time to establish trust
+- Remember there is expertise on both sides
+
+![](figs/engagement.JPG){.absolute right=0 bottom=0 width=50%}
+[Alex Koiter]{.absolute .attrib right=0 bottom=-2%}
+
+
+## Why Participate? {{< fa binoculars >}} 
+### As a community member
+- Engage in what's important to you
+- Turn hobbies into data collection
+- Learn more about scientific processes
+- Help your community
+- Fun activities
+
+### Considerations
+- Protocols are not always fun
+- Not always clear how your part \
+  contributes to the whole
+- May require a minimum time commitment
+- Will this be valuable to you?
+
+![](figs/cbc.jpg){.absolute right=0 bottom=5% width=55%}
+[Christmas Bird Count Selfie - Steffi LaZerte]{.absolute .attrib right=0 bottom=2%}
+
+# Third role
+
+Use data, but not involved in design or collection
+
+![](figs/vivi_computer.jpg)
+
+
+# Some of the Places You'll Go!
+
+Examples using data from these kinds of projects
+
+![](figs/places.png){fig-alt="A round hedgehog in a yellow beanie, knitting a teal scarf. Behind them are different outputs from \"knitting\" documents in R, including PDF, Word, LaTeX, html5, slides, eBooks, dashboards, and websites."}
+
+[[[Illustration by Alison Hill and Allison Horst, for RStudio](https://allisonhorst.com/horst-hill-collaborations)]{.footnote}]{.small}
+
+## {data-menu-title="eBird" background-image="figs/ebird.png" background-size="contain"}
+
+## eBird
+
+:::{layout-ncol=2 layout-valign="center"}
+![](figs/ebird_web.png)
+
+![](figs/ebird_app.png)
+:::
+
+## Migration and Distribution
+
+[[Jared Sonnleitner, Steffi LaZerte, Ann McKellar, Nancy Flood, Matt Reudink]{.small}](https://doi.org/10.1002/ecs2.4316)
+
+![](figs/bluebirds1.png){.absolute left=10% bottom=-5% width=50%}
+
+![](figs/bluebird_western_Gregory_Smith.jpg){.absolute right=15% top=17% width=20%}
+[Gregory Smith]{.absolute .attrib right=15.5% top=19%}
+[Eastern Bluebirds]{.absolute style="text-align:left;" right=-2.5% top=28%}
+
+![](figs/bluebird_mountain_Elaine_R_Wilson.jpg){.absolute right=15% top=44% width=20%}
+[Elaine R. Wilson]{.absolute .attrib right=15.5% top=46%}
+[Mountain Bluebirds]{.absolute right=-4.5% top=54%}
+
+![](figs/bluebird_eastern_Don_Faulkner.jpg){.absolute right=15% bottom=-2% width=20%}
+[Don Faulkner]{.absolute .attrib right=15.5% bottom=25%}
+[Western Bluebirds]{.absolute right=-3% top=85%}
+
+[[![](figs/ebird_logo.svg)](https://ebird.org)]{.absolute right=0 top=0 width=10%}
+
+## Migration and Distribution
+
+[[Erik Prytula, Matt Reudink, Steffi LaZerte, Jared Sonnleitner, Ann McKellar]{.small}](https://doi.org/10.5751/JFO-00341-940314)
+
+![](figs/swifts1.png){.absolute left=5% bottom=-3% width=50%}
+
+![](figs/swift_Kat_Sam.jpeg){.absolute right=5% bottom=20 width=32%}
+[Kat+Sam]{.absolute .attrib right=5.5% bottom=30}
+
+[See also [Birds Canada Swift Watch](https://www.birdscanada.org/bird-science/swiftwatch)]{.footnote .left}
+
+[[![](figs/ebird_logo.svg)](https://ebird.org)]{.absolute right=0 top=0 width=10%}
+
+## Banding Stations {style="text-align:center" background-image="figs/rocky_point.png" background-size="contain"}
+
+## Vulture migration {background-image="figs/donnecke_vultures1.png" background-size="100%" background-position="bottom right"}
+
+[[Don Kramer, Daniel Donnecke, Steffi LaZerte]{.small}](https://github.com/steffilazerte/vulture_migration)
+
+[Daniel Donnecke]{.absolute .attrib right=0 bottom=0}
+
+[[![](figs/rocky_point.jpg)](https://rpbo.org/)]{.absolute width=10% top=0 right=0}
+
+## Turkey Vulture Migration
+
+[[Don Kramer, Daniel Donnecke, Steffi LaZerte]{.small}](https://github.com/steffilazerte/vulture_migration)
+
+[[![](figs/rocky_point.jpg)](https://rpbo.org/)]{.absolute width=10% top=0 right=0}
+
+:::{layout-ncol=2 layout-valign="center"}
+![](figs/vulture_plot.png)
+
+![](figs/donnecke_vultures2.png)
+:::
+
+[Daniel Donnecke]{.absolute .attrib right=2% bottom=12%}
+
+
+## Breeding Bird Survey of Canada
+
+```{r BBS_map}
+#| cache: true
+#| echo: false
+#| fig-cap: "Canadian BBS Routes"
+
+# pak::pkg_install("bbsBayes/bbsBayes2")
+
+library(bbsBayes2)
+library(dplyr)
+library(ggplot2)
+library(sf)
+
+# fetch_bbs_data()
+
+d <- load_bbs_data()$routes |>
+  select(route, route_name, rpid, route_data_id, latitude, longitude, state, country)  |>
+  distinct() |>
+  st_as_sf(coords = c("longitude", "latitude"), crs = 4326)
+
+m <- load_map(stratify_by = "bbs_cws") |>
+  filter(country == "Canada") |>
+  mutate(bcr = factor(bcr))
+
+ggplot() +
+  theme_minimal() +
+  theme(legend.position = c(0.85, 0.9), legend.direction = "horizontal",
+        legend.title.position = "top") +
+  geom_sf(data = m, aes(fill = bcr)) +
+  geom_sf(data = filter(d, country == "CA"), size = 0.5) +
+  scale_fill_viridis_d(name = "Bird Conservation Region (BCR)")
+```
+
+
+## bbsBayes2 R package
+
+[[Adam C. Smith, Brandon Edwards, Steffi LaZerte]{.small}](https://bbsbayes.github.io/bbsBayes2/)
+
+:::{.spacer}
+- Breeding Bird Survey (BBS) data
+- Spatially explicit models
+- Informs many species at risk assessments
+:::
+
+
+![](figs/bbsbayes2_barn_swallows.png){.absolute right=-5% top=15% width=60%}
+[[![](figs/bbsbayes2.png)](https://bbsbayes.github.io/bbsBayes2/)]{.absolute top=0 right=10%}
+
+## {#iNaturalist data-menu-title="iNaturalist" background-image="figs/inaturalist.png" background-size="contain"}
+
+## iNaturalist
+
+[[![](figs/inaturalist_logo)](https://www.inaturalist.org/)]{.absolute right=0 top=0% width=15%}
+
+### Seek App
+
+![](figs/seek.png)
+
+
+
+## iNaturalist App/Web
+
+
+[[![](figs/inaturalist_logo)](https://www.inaturalist.org/)]{.absolute right=0 top=0% width=15%}
+
+### iNaturalist
+
+![](figs/inaturalist_app.png)
+
+
+
+## {#naturecounts data-menu-title="NatureCounts" background-image="figs/naturecounts.png" background-size="contain"}
+
+
+
+
+
+## NatureCounts
+
+
+
+
+
+### Includes
+
+- eBird 
+- iNaturalist
+- Breeding Bird Surveys
+- Christmas Bird Count
+- Provincial Atlas Programs
+- Banding station/Observatory counts
+- ...
+
+![](figs/birdscanada_logo.png){width=15% style="padding-left:10%"}
+
+[[![](figs/naturecounts_logo.png)](https://naturecounts.ca/)]{.absolute right=0 top=-3% width=25%}
+
+![](figs/bba_mb.png){.absolute right=0 top=10% width=60%}
+[Manitoba Breeding Bird Atlas]{.absolute .attrib right=2% bottom=2%}
+
+
+
+## Conservation and Trends
+
+### Species at Risk Workflows
+[with Danielle Ethier (BirdsCanada) and ECCC]{.small}
+![](figs/birdscanada_logo.png){.absolute right=0 bottom=0 width=15%}
+
+- [COSEWIC](https://cosewic.ca/index.php/en/) - National
+- [WildSpecies](https://www.wildspecies.ca/) - Regional
+
+[[![](figs/naturecounts_logo.png)](https://naturecounts.ca/)]{.absolute right=0 top=-3% width=25%}
+
+### State of Canada's Birds
+
+- Uses NatureCounts data
+- Partnership between Environment and   
+  Climate Change Canada and Birds Canada
+- [Dynamic Report and Species Accounts](https://naturecounts.ca/nc/socb-epoc/main.jsp)
+
+![](figs/eccc.png){.absolute width=30% left=-3% bottom=1%}
+![](figs/birdscanada_logo.png){.absolute width=15% left=29% bottom=2%}
+
+
+![](figs/state_of_canadas_birds2.png){.absolute width=58% right=-7% bottom=-7%}
+
+[[![](figs/naturecounts_logo.png)](https://naturecounts.ca/)]{.absolute right=0 top=-3% width=25%}
+
+## {#xenocanto data-menu-title="Xeno-Canto" background-image="figs/xeno_canto.png" background-size="contain"}
+
+
+## White-throated Sparrow Song
+
+[Ken Otter, Alexandra McKenna, Steffi LaZerte, Scott Ramsey](https://doi.org/10.1016/j.cub.2020.05.084) 
+
+:::{.center}
+![](figs/wtsp_wide.png)
+:::
+
+[[![](figs/xenocanto_logo.png)](https://xeno-canto.org/)]{.absolute right=0 top=-3% width=7%}
+
+
+## {#sparrow data-menu-title="White-throated Sparrow Song" background-image="figs/wtsp_viral.png" background-size="contain"}
+
+
+[[![](figs/xenocanto_logo.png)](https://xeno-canto.org/)]{.absolute right=0 top=-3% width=7%}
+
+## Inspired a human song!
+[Sherry Ryan](https://www.sherryryan.com/)
+
+:::{.center}
+<iframe width="100%" height="570" src="https://www.youtube.com/embed/D2S6dXdhCQ8?si=689a4yAzH0aLkh5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="margin-top:20px"></iframe>
+:::
+
+<!-- -->
+
+<!-- #### Song -->
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/PkARoCOjlZw?si=W_fJxTdTu8YVdqNz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+
+[[![](figs/xenocanto_logo.png)](https://xeno-canto.org/)]{.absolute right=0 top=-3% width=7%}
+
+# Not just birds...
+
+## Secchi Disk Dip
+
+- North American Lake Management Society (NALMS)
+- Volunteer monitors record water transparency
+
+[[![](figs/secchi.png)](https://www.nalms.org/secchidipin/about/)]{.absolute right=0 top=-3% width=10%}
+
+![](figs/secchi.jpg){.absolute width=40% bottom=23% left=5%}
+[Gertrud Nürnberg]{.absolute .attrib left=34% bottom=25%}
+
+![](figs/secchi_map.jpg){.absolute width=60% bottom=0 right=-10%}
+[NALMS]{.absolute .attrib right=-5% bottom=3%}
+
+![](/figs/lakes_SK.png){.fragment .absolute width=50% bottom=-3% left=0}
+
+## {#lake-winnipeg data-menu-title="Lake Winnipeg" background-image="figs/lake_winnipeg.png" background-size="contain"}
+
+## Find a Project! {background-image="figs/wn_hawkwatch_narrow.jpg" background-size="60%" background-position="right"}
+
+[**Westman Naturalists Hawk Watch 2024**]{.absolute .attrib right=0 top=-2%}
+
+### Individual Projects {style="margin-top: 0"}
+
+- [Westman Naturalists](https://westman-naturalists.github.io/)
+- [eBird](https://ebird.org/home)
+- [iNaturalist](https://www.inaturalist.org/)
+- [Secchi Dip-In](https://www.nalms.org/secchidipin/about/)
+- [Breeding Bird Survey](https://www.canada.ca/en/environment-climate-change/services/bird-surveys/landbird/north-american-breeding/overview.html)
+  
+### Collections {style="margin-top: 5pt"}
+
+- [Birds Canada](https://www.birdscanada.org/you-can-help/citizen-science)
+- [NASA projects](https://science.nasa.gov/citizen-science/)
+- [SciStarter](https://scistarter.org/)
+- [Zooniverse](https://www.zooniverse.org/)
+
+### Resources {style="margin-top: 5pt"}
+
+- [Platforms for hosting projects](https://participatorysciences.org/resources/platforms-for-hosting-participatory-science-projects/)
+
+:::{.fragment}
+[Thank you!]{.absolute right=15% top=10% style="font-size:220%; font-weight:bold;"}
+
+![](figs/steffi_logo.png){.absolute bottom=60% right=10% width=30%}
+:::
