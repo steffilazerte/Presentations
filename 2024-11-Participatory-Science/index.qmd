@@ -23,7 +23,7 @@ engine: knitr
 
 ```{r}
 #| include: false
-qrcode::qr_code("https://steffilazerte.ca/Presentations/2024-11 Participatory science") |>
+qrcode::qr_code("https://steffilazerte.ca/Presentations/2024-11-Participatory-Science/") |>
   qrcode::generate_svg("figs/qr.svg")
 ```
 
