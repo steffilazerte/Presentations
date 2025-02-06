@@ -3,7 +3,7 @@ format:
   revealjs:
     author-steffi: true
     title: "Participatory science:<br>Oh, the Places You'll Go!"
-    workshop: "Westman Naturalists 2025"
+    workshop: "<strong>Brandon University</strong><br>Applied Quantitative Methods in Geography"
     date: today
     date-format: iso
     title-slide-attributes: 
