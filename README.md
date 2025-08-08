@@ -1,73 +1,34 @@
 
 # Links to Presentations
 
-## Testing in R
-
-1.  **2019-11 ROpenSci Community Call: Last Night, Testing Saved my
-    Life**
-
-<!-- end list -->
-
-  - Presentation
-    [(html)](http://steffilazerte.github.io/Presentations/2019-11%20ROpenSci%20-%20Testing/2019-11_ROpenSci_Testing.html)
-    [(pdf)](http://steffilazerte.github.io/Presentations/2019-11%20ROpenSci%20-%20Testing/2019-11_ROpenSci_Testing.pdf)
-
-## R For Ornithologists
-
-1.  **2019-08 [Society for Canadian
-    Ornithologists](https://www.sco-soc.ca/) 2019 Meeting in Québec
-    City, Canada <http://sco-soc-quebec2019.org/>**
-    
-      - Presentation [(English
-        html)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_en.html)
-        [(English
-        pdf)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_en.pdf)
-        [(French
-        html)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_fr.html)
-        [(French
-        pdf)](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_fr.pdf)
-      - From other presenters:
-          - [naturecounts: a new R package for accessing standardized
-            data on bird
-            populations](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/SCO_2019_naturecounts_R_Ethier_Final.pdf)
-            - Denis Lepage, Danielle Ethier, Steffi LaZerte
-          - [An automated approach to identifying search terms for
-            systematic
-            reviews](http://steffilazerte.github.io/Presentations/2019-08%20SOC%20-%20R%20Symposium/Grames_SCO-SOC_slides.pdf)
-            - Eliza M. Grames, Andrew N. Stillman, Morgan W. Tingley,
-            and Chris S. Elphick
-
-## `naturecounts`
-
-1.  **2019-05 [Canada Research Software
-    Conference](https://www.canarie.ca/software/canadian-research-software-conference/program-details/)**
-    
-      - Presentation
-        [(html)](http://steffilazerte.github.io/Presentations/2019-05%20CRSC%20-%20naturecounts/LaZerte_CRSC_2019.html)
-        [(pdf)](http://steffilazerte.github.io/Presentations/2019-05%20CRSC%20-%20naturecounts/LaZerte_CRSC_2019.pdf)
-
-## `cavityuse`
-
-1.  **2018-08 [International Society for Behavioural Ecology,
-    Minneapolis, USA](http://www.behavecol.com)**
-    
-      - Presentation
-        [(html)](http://steffilazerte.github.io/Presentations/2018-08%20ISBE/LaZerte_ISBE_2018.html)
-        [(pdf)](http://steffilazerte.github.io/Presentations/2018-08%20ISBE/LaZerte_Gow_ISBE_cavityuse.pdf)
-
-## `weathercan`
-
-1.  **2018-07 Ag Canada**
-    
-      - Presentation
-        [(html)](http://steffilazerte.github.io/Presentations/2018-07%20Ag%20Canada%20-%20weathercan/LaZerte_AGCAN_2018_weathercan.html)
-        [(pdf)](http://steffilazerte.github.io/Presentations/2018-07%20Ag%20Canada%20-%20weathercan/LaZerte_AGCAN_2018_weathercan.pdf)
-
-2.  **2017-09 [PCAG](http://pcag.uwinnipeg.ca/PCAG2017.html)**
-    
-      - Regular Presentation
-        [(html)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan.html)
-        [(pdf)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan.pdf)
-      - With Extra Slides
-        [(html)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan_extra.html)
-        [(pdf)](https://steffilazerte.github.io/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan_extra.pdf)
+- 2025-08 Open Science
+  - [index_fr.html](https://steffilazerte.ca/Presentations/2025-08-Open-Science/index_fr.html)
+  - [index.html](https://steffilazerte.ca/Presentations/2025-08-Open-Science/index.html)
+- 2024-11 Participatory Science
+  - [index.html](https://steffilazerte.ca/Presentations/2024-11-Participatory-Science/index.html)
+- 2022-04 rOpenSci
+  - [2022-04_rOpenSci.html](https://steffilazerte.ca/Presentations/2022-04%20-%20rOpenSci/2022-04_rOpenSci.html)
+- 2021-11 UofM
+  - [2021-11_UofM_rOpenSci.html](https://steffilazerte.ca/Presentations/2021-11%20UofM%20-%20rOpenSci/2021-11_UofM_rOpenSci.html)
+- 2021-10 Edmonton R user group
+  - [Edmonton_R_user_rOpenSci.html](https://steffilazerte.ca/Presentations/2021-10%20Edmonton%20R%20user%20group%20-%20rOpenSci/Edmonton_R_user_rOpenSci.html)
+- 2021-08 ESA rOpenSci
+  - [2021-08_ESA_rOpenSci.html](https://steffilazerte.ca/Presentations/2021-08%20ESA%20rOpenSci/2021-08_ESA_rOpenSci.html)
+- 2021-08 AOS\|SOC
+  - [AOS_SCO_2021_LaZerte.html](https://steffilazerte.ca/Presentations/2021-08%20AOS%7CSOC%20-%20R%20Symposium/AOS_SCO_2021_LaZerte.html)
+- 2021-04 rOpenSci
+  - [2021-04_rOpenSci_community.html](https://steffilazerte.ca/Presentations/2021-04%20rOpenSci%20-%20Community/2021-04_rOpenSci_community.html)
+- 2019-11 rOpenSci
+  - [2019-11_ROpenSci_Testing.html](https://steffilazerte.ca/Presentations/2019-11%20rOpenSci%20-%20Testing/2019-11_ROpenSci_Testing.html)
+- 2019-08 SOC
+  - [LaZerte_SCO_SOC_2019_fr.html](https://steffilazerte.ca/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_fr.html)
+  - [LaZerte_SCO_SOC_2019_en.html](https://steffilazerte.ca/Presentations/2019-08%20SOC%20-%20R%20Symposium/LaZerte_SCO_SOC_2019_en.html)
+- 2019-05 CRSC
+  - [LaZerte_CRSC_naturecounts_2019.html](https://steffilazerte.ca/Presentations/2019-05%20CRSC%20-%20naturecounts/LaZerte_CRSC_naturecounts_2019.html)
+- 2018-08 ISBE
+  - [LaZerte_ISBE_2018_cavityuse.html](https://steffilazerte.ca/Presentations/2018-08%20ISBE/LaZerte_ISBE_2018_cavityuse.html)
+- 2018-07 Ag Canada
+  - [LaZerte_AGCAN_2018_weathercan.html](https://steffilazerte.ca/Presentations/2018-07%20Ag%20Canada%20-%20weathercan/LaZerte_AGCAN_2018_weathercan.html)
+- 2017-09 PCAG
+  - [LaZerte_PCAG_2017_weathercan_extra.html](https://steffilazerte.ca/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan_extra.html)
+  - [LaZerte_PCAG_2017_weathercan.html](https://steffilazerte.ca/Presentations/2017-09%20PCAG%20-%20weathercan/LaZerte_PCAG_2017_weathercan.html)
