@@ -1,0 +1,301 @@
+---
+format: 
+  revealjs:
+    footer: ""
+    author-steffi: true
+    title: "Conseils pratiques pour la science ouverte en ornithologie"
+    workshop: "<strong>SCO-SOC 2025</strong>"
+    date: today
+    date-format: iso
+    title-slide-attributes: 
+      data-background-image: figs/mycol_CC0_crow2.png
+      data-background-size: "40%"
+      data-background-position: "100% 100%"
+    template-partials:
+      - fr/title-slide.html
+    theme: [default, styles.scss]
+    width: 1200
+    slide-number: true
+    fontsize: 1.7em
+engine: knitr
+---
+
+
+```{r}
+#| include: false
+qrcode::qr_code("https://github.com/steffilazerte/Presentations/2025-07-Open-Science") |>
+  qrcode::generate_svg("figs/qr.svg")
+```
+
+
+
+## Qu'est-ce que la science ouverte ?
+
+> *Transparent **et** accessible*
+
+- Données
+- Méthodologie
+- Code
+- Évaluation par les pairs
+- Accès à l'article
+
+![](figs/open_science.png){.absolute right=-5% bottom=10% width=65% fig-alt="A circle of hexagons each featuring a different aspect of open science: 'open educational resources, open data, open source, open methodology, open peer review, open access'"}
+
+:::{.footer}
+[Gallagher et al. 2020](https://www.nature.com/articles/s41559-020-1109-6)
+:::
+
+:::{.fragment}
+### La mise en œuvre peut s'avérer difficile...
+
+- Cela prend du temps
+- Cela demande des compétences
+- Cela coûte de l'argent [(parfois)]{.small}
+- Cela demande du courage
+:::
+
+# Ouah ! Ça fait beaucoup ! {background-image="figs/Grey_Crowned_Crane_2_Kuribo_CC.png" background-size="30%" background-position="90% 100%" background-title="A suprised-looking bird with a spiky ruff"}
+
+**Pourquoi pratiquer la science ouverte ?**
+
+:::{.footer}
+[Grey-crowned crane](https://upload.wikimedia.org/wikipedia/commons/1/1c/Grey_Crowned_Crane_2.jpg) - Kuribo, CC BY-SA 2.0
+:::
+
+## Pourquoi pratiquer la science ouverte ?
+
+### C'est bon pour la science {{< fa flask >}} [(et ornithologie)]{.small .hl}
+
+::::{.space-list}
+
+:::{.fragment}
+- Soutenir la science et la recherche partout
+  - [Petites organisations à but non lucratif, laboratoires/groupes disposant de moins de fonds]{.hl}
+:::
+
+:::{.fragment}
+- La science est plus solide et plus fiable
+  - [Analyses complexes et meilleures pratiques (par exemple, génétique, eBird)]{.hl}
+:::
+
+:::{.fragment}
+- Améliore la collégialité et la collaboration
+  - [Conservation des oiseaux et collaborations internationales]{.hl}
+:::
+
+::::
+
+![](figs/sowa-bird-nature-animals-a4112d_CC0.png){.absolute width=40% right=-10% bottom=-15% fig-alt="An owl with big orange eyes looking to the left"}
+
+:::{.footer}
+[Eurasian eagle owl](https://pixabay.com/photos/owl-bird-nature-eyes-animals-beak-794892/) - Robert C.
+:::
+
+## Pourquoi pratiquer la science ouverte ?
+
+### Bon pour vous {{< fa lightbulb >}}
+- Visibilité, montrez vos compétences
+- Obtenez le mérite pour *tout* votre travail (procédures opérationnelles standard, analyses complexes)
+- Éléments de portfolio
+
+### Vous devrez {{< fa grin >}} 
+- Exigé par les organismes subventionnaires et le gouvernement
+
+![](figs/Seagull_July_2014-2.jpg){.absolute width=55% right=-20% bottom=-15% fig-alt="A gull with it's beak wide open positioned around the hex sticker."}
+![](https://github.com/ropensci/weathercan/raw/main/inst/assets/weathercan_logo.png){.absolute width=14.5% right=23% bottom=25% fig-alt="A red hexlogo the the label 'weathercan' showing a can with a pull tab labelled with a maple leaf and a storm cloud with lightning and rain"}
+
+:::{.footer}
+[Yellow-legged gull](https://commons.wikimedia.org/wiki/File:Seagull_July_2014-2.jpg) - Joaquim Alves Gaspar, CC BY-SA 3.0
+:::
+
+# *Comment* pratiquer la science ouverte ?
+
+## Données ouvertes, méthodologie et code
+
+### 1. Mettez-le en ligne !
+
+- Publiez-le dans un référentiel : **données, code ou fourre-tout**
+
+:::{.fragment style="padding-bottom: 15px"}
+### 2. Visez un stockage à long terme
+:::
+
+
+:::{.fragment}
+### 3. Réfléchissez à votre façon de travailler
+- Données et fourre-tout : {{< ai dryad >}} [Dryad](https://datadryad.org/), {{< ai figshare >}} [figshare](https://figshare.com), {{< ai zenodo >}} [Zenodo](https://zenodo.org/), etc.
+- Basé sur des projets : {{< ai osf >}} [Open Science Framework](https://osf.io/) (OSF) ; [Quarto Manuscripts](https://quarto.org/docs/manuscripts/) avec {{< fa brands github >}} [GitHub](https://github.com)
+- Basé sur le code : {{< fa brands github >}} [GitHub](https://github.com) (avec {{< ai zenodo >}} [Zenodo](https://zenodo.org/))
+
+:::
+
+# Par exemple...
+
+{{< fa brands github >}} [GitHub](https://github.com)  avec {{< ai zenodo >}} [Zenodo](https://zenodo.org/)
+
+## {background-image="figs/bluebirds_wide.png" background-size=100% background-position="bottom" background-title="A screenshot of a GitHub repository on bluebird migration"}  
+
+## {background-image="figs/bluebirds_wide_annotated1.png" background-size=100% background-position="bottom" background-title="The same screenshot highlighting a data and scripts folder as well as two contributors, Jared-Sonnleitner and steffilazerte"}
+
+## {background-image="figs/bluebirds_wide_annotated2.png" background-size=100% background-position="bottom" background-title="The same screenshot now highlighting a Zenodo badge and DOI as well as a tag called 'Final'"}
+
+## Publication ouverte {background-image="figs/ace2.png" background-size=52% background-position="right" fig-alt="A screenshot of the home page for the 'Avian Conservation & Ecology' Journal"}
+
+### Évaluation ouverte par les pairs
+- Envisager des évaluations ouvertes
+
+:::{.fragment}
+### Accès libre [(sans $$$)]{style="font-weight:normal; font-size: 60%"}
+- Votre bibliothèque
+  - Référentiel pour les prépublications
+  - Accords d'accès libre
+  - Subventions/fonds pour l'accès libre
+- Serveurs de prépublications
+:::
+
+:::{.fragment}
+### Accès libre [(avec un certain budget)]{style="font-weight:normal; font-size: 60%"}
+- Intégrez les fonds dans votre subvention
+- Recherchez des revues à but non lucratif
+:::
+
+
+# Voici quelques conseils...
+
+# Conseil n° 1
+
+**N'essayez pas de tout faire**
+
+## Conseil n° 1: N'essayez pas de tout faire
+
+> "Le mieux est l'ennemi du bien."
+> -- Voltaire
+
+- Soyez indulgent envers vous-même, ne visez pas la perfection
+- Vous avez le droit de commencer modestement
+
+
+![](figs/continuum.png){.absolute width=100% left=5% bottom=20% fig-alt="A fluffy white piping plover chick (shore bird) with an arrow leading to a white and grey adult piping plover. The words 'and grow!' are on the arrow"}
+
+:::{.footer}
+[Piping plover](https://commons.wikimedia.org/wiki/File:Piping_plover_(93872).jpg) and [chick](https://commons.wikimedia.org/wiki/File:Piping_plover_chick_(93850).jpg) - Rododendrites, CC BY-SA 4.0
+:::
+
+# Conseil n° 2
+
+**Faites une chose nouvelle**
+
+## Conseil n° 2: Faites une chose nouvelle
+
+> *Sur chaque projet, élargissez vos compétences, juste un peu*
+
+### Un exemple de code...
+
+- 1<sup>ère</sup> fois - Conservez une trace écrite de votre analyse.
+- 2<sup>e</sup> fois - Partager le script dans un référentiel de données
+- 3<sup>e</sup> fois - Partager sur GitHub (avec le téléchargement via le navigateur)
+- 4<sup>e</sup> fois - Partager sur GitHub (avec git !)
+
+Avant même de vous en rendre compte,<br>vous partagez du code *et* apprenez à utiliser de nouveaux outils.
+
+![](figs/procrastination.jpeg){.absolute right=-5% bottom=0 width=34% fig-alt="cartoon with a chickadee. First panel chickadee says 'I better start building that nest', second panel says 'later', chickadee says 'shooot I have to get started', third panel says 'even later' chickadee says 'shoot!'"}
+
+:::{.footnote}
+[Birdstrips](https://www.patreon.com/c/birdstrips/about)
+:::
+
+# Conseil n° 3
+
+**C'est normal d'être nerveux**
+
+## Conseil n° 3: C'est normal d'être nerveux
+
+> *et n'oubliez pas que vous êtes génial !*
+
+:::{.fragment}
+### « Et si je fais une erreur ? »
+- Les erreurs, ça arrive -> Mais tu fais preuve de transparence !
+:::
+
+:::{.fragment}
+### « Et si quelqu'un volait mes données/idées ? »
+- Il est plus facile d'inventer des données que de les voler.
+- Vous avez une trace !
+:::
+
+
+:::{.fragment}
+**Vous pouvez également choisir de garder cela<br>privé pour commencer.**
+:::
+
+
+![](figs/what_if.jpg){.absolute width=40% right=0 bottom=10% fig-alt="Cartoon with two boreal chickadees. First panel birds are eating seeds on the ground. One says 'What if it's rotten inside?' the other says 'It's not'. Second panel the birds are flying, one says 'What if we don't make it in time?' the other says 'We will.'. Third panel the birds are hanging off pinecones in a tree, one says 'What if I can't do it?', the other says 'You can'. Fourth panel the birds are facing the viewer, one says 'What if... everything's gonna be okay?', the other says 'It is'."}
+
+:::{.footnote}
+[Birdstrips](https://www.patreon.com/c/birdstrips/about)
+:::
+
+
+# Conseil n° 4
+
+**Travaillez avec les autres**
+
+## Conseil n° 4: Travaillez avec les autres
+
+
+### Organisations / Communautés
+[![](figs/ropensci.svg){width=20%}](https://ropensci.org)[  ]{style="padding-left:60px"}
+[![](figs/sortee.png){width=30%}](https://sortee.org/)
+
+:::{.spacer}
+:::
+
+### SCO-SOC!
+- **Mixer de réseautage** - À venir bientôt !
+
+<!-- ![](figs/ropensci.svg){.absolute width=15% right=50% top=15%} -->
+<!-- ![](figs/sortee.png){.absolute width=15% right=50% top=15%} -->
+![](figs/not-alone-clean.png){.absolute width=40% right=0 top=15%}
+
+:::{.footnote}
+[Birdstrips](https://www.patreon.com/c/birdstrips/about)
+:::
+
+<!-- :::{.fragment} -->
+<!-- ### "What if I'm not doing it right?" -->
+<!-- - Who cares? The important thing is that you're doing it! -->
+<!-- ::: -->
+
+## La science ouverte pour les ornithologues ! {background-image="figs/mycol_CC0_crow2.png" background-position="bottom right" background-size=40% background-title="Crow with it's head tilted questioningly"}
+
+:::{.spacer}
+:::
+
+- Conseil n° 1 : n'essayez pas de tout faire
+- Conseil n° 2 : faites une chose nouvelle
+- Conseil n° 3 : il est normal d'être nerveux
+- Conseil n° 4 : travaillez avec les autres
+
+:::{.footer}
+[American crow](https://commons.wikimedia.org/wiki/File:Crow_head_tilt_-_bird_portrait.jpg) - mycol CC0
+:::
+
+::::{.fragment} 
+
+:::{.spacer}
+:::
+
+Merci à Alex Koiter pour ses idées et ses suggestions !  
+[(Voir la presentation d'Alex, [Open and Reproducible Soil Science](https://alexkoiter.ca/presentations/UM_Soil_Science_2023/Open_reproducible_science.html#/with-great-data-comes-great-responsibility))]{.small}
+
+
+[Merci!]{.absolute left=0 bottom=15% style="font-size:220%; font-weight:bold;"}
+
+![](https://github.com/steffilazerte/Presentations/blob/master/Global/steffi_logo.png?raw=true){.absolute bottom=0 left=0.5% width=30%}
+
+![](figs/qr.svg){.absolute bottom=0 left=35% width=15% fig-alt="QR Code"}
+
+:::{.small .absolute left=50% bottom=6%}
+[Ressources](https://github.com/steffilazerte/Presentations/2025-08-Open-Science)<br>[English slides](https://steffilazerte.ca/Presentations/2025-08-Open-Science)<br>[Diapositive françaises](https://steffilazerte.ca/Presentations/2025-08-Open-Science/index_fr.html)
+:::
+::::
