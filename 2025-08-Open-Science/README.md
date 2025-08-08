@@ -6,11 +6,13 @@ Presented at the [2025 SCO-SOC meeting](https://conferencestest.usask.ca/sco-202
 - [English Slides](https://steffilazerte.ca/Presentations/2025-08-Open-Science/index.html)
 - [French Slides](https://steffilazerte.ca/Presentations/2025-08-Open-Science/index_fr.html)
 
-> Please note that I translated the English slides into French using DeepL and my own understanding of French (which is limited with respect to Scientific Terminology). 
+> Please note that I translated the English slides into French using DeepL and my own understanding of French (which is limited especially with respect to Scientific Terminology). 
 > Feel free to open an Issue if you see any problems, or submit a PR to address them directly.
 > Thanks!
+>
 > ---
-> Veuillez noter que j'ai traduit les diapositives anglaises en français à l'aide de DeepL et de ma propre compréhension du français (qui est limitée en ce qui concerne la terminologie scientifique). 
+>
+> Veuillez noter que j'ai traduit les diapositives anglaises en français à l'aide de DeepL et de ma propre compréhension du français (qui est particulièrement limitée en ce qui concerne la terminologie scientifique). 
 > N'hésitez pas à ouvrir un ticket si vous constatez des problèmes, ou à soumettre une demande de modification pour les résoudre directement.
 > Merci !
 
