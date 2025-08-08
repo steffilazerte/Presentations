@@ -133,7 +133,7 @@ qrcode::qr_code("https://github.com/steffilazerte/Presentations/2025-07-Open-Sci
 
 {{< fa brands github >}} [GitHub](https://github.com)  avec {{< ai zenodo >}} [Zenodo](https://zenodo.org/)
 
-## {background-image="figs/bluebirds_wide.png" background-size=100% background-position="bottom" background-title="A screenshot of a GitHub repository on bluebird migration"}  
+## {background-image="figs/bluebirds_wide_annotated0.png" background-size=100% background-position="bottom" background-title="A screenshot of a GitHub repository on bluebird migration"}  
 
 ## {background-image="figs/bluebirds_wide_annotated1.png" background-size=100% background-position="bottom" background-title="The same screenshot highlighting a data and scripts folder as well as two contributors, Jared-Sonnleitner and steffilazerte"}
 
