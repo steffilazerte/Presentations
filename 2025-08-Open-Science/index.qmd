@@ -24,7 +24,7 @@ engine: knitr
 
 ```{r}
 #| include: false
-qrcode::qr_code("https://github.com/steffilazerte/Presentations/2025-07-Open-Science") |>
+qrcode::qr_code("https://github.com/steffilazerte/Presentations/tree/master/2025-08-Open-Science#readme") |>
   qrcode::generate_svg("figs/qr.svg")
 ```
 
