@@ -296,6 +296,6 @@ Merci à Alex Koiter pour ses idées et ses suggestions !
 ![](figs/qr.svg){.absolute bottom=0 left=35% width=15% fig-alt="QR Code"}
 
 :::{.small .absolute left=50% bottom=6%}
-[Ressources](https://github.com/steffilazerte/Presentations/tree/master/2025-08-Open-Science#practical-tips-for-open-science-in-ornithology)<br>[English slides](https://steffilazerte.ca/Presentations/2025-08-Open-Science)<br>[Diapositive françaises](https://steffilazerte.ca/Presentations/2025-08-Open-Science/index_fr.html)
+[Ressources](https://github.com/steffilazerte/Presentations/tree/master/2025-08-Open-Science#readme)<br>[English slides](https://steffilazerte.ca/Presentations/2025-08-Open-Science)<br>[Diapositive françaises](https://steffilazerte.ca/Presentations/2025-08-Open-Science/index_fr.html)
 :::
 ::::
