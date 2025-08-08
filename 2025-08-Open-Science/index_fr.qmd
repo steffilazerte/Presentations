@@ -192,9 +192,9 @@ qrcode::qr_code("https://github.com/steffilazerte/Presentations/2025-07-Open-Sci
 ### Un exemple de code...
 
 - 1<sup>ère</sup> fois - Conservez une trace écrite de votre analyse.
-- 2<sup>e</sup> fois - Partager le script dans un référentiel de données
-- 3<sup>e</sup> fois - Partager sur GitHub (avec le téléchargement via le navigateur)
-- 4<sup>e</sup> fois - Partager sur GitHub (avec git !)
+- 2<sup>ème</sup> fois - Partager le script dans un référentiel de données
+- 3<sup>ème</sup> fois - Partager sur GitHub (avec le téléchargement via le navigateur)
+- 4<sup>ème</sup> fois - Partager sur GitHub (avec git !)
 
 Avant même de vous en rendre compte,<br>vous partagez du code *et* apprenez à utiliser de nouveaux outils.
 
