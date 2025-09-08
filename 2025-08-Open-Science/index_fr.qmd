@@ -31,7 +31,7 @@ qrcode::qr_code("https://github.com/steffilazerte/Presentations/tree/master/2025
 
 ## Qu'est-ce que la science ouverte ?
 
-> *Transparent **et** accessible*
+> *Transparente **et** accessible*
 
 - Données
 - Méthodologie
@@ -64,7 +64,7 @@ qrcode::qr_code("https://github.com/steffilazerte/Presentations/tree/master/2025
 
 ## Pourquoi pratiquer la science ouverte ?
 
-### C'est bon pour la science {{< fa flask >}} [(et ornithologie)]{.small .hl}
+### C'est bon pour la science {{< fa flask >}} [(et l'ornithologie)]{.small .hl}
 
 ::::{.space-list}
 
@@ -98,8 +98,8 @@ qrcode::qr_code("https://github.com/steffilazerte/Presentations/tree/master/2025
 - Obtenez le mérite pour *tout* votre travail (procédures opérationnelles standard, analyses complexes)
 - Éléments de portfolio
 
-### Vous devrez {{< fa grin >}} 
-- Exigé par les organismes subventionnaires et le gouvernement
+### Obligatoire {{< fa grin >}} 
+- Exigé par les organismes financeurs et le gouvernement
 
 ![](figs/Seagull_July_2014-2.jpg){.absolute width=55% right=-20% bottom=-15% fig-alt="A gull with it's beak wide open positioned around the hex sticker."}
 ![](https://github.com/ropensci/weathercan/raw/main/inst/assets/weathercan_logo.png){.absolute width=14.5% right=23% bottom=25% fig-alt="A red hexlogo the the label 'weathercan' showing a can with a pull tab labelled with a maple leaf and a storm cloud with lightning and rain"}
@@ -110,7 +110,7 @@ qrcode::qr_code("https://github.com/steffilazerte/Presentations/tree/master/2025
 
 # *Comment* pratiquer la science ouverte ?
 
-## Données ouvertes, méthodologie et code
+## Données, méthodologie et code ouverts
 
 ### 1. Mettez-le en ligne !
 
@@ -149,13 +149,13 @@ qrcode::qr_code("https://github.com/steffilazerte/Presentations/tree/master/2025
 - Votre bibliothèque
   - Référentiel pour les prépublications
   - Accords d'accès libre
-  - Subventions/fonds pour l'accès libre
+  - Financements/fonds pour l'accès libre
 - Serveurs de prépublications
 :::
 
 :::{.fragment}
 ### Accès libre [(avec un certain budget)]{style="font-weight:normal; font-size: 60%"}
-- Intégrez les fonds dans votre subvention
+- Intégrez les fonds dans votre demande de financement
 - Recherchez des revues à but non lucratif
 :::
 
@@ -171,7 +171,7 @@ qrcode::qr_code("https://github.com/steffilazerte/Presentations/tree/master/2025
 > "Le mieux est l'ennemi du bien."
 > -- Voltaire
 
-- Soyez indulgent envers vous-même, ne visez pas la perfection
+- Soyez indulgent·e envers vous-même, ne visez pas la perfection
 - Vous avez le droit de commencer modestement
 
 
@@ -193,8 +193,8 @@ qrcode::qr_code("https://github.com/steffilazerte/Presentations/tree/master/2025
 
 - 1<sup>ère</sup> fois - Conservez une trace écrite de votre analyse.
 - 2<sup>ème</sup> fois - Partager le script dans un référentiel de données
-- 3<sup>ème</sup> fois - Partager sur GitHub (avec le téléchargement via le navigateur)
-- 4<sup>ème</sup> fois - Partager sur GitHub (avec git !)
+- 3<sup>ème</sup> fois - Partager sur GitHub (avec le téléversement via le navigateur)
+- 4<sup>ème</sup> fois - Partager sur GitHub (avec Git !)
 
 Avant même de vous en rendre compte,<br>vous partagez du code *et* apprenez à utiliser de nouveaux outils.
 
@@ -206,11 +206,11 @@ Avant même de vous en rendre compte,<br>vous partagez du code *et* apprenez à 
 
 # Conseil n° 3
 
-**C'est normal d'être nerveux**
+**C'est normal d'être nerveux·se**
 
-## Conseil n° 3: C'est normal d'être nerveux
+## Conseil n° 3: C'est normal d'être nerveux·se
 
-> *et n'oubliez pas que vous êtes génial !*
+> *et n'oubliez pas que vous êtes génial·e !*
 
 :::{.fragment}
 ### « Et si je fais une erreur ? »
@@ -251,7 +251,7 @@ Avant même de vous en rendre compte,<br>vous partagez du code *et* apprenez à 
 :::
 
 ### SCO-SOC!
-- **Mixer de réseautage** - À venir bientôt !
+- **Événement de réseautage** - À venir bientôt !
 
 <!-- ![](figs/ropensci.svg){.absolute width=15% right=50% top=15%} -->
 <!-- ![](figs/sortee.png){.absolute width=15% right=50% top=15%} -->
@@ -273,7 +273,7 @@ Avant même de vous en rendre compte,<br>vous partagez du code *et* apprenez à 
 
 - Conseil n° 1 : n'essayez pas de tout faire
 - Conseil n° 2 : faites une chose nouvelle
-- Conseil n° 3 : il est normal d'être nerveux
+- Conseil n° 3 : il est normal d'être nerveux·se
 - Conseil n° 4 : travaillez avec les autres
 
 :::{.footer}
@@ -286,10 +286,10 @@ Avant même de vous en rendre compte,<br>vous partagez du code *et* apprenez à 
 :::
 
 Merci à Alex Koiter pour ses idées et ses suggestions !  
-[(Voir la presentation d'Alex, [Open and Reproducible Soil Science](https://alexkoiter.ca/presentations/UM_Soil_Science_2023/Open_reproducible_science.html#/with-great-data-comes-great-responsibility))]{.small}
+[(Voir la présentation d'Alex, [Open and Reproducible Soil Science](https://alexkoiter.ca/presentations/UM_Soil_Science_2023/Open_reproducible_science.html#/with-great-data-comes-great-responsibility))]{.small}
 
 
-[Merci!]{.absolute left=0 bottom=15% style="font-size:220%; font-weight:bold;"}
+[Merci !]{.absolute left=0 bottom=15% style="font-size:220%; font-weight:bold;"}
 
 ![](https://github.com/steffilazerte/Presentations/blob/master/Global/steffi_logo.png?raw=true){.absolute bottom=0 left=0.5% width=30%}
 
