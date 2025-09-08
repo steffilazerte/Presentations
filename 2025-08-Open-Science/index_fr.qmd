@@ -214,7 +214,7 @@ Avant même de vous en rendre compte,<br>vous partagez du code *et* apprenez à 
 
 :::{.fragment}
 ### « Et si je fais une erreur ? »
-- Les erreurs, ça arrive -> Mais tu fais preuve de transparence !
+- Les erreurs, ça arrive -> Mais vous faites preuve de transparence !
 :::
 
 :::{.fragment}
