@@ -13,7 +13,7 @@ quarto::quarto_render()
 # Use decktape docker image
 #
 # In the slides folder, in the terminal:
-# sudo docker run --rm -t -v `pwd`:/slides -v .:/home/user ghcr.io/astefanutti/decktape reveal --fragments /home/user/index.html lazerte_open_science.pdf
+# sudo docker run --rm -t -v "`pwd`:/slides" -v ".:/home/user" ghcr.io/astefanutti/decktape reveal --fragments /home/user/index.html lazerte_open_science.pdf
 #
 # Note the use of 'reveal --fragments' which may or may not be necessary in future (see https://github.com/astefanutti/decktape/issues/353)
 
