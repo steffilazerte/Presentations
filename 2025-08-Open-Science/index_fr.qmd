@@ -114,7 +114,7 @@ qrcode::qr_code("https://github.com/steffilazerte/Presentations/tree/master/2025
 
 ### 1. Mettez-le en ligne !
 
-- Publiez-le dans un référentiel : **données, code ou fourre-tout**
+- Publiez-le sur une plateforme de référence : **données, code ou fourre-tout**
 
 :::{.fragment style="padding-bottom: 15px"}
 ### 2. Visez un stockage à long terme
