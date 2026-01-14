@@ -1,0 +1,355 @@
+---
+format: 
+  revealjs:
+    author-steffi: true
+    title: "How does one study<br>animal behaviour?"
+    workshop: "<strong>Brandon University</strong><br>15:375 Animal Behaviour"
+    date: today
+    date-format: iso
+    title-slide-attributes: 
+      data-background-image: figs/cat_box_sm.jpg
+      data-background-size: "45%"
+      data-background-position: "100% 50%"
+    template-partials:
+      - title-slide.html
+    theme: [default, styles.scss]
+    width: 1200
+    slide-number: true
+    fontsize: 1.7em
+engine: knitr
+---
+
+## A little about me {background-image=figs/vivi_computer_narrow.jpg background-size='60%' background-position="100%"}
+
+**Background in Animal Behaviour**
+
+### MSc
+Chipmunk Activity Patterns
+
+### PhD
+Chickadee Communication & <br>Urbanization
+
+### Currently
+R-programming consultant 
+
+- Ornithology
+- Hydrology
+- A little bit of everything
+
+
+{{<fa test>}}
+
+```{r}
+#| include: false
+qrcode::qr_code(
+  "https://steffilazerte.ca/Presentations/2026-01-BU-Animal-Behaviour"
+) |>
+  qrcode::generate_svg("figs/qr.svg")
+```
+
+## How does one study behaviour?
+
+### What is *behaviour*? {.fragment}
+
+:::{.fragment}
+### What are we studying when we study behaviour?
+- **Proximate** - *How* do animals do the crazy things they do?
+- **Ultimate** - *Why* do animals do the crazy things they do?
+:::
+
+:::{.fragment}
+### What study designs can we use?
+- Observation
+- Experimental (manipulation)
+
+**Classically:**
+
+Observe → Hypothesize → Manipulate to test hypothesis
+:::
+
+:::{.fragment}
+### What techniques/tools can we use?
+:::
+
+::: {.notes}
+From my masters to my current work, I have lots of examples of different ways of studying behaviour
+:::
+
+## How does one study behaviour?
+
+### What is *behaviour*? → Examples
+
+:::{.fade}
+### What are we studying when we study behaviour?
+- **Proximate** - *How* do animals do the crazy things they do?
+- **Ultimate** - *Why* do animals do the crazy things they do?
+
+### What study designs can we use?
+- Observation
+- Experimental (manipulation)
+
+**Classically:**
+
+Observe → Hypothesize → Manipulate to test hypothesis
+:::
+ 
+### What techniques/tools can we use? → Examples
+
+
+# Activity
+
+:::{.notes}
+Why do we care?
+- Better understanding of relationship with environment
+  - Light pollution changes rhythms
+  - Full moons can change rhythms
+:::
+
+
+## Temperature loggers on Eastern Chipmunks
+[[Steffi LaZerte and Don Kramer](https://doi.org/10.1139/cjz-2016-0064)]{.footnote2}
+
+![](figs/steffi_chipmunks.JPG){.absolute left=0 top=150 width=50%}
+
+:::{.absolute left=120 bottom=30}
+An unexpected twist to a Master's 
+:::
+
+![](figs/eg_C043.png){.absolute .fragment left=0 bottom=-3% width=53%}
+
+![](figs/chipmunk.jpg){.absolute right=0 width=38%}
+
+
+
+## Temperature loggers on Eastern Chipmunks
+[[Steffi LaZerte and Don Kramer](https://doi.org/10.1139/cjz-2016-0064)]{.footnote2}
+
+![](figs/chipmunks_daily.jpg){.absolute left=0 bottom=-3% width=48%}
+
+![](figs/chipmunk.jpg){.absolute right=0 width=38%}
+
+
+
+## Geolocators on Red-headed Woodpeckers
+[Elena West]{.footnote2}
+
+About a decade later...
+
+![](figs/mounted geolocator.jpg){.absolute left=-30 top=130 width=50%}
+[Ken Otter]{.absolute .attrib left=40% bottom=24%}
+
+![](figs/redheaded_woodpecker_flickr_cbgrfx123.jpg){.absolute right=-30 width=50%}
+
+[[cbgrfx123](https://www.flickr.com/photos/72005145@N00/3477356807), CC BY-SA 2.0]{.absolute .attrib right=33% top=21%}
+
+## Geolocators on Red-headed Woodpeckers
+[Elena West]{.footnote2}
+
+![](figs/lightlevels.png){.center}
+
+## Body Cameras
+- Cat camera Project 
+- Tracking cat activity
+
+![](figs/cat_cam_elizabeth_gow.jpg){.absolute right=-70 top=10 width=70%}
+[Elizabeth Gow]{.absolute .attrib right=-3% bottom=4%}
+
+[Elizabeth Gow]{.footnote2}
+
+## Body Cameras
+- Cat camera Project 
+- Tracking cat activity
+- Small studies taken together can<br>contribute to large scale estimates
+
+![](figs/cats_birds.png){.absolute right=-70 top=10 width=70%}
+
+[Elizabeth Gow]{.footnote2}
+
+## Side-note
+- Cats are great
+- Cats can be outside
+- But keep the safe...
+- and don't let them kill wildlife
+
+![](figs/cat_camping.jpg){.absolute right=-70 top=10}
+
+
+## Trail Cameras
+[Robyn Reudink and Karl Larsen]{.footnote2}
+
+- Western Rattlesnakes
+
+:::{.center}
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/530488851?fl=pl&fe=sh#t=33s&end=53s" width="1000" height="500" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
+:::
+
+# A moment to reflect
+Pros and cons of these tools?  
+What type of study design were these examples?
+
+:::{.notes}
+- Hint... why was Steffi hired to help?
+- Lots of data points, but actually few animals
+- Lots of data processing
+:::
+
+
+# Communication
+
+## Chickadees {background-image="figs/urban%20birds.jpg" background-size="75%"}
+[[Steffi LaZerte, Hans Slabbekoorn, Ken Otter](https://doi.org/10.1098/rspb.2016.1058)]{.footnote2}
+
+## Chickadees
+[[Steffi LaZerte, Hans Slabbekoorn, Ken Otter](https://doi.org/10.1098/rspb.2016.1058)]{.footnote2}
+
+:::{layout="[[-1, 10, -2, 10, -1]]"}
+![](figs/steffi_wl.JPG)
+
+![](figs/speaker_bird_close2.JPG)
+:::
+
+## Chickadees
+[[Steffi LaZerte, Hans Slabbekoorn, Ken Otter](https://doi.org/10.1098/rspb.2016.1058)]{.footnote2}
+
+:::{.absolute top=0 right=0}
+```{r}
+htmltools::tags$audio(
+  controls = "",
+  htmltools::tags$source(
+    src = "figs/BCCH_shift.wav",
+    type = "audio/wav"
+  )
+)
+```
+:::
+
+:::{.center}
+![](figs/bcch_measures-1.png){width=73%}
+:::
+
+
+## Observation - Urban Noise 
+[[Steffi LaZerte, Hans Slabbekoorn, Ken Otter](https://doi.org/10.1098/rspb.2016.1058)]{.footnote2}
+
+![](figs/bcch_pre_freq_panel-1.png){style="margin-top:100px"}
+![](figs/bcch_singing_sm.JPG){.absolute width=20% top=-20 right=-60}
+
+## Manipulation - Experimental Noise
+[[Steffi LaZerte, Hans Slabbekoorn, Ken Otter](https://doi.org/10.1098/rspb.2016.1058)]{.footnote2}
+
+![](figs/exp_freq_panel-1.png){style="margin-top:100px"}
+![](figs/speaker_bird_close2.JPG){.absolute width=15% top=-20 right=-60}
+
+## White-throated Sparrows
+
+[[Ken Otter, Alexandra McKenna, Steffi LaZerte, Scott Ramsey](https://doi.org/10.1016/j.cub.2020.05.084)]{.footnote2}
+
+:::{.center}
+![](figs/wtsp_wide.png)
+:::
+
+[[![](figs/xenocanto_logo.png)](https://xeno-canto.org/)]{.absolute right=0 top=-3% width=7%}
+
+
+## {#sparrow data-menu-title="White-throated Sparrow Song" background-image="figs/wtsp_viral.png" background-size="50%"}
+
+[[Ken Otter, Alexandra McKenna, Steffi LaZerte, Scott Ramsey](https://doi.org/10.1016/j.cub.2020.05.084)]{.footnote2}
+
+[[![](figs/xenocanto_logo.png)](https://xeno-canto.org/)]{.absolute right=0 top=-3% width=7%}
+
+## Inspired a human song!
+[Sherry Ryan](https://www.sherryryan.com/)
+
+:::{.center}
+<iframe width="100%" height="570" src="https://www.youtube.com/embed/D2S6dXdhCQ8?si=689a4yAzH0aLkh5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="margin-top:20px"></iframe>
+:::
+
+[[![](figs/xenocanto_logo.png)](https://xeno-canto.org/)]{.absolute right=0 top=-3% width=7%}
+
+
+# Migration
+
+## Bluebirds
+
+[[Jared Sonnleitner, Steffi LaZerte, Ann McKellar, Nancy Flood, Matt Reudink](https://doi.org/10.1002/ecs2.4316)]{.footnote2}
+
+![](figs/bluebirds1.png){.absolute left=10% bottom=0 width=50%}
+
+![](figs/bluebird_western_Gregory_Smith.jpg){.absolute right=15% top=12% width=20%}
+[Gregory Smith]{.absolute .attrib right=15.5% top=14%}
+[Eastern Bluebirds]{.absolute style="text-align:left;" right=-2.5% top=23%}
+
+![](figs/bluebird_mountain_Elaine_R_Wilson.jpg){.absolute right=15% top=39% width=20%}
+[Elaine R. Wilson]{.absolute .attrib right=15.5% top=41%}
+[Mountain Bluebirds]{.absolute right=-4.5% top=49%}
+
+![](figs/bluebird_eastern_Don_Faulkner.jpg){.absolute right=15% bottom=3% width=20%}
+[Don Faulkner]{.absolute .attrib right=15.5% bottom=30%}
+[Western Bluebirds]{.absolute right=-3% top=80%}
+
+[[![](figs/ebird_logo.svg)](https://ebird.org)]{.absolute right=0 top=0 width=10%}
+
+## Swifts
+
+[[Erik Prytula, Matt Reudink, Steffi LaZerte, Jared Sonnleitner, Ann McKellar](https://doi.org/10.5751/JFO-00341-940314)]{.footnote2}
+
+![](figs/swifts1.png){.absolute left=5% bottom=2% width=50%}
+
+![](figs/swift_Kat_Sam.jpeg){.absolute right=5% bottom=5% width=32%}
+[Kat+Sam]{.absolute .attrib right=5.5% bottom=7%}
+
+[[![](figs/ebird_logo.svg)](https://ebird.org)]{.absolute right=0 top=0 width=10%}
+
+## Turkey Vultures {background-image="figs/donnecke_vultures1.png" background-size="100%" background-position="bottom right"}
+
+[[Don Kramer, Daniel Donnecke, Steffi LaZerte](https://doi.org/10.3356/jrr2491)]{.footnote2}
+
+[Daniel Donnecke]{.absolute .attrib right=0 bottom=0}
+
+[[![](figs/rocky_point.jpg)](https://rpbo.org/)]{.absolute width=10% top=0 right=0}
+
+## Turkey Vultures
+
+[[Don Kramer, Daniel Donnecke, Steffi LaZerte](https://doi.org/10.3356/jrr2491)]{.footnote2}
+
+[[![](figs/rocky_point.jpg)](https://rpbo.org/)]{.absolute width=10% top=0 right=0}
+
+:::{layout-ncol=2 layout-valign="center"}
+![](figs/vulture_plot.png)
+
+![](figs/donnecke_vultures2.png)
+:::
+
+[Daniel Donnecke]{.absolute .attrib right=2% bottom=19%}
+
+## Urbanization and Migration
+[Steffi LaZerte, Barbara Frei, Elizabeth Gow and Krista De Groot]{.footnote2}
+[[![](figs/motus-logo.png)](https://motus.org/explore/)]{.absolute width=14% top=-35 right=-50}
+
+:::{.center style="margin-top:-20px"}
+![](figs/Motus-System-IG-final.jpg)
+:::
+
+## Urbanization and Migration
+[Steffi LaZerte, Barbara Frei, Elizabeth Gow and Krista De Groot]{.footnote2}
+[[![](figs/motus-logo.png)](https://motus.org/explore/)]{.absolute width=14% top=-35 right=-50}
+
+![](figs/swainsons_map.png){.absolute width=50% left=0}
+![](figs/hermit_map.png){.absolute right=0 width=50%}
+
+## So what did we learn?
+
+:::{.fragment}
+- Field work doesn't always/often go as planned
+- You can reveal animal behaviour using unexpected methods
+- Pros and cons to different methods
+- Technology plays a big role!
+:::
+
+:::{.fragment}
+**But remember, this is through Steffi's lens**
+:::
+
+:::{.fragment}
+[Thank you!]{style="font-size:220%; font-weight:bold;"}
+:::
